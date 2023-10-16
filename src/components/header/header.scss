@@ -7,6 +7,10 @@
   padding: 22px 0;
   position: relative;
 
+  .media_token-kirish {
+    display: none;
+  }
+
   nav {
     display: flex;
     align-items: center;
@@ -189,12 +193,22 @@
 
 @media screen and (max-width: 361px) {
   .header {
-    button {
+    .btn {
       display: none !important;
     }
 
     &-hum {
       display: block !important;
+    }
+
+    .media_token-kirish {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 50px;
+      border-radius: 20px;
+      margin-left: 40px;
+      margin-top: 13px;
     }
 
     &-profile {
@@ -238,7 +252,7 @@
           letter-spacing: 0em;
           text-align: left;
           white-space: nowrap;
-          width: 160px;
+          width: 60%;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
@@ -247,7 +261,7 @@
 
       hr {
         border: none;
-        border-bottom: 1px solid #F5F5F5;
+        border-bottom: 1px solid #f5f5f5;
       }
 
       &_navlink {
@@ -257,12 +271,11 @@
         align-items: flex-start;
         gap: 23px;
         font-family: Poppins;
-font-size: 20px;
-font-weight: 500;
-line-height: 16px;
-letter-spacing: 0em;
-text-align: left;
-
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 16px;
+        letter-spacing: 0em;
+        text-align: left;
       }
 
       &_vector {
