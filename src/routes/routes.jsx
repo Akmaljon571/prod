@@ -9,6 +9,7 @@ import {
   RegistrCode,
   RegistrFinish,
 } from '../components';
+import ErrorPage from '../page/error';
 
 function Routers() {
   return (
@@ -22,7 +23,7 @@ function Routers() {
       <Route path="/registration/code" element={<RegistrCode />} />
       <Route path="/registration/profil" element={<RegistrFinish />} />
       <Route path="/dars" element={<DarsPage />} />
-      {/* <Route path='/*' element={<Error />} /> */}
+      <Route path="/*" element={<ErrorPage />} />
     </Routes>
   );
 }
