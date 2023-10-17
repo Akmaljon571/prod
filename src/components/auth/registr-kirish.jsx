@@ -4,6 +4,8 @@ import { Button } from '@mui/material';
 import './auth.scss';
 
 function RegistrFinish() {
+  
+
   return (
     <div className="auth finish">
       <Link to={'/'}>

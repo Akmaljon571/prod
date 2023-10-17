@@ -1,17 +1,34 @@
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../img/LinCor.svg';
 import { Button } from '@mui/material';
-import './auth.scss';
 import { message } from 'antd';
+import time from '../../img/Time.svg';
 import { State, api } from '../../context';
-import { useContext, useRef } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
+import './auth.scss';
 
 function RegistrCode() {
   const [messageApi, contextHolder] = message.useMessage();
   const phone = JSON.parse(localStorage.getItem('registr'));
   const codeRef = useRef();
   const navigate = useNavigate();
+  const [vaqt, setVaqt] = useState('00:59');
   const { setToken } = useContext(State);
+
+  useEffect(() => {
+    setTimeout(() => {
+      const a = Number(vaqt.split(':')[1]);
+      if (a !== 0) {
+        if (a - 1 > 9) {
+          setVaqt(`00:${a - 1}`);
+        } else if (a - 1 <= 9) {
+          setVaqt(`00:0${a - 1}`);
+        }
+      } else {
+        setVaqt('00:00');
+      }
+    }, 1000);
+  }, [vaqt]);
 
   const codeFilter = (e) => {
     const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
@@ -95,6 +112,7 @@ function RegistrCode() {
             type: 'success',
             content: "Sms jo'natildi",
           });
+          setVaqt('00:59');
         } else {
           messageApi.destroy();
           messageApi.open({
@@ -118,13 +136,29 @@ function RegistrCode() {
         <span>Kodni kiriting</span>
         <input ref={codeRef} maxLength={4} onKeyDown={codeFilter} type="text" />
       </label>
-      <span
-        onClick={reset}
-        style={{ cursor: 'pointer' }}
-        className="parol-update"
-      >
-        Kodni qayta yuborish.
-      </span>
+      {vaqt?.split(':')[1] !== '00' ? (
+        <span
+          style={{
+            cursor: 'pointer',
+            color: '#CCD2E3',
+            display: 'flex',
+            gap: '20px',
+          }}
+          className="parol-update"
+        >
+          Kodni qayta yuborish.
+          <img width={24} height={24} src={time} alt="" />
+          {vaqt}
+        </span>
+      ) : (
+        <span
+          onClick={reset}
+          style={{ cursor: 'pointer' }}
+          className="parol-update"
+        >
+          Kodni qayta yuborish.
+        </span>
+      )}
       <Button onClick={click} className="kirish" variant="contained">
         Tasdiqlash
       </Button>

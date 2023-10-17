@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import logo from '../../img/LinCor.svg';
 import vector from '../../img/header-vector.svg';
 import sVector from '../../img/profile-vector.svg';
@@ -11,14 +11,14 @@ import aloqa from '../../img/phone-call.svg';
 import chiqish from '../../img/log-out.svg';
 import hum from '../../img/hum.svg';
 import './header.scss';
+import { State } from '../../context';
 
 function Header() {
-  // const { token } = useContext(State)
+  const { token } = useContext(State);
   const [prof, setProf] = useState(false);
   const [mediaModal, setMediaModal] = useState(false);
   const [list_none, setListNone] = useState(false);
   const navigate = useNavigate();
-  const token = false;
 
   return (
     <>

@@ -8,6 +8,5 @@ export const StatePriveder = ({ children }) => {
     JSON.parse(localStorage.getItem('access_token')) || '',
   );
   const data = { token, setToken };
-
   return <State.Provider value={data}>{children}</State.Provider>;
 };

@@ -3,7 +3,6 @@ import video from '../../video/1772591765.mp4';
 import poster from '../../img/photo_2023-10-17_02-48-14.jpg';
 import './dars.scss';
 import play from '../../img/video-player.svg';
-import { Button } from '@mui/material';
 
 function Dars() {
   const [isPlaying, setIsPlaying] = useState(false);

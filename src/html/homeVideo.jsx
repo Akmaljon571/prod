@@ -6,7 +6,6 @@ function HomeVideo() {
     <>
       <video
         id="video-player"
-        autoplay="autoplay"
         loop
         className="homeVideo"
         autoPlay
