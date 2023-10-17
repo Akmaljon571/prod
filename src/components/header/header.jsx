@@ -17,7 +17,7 @@ function Header() {
   const [prof, setProf] = useState(false);
   const [mediaModal, setMediaModal] = useState(false);
   const [list_none, setListNone] = useState(false);
-  const token = false;
+  const token = true;
 
   return (
     <div className="header-fix">

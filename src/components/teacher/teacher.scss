@@ -1,0 +1,186 @@
+.teacher {
+  height: 604px;
+  padding: 72px 0 72px 48px;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  .left {
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    max-width: 500px;
+    min-width: 500px;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 8px solid #f5f5f5;
+      box-sizing: content-box;
+      object-fit: fill;
+    }
+  }
+
+  &-absalute {
+    position: absolute;
+    top: 200px;
+    left: 167px;
+    z-index: 50;
+
+    &-text {
+      font-family: Poppins;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 32px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #fafafa;
+      position: absolute;
+      top: 300px;
+      left: 237px;
+      z-index: 170;
+    }
+  }
+
+  .right {
+    h3 {
+      font-family: Poppins;
+      font-size: 56px;
+      font-weight: 700;
+      line-height: 64px;
+      letter-spacing: 0em;
+      text-align: left;
+      margin-bottom: 24px;
+      max-width: 532px;
+    }
+
+    p {
+      max-width: 339px;
+      font-family: Poppins;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #5c5c5c;
+    }
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .teacher {
+    height: 492px;
+    padding: 40px;
+
+    &-absalute {
+      width: 150px;
+      height: 150px;
+      left: 143px;
+      top: 165px;
+
+      &-text {
+        top: 225px;
+        left: 170px;
+        font-family: Poppins;
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 32px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+    }
+
+    .left {
+      max-width: 400px;
+      min-width: 400px;
+      gap: 5px;
+
+      img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    .right {
+      h3 {
+        font-family: Poppins;
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 64px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+
+      p {
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .teacher {
+    flex-direction: column;
+    padding: 20px;
+
+    .left {
+      max-width: 300px;
+      min-width: 300px;
+
+      img {
+        border: none;
+        width: 126px;
+        height: 126px;
+      }
+    }
+
+    &-absalute {
+      top: 85px;
+      left: 85px;
+      width: 126px;
+      height: 126px;
+
+      &-text {
+        font-size: 22px;
+        top: 135px;
+        left: 115px;
+      }
+    }
+
+    .right {
+      h3 {
+        max-width: 276px;
+        font-family: Poppins;
+font-size: 24px;
+font-weight: 700;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: left;
+
+      }
+
+      p{
+        max-width: 276px;
+        font-family: Poppins;
+font-size: 14px;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: left;
+
+      }
+    }
+  }
+}

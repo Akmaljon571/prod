@@ -1,4 +1,4 @@
-import { Header, Hero } from '../components';
+import { Header, Hero, Teacher } from '../components';
 import { HomeVideo, Line } from '../html';
 
 function Home() {
@@ -8,6 +8,8 @@ function Home() {
       <Hero />
       <Line />
       <HomeVideo />
+      <Line />
+      <Teacher />
     </>
   );
 }
