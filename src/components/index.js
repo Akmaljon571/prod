@@ -11,6 +11,7 @@ import PasswordUpdate from './auth/password-update';
 import Registr from './auth/registr';
 import RegistrCode from './auth/registr-code';
 import RegistrFinish from './auth/registr-kirish';
+import Dars from './dars/dars';
 
 export {
   Header,
@@ -26,4 +27,5 @@ export {
   Registr,
   RegistrCode,
   RegistrFinish,
+  Dars,
 };

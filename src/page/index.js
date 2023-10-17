@@ -1,3 +1,4 @@
+import DarsPage from './dars';
 import Home from './home';
 
-export { Home };
+export { Home, DarsPage };

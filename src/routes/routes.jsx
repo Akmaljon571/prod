@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { Home } from '../page';
+import { DarsPage, Home } from '../page';
 import {
   Login,
   Password,
@@ -21,7 +21,7 @@ function Routers() {
       <Route path="/registration" element={<Registr />} />
       <Route path="/registration/code" element={<RegistrCode />} />
       <Route path="/registration/profil" element={<RegistrFinish />} />
-
+      <Route path="/dars" element={<DarsPage />} />
       {/* <Route path='/*' element={<Error />} /> */}
     </Routes>
   );

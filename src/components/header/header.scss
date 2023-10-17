@@ -4,7 +4,7 @@
   position: fixed;
   top: 0;
   background-color: #fff;
-  z-index: 10000;
+  z-index: 1001;
   width: 100%;
   max-width: 1390px;
   padding-right: 30px;
@@ -116,7 +116,7 @@
     box-sizing: border-box;
     box-shadow: 20px 28px 60px 10px #00000026;
     border-radius: 20px;
-    z-index: 700;
+    z-index: 1200;
     background-color: #fff;
 
     .top {
@@ -198,7 +198,7 @@
   right: 0;
   left: 0;
   bottom: 0;
-  z-index: 500;
+  z-index: 1000;
 }
 
 @media screen and (max-width: 361px) {
