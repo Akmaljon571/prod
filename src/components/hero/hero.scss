@@ -99,58 +99,56 @@
 }
 
 @media screen and (max-width: 361px) {
-    .hero {
-      padding: 25px 20px 0 20px;
-      height: 280px;
-      margin-top: 7px;
-  
-      .left {
-        h1 {
-            font-family: Poppins;
-            font-size: 22px;
-            font-weight: 700;
-            line-height: 28px;
-            letter-spacing: 0em;
-            text-align: left;
-            
+  .hero {
+    padding: 25px 20px 0 20px;
+    height: 280px;
+    margin-top: 7px;
+
+    .left {
+      h1 {
+        font-family: Poppins;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 28px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+
+      p {
+        font-family: Poppins;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: left;
+        width: 198px;
+        margin-bottom: 23px;
+      }
+
+      button {
+        width: 153px;
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: left;
+        padding: 6px 15px;
+        white-space: nowrap;
+        gap: 11px;
+
+        img {
+          width: 24px;
+          height: 24px;
         }
-  
-        p {
-            font-family: Poppins;
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 20px;
-            letter-spacing: 0em;
-            text-align: left;  
-            width: 198px;    
-            margin-bottom: 23px;      
-        }
-
-        button {
-            width: 153px;
-            font-family: Poppins;
-font-size: 16px;
-font-weight: 400;
-line-height: 20px;
-letter-spacing: 0em;
-text-align: left;
-padding: 6px 15px;
-white-space: nowrap;
-gap: 11px;
-
-img {
-    width: 24px;
-    height: 24px;
-}
-
-}
-}
-
-.right {
-          margin-left: -50px;
-        width: 185px;
-        height: 210px;
-        margin-top: 50px;
       }
     }
+
+    .right {
+      margin-left: -50px;
+      width: 185px;
+      height: 210px;
+      margin-top: 50px;
+    }
   }
+}

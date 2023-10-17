@@ -1,5 +1,14 @@
 @import '../../utils/scss/var.scss';
 
+.header-fix {
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  z-index: 10000;
+  width: 100%;
+  max-width: 1360px;
+}
+
 .header {
   display: flex;
   align-items: center;

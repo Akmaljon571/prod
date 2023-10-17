@@ -20,7 +20,7 @@ function Header() {
   const token = false;
 
   return (
-    <>
+    <div className='header-fix'>
       <header className="header">
         <nav>
           <Link to={'/'}>
@@ -206,7 +206,7 @@ function Header() {
           className="header-modal-fix"
         ></span>
       ) : null}
-    </>
+    </div>
   );
 }
 
