@@ -1,11 +1,12 @@
 import { Header, Hero } from '../components';
-import { HomeVideo } from '../html';
+import { HomeVideo, Line } from '../html';
 
 function Home() {
   return (
     <>
       <Header />
       <Hero />
+      <Line />
       <HomeVideo />
     </>
   );

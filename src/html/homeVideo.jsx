@@ -8,6 +8,7 @@ function HomeVideo() {
         id="video-player"
         autoplay="autoplay"
         loop
+        className="homeVideo"
         autoPlay
         muted
         poster={poster}
