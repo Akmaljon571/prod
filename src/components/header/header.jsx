@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
 import { useState } from 'react';
 import logo from '../../img/LinCor.svg';
@@ -17,7 +17,8 @@ function Header() {
   const [prof, setProf] = useState(false);
   const [mediaModal, setMediaModal] = useState(false);
   const [list_none, setListNone] = useState(false);
-  const token = true;
+  const navigate = useNavigate();
+  const token = false;
 
   return (
     <>
@@ -50,6 +51,7 @@ function Header() {
               style={{ borderRadius: '20px', textTransform: 'capitalize' }}
               variant="outlined"
               className="btn"
+              onClick={() => navigate('/login')}
             >
               Kirish
               <img src={vector} alt="Vector" />

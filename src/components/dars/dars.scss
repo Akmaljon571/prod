@@ -17,26 +17,26 @@
     width: 100%;
     height: 560px;
     object-fit: fill;
-    border-radius: 20px;
+    border-radius: 12px;
   }
 
   .control-button {
     position: absolute;
-    top: 250px;
+    top: 280px;
     left: 48%;
     cursor: pointer;
   }
 
   .video-count {
     position: absolute;
-    top: 54px;
+    top: 42px;
     padding: 4px 10px;
     display: flex;
     align-items: center;
     gap: 8px;
     background: #ffffff99;
     border-radius: 22px;
-    margin-left: 4px;
+    left: 12px;
 
     b {
       font-family: Poppins;
@@ -73,7 +73,7 @@
     cursor: pointer;
     position: absolute;
     left: 1%;
-    bottom: 40px;
+    bottom: 20px;
     border-radius: 2px;
     height: 4px;
   }
