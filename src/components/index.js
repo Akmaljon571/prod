@@ -12,6 +12,7 @@ import Registr from './auth/registr';
 import RegistrCode from './auth/registr-code';
 import RegistrFinish from './auth/registr-kirish';
 import Dars from './dars/dars';
+import Message from './message/message';
 
 export {
   Header,
@@ -28,4 +29,5 @@ export {
   RegistrCode,
   RegistrFinish,
   Dars,
+  Message,
 };

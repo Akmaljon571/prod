@@ -34,7 +34,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    background: #FFFFFF99;
+    background: #ffffff99;
     border-radius: 22px;
     margin-left: 4px;
 
@@ -80,25 +80,25 @@
 }
 
 @media screen and (max-width: 360px) {
-    .dars {
-        video {
-            height: 247px !important;
-        }
+  .dars {
+    video {
+      height: 247px !important;
+    }
 
-        .control-button {
-            top: 130px;
-            left: 45%;
-            width: 35px;
-            height: 35px;
-        }
+    .control-button {
+      top: 130px;
+      left: 45%;
+      width: 35px;
+      height: 35px;
+    }
 
-        .video-count {
-            top: 38px;
-        }
+    .video-count {
+      top: 38px;
+    }
 
-        .time-slider {
-            width: 95%;
-            bottom: 20px;
-        }
+    .time-slider {
+      width: 95%;
+      bottom: 20px;
     }
   }
+}

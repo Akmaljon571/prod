@@ -1,0 +1,134 @@
+.message {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 540px;
+  background-color: #1d68f9;
+  border-radius: 20px;
+  padding: 64px 40px 0 40px;
+
+  h2 {
+    font-family: Poppins;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 64px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #fff;
+    margin-bottom: 40px;
+    margin-top: -40px;
+    white-space: nowrap;
+  }
+
+  .form {
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    input,
+    textarea {
+      background-color: #4a86fa;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 16px;
+      color: #cddefe;
+      font-family: Poppins;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 12px;
+      letter-spacing: 0em;
+      text-align: left;
+      outline: none;
+
+      &::-ms-input-placeholder {
+        color: #cddefe;
+      }
+
+      &::placeholder {
+        color: #cddefe;
+      }
+
+      &::-ms-input-placeholder {
+        color: #cddefe;
+      }
+    }
+
+    textarea {
+      margin: 20px 0;
+      resize: none;
+    }
+
+    button {
+      background-color: #fff;
+      color: #0550e0;
+      font-family: Poppins;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 16px;
+      letter-spacing: 0em;
+      text-align: left;
+      padding: 14px;
+      border-radius: 12px;
+      text-transform: capitalize;
+    }
+  }
+
+  .girl {
+    margin-bottom: -10px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+    .message {
+        h2 {
+            font-family: Poppins;
+font-size: 48px;
+font-weight: 700;
+line-height: 64px;
+letter-spacing: 0em;
+text-align: left;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .message {
+        padding: 30px 20px;
+        height: auto;
+
+        h2 {
+            font-family: Poppins;
+font-size: 22px;
+font-weight: 700;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: left;
+margin-top: 0;
+margin-bottom: 30px;
+        }
+
+        .left {
+            width: 100%;
+        }
+
+        .form {
+            width: 100%;
+            padding: 0;
+        }
+
+        .girl {
+            display: none;
+        }
+    }
+
+    .girl-media {
+        display: block !important;
+        width: 100%;
+        height: 272px;
+        margin: 0 auto;
+        margin-left: -30px;
+        margin-bottom: 5px;
+    }
+}
