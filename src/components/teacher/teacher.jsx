@@ -4,6 +4,7 @@ import img4 from '../../img/confident-corporate-charm-handsome-young-african-ame
 import img3 from '../../img/pretty-smiling-woman-cafe_624325-3285.jpg';
 import absalute from '../../img/teacher.svg';
 import './teacher.scss';
+import { Button } from '@mui/material';
 
 function Teacher() {
   return (
@@ -21,6 +22,7 @@ function Teacher() {
         <p>
           Bu topik darsliklari sizning yuqori daraja olishingizga yordam beradi
         </p>
+        <Button variant='contained'>Boshlash</Button>
       </div>
     </div>
   );
