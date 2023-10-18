@@ -19,6 +19,7 @@ import Kurs from './kurs/kurs';
 import Comfort from './comfort/comfort';
 import Madaniyat from './madaniyat/madaniyat';
 import Dropdown from './dropdown/dropdown';
+import Fikr from './fikr/fikr';
 
 export {
   Header,
@@ -42,4 +43,5 @@ export {
   Comfort,
   Madaniyat,
   Dropdown,
+  Fikr,
 };

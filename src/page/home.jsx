@@ -1,6 +1,7 @@
 import {
   Comfort,
   Dropdown,
+  Fikr,
   Header,
   Hero,
   Kurs,
@@ -22,6 +23,7 @@ function Home() {
       <Comfort />
       <Teacher />
       <Madaniyat />
+      <Fikr />
       <Dropdown />
       <Message />
     </>

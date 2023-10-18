@@ -1,0 +1,89 @@
+.fikr {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 40px;
+
+    h2 {
+      font-family: Unbounded;
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 48px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #020c31;
+    }
+
+  .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 80px;
+    width: 100%;
+
+    .item {
+      min-width: 323px;
+      max-width: 557px;
+      display: flex;
+      height: 400px;
+      border-radius: 12px;
+      flex-direction: column;
+      background-color: #edf6f4;
+      margin-left: 16px;
+
+      .prof {
+        padding: 24px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        border-bottom: 1px solid #24282514;
+
+        h3 {
+          font-family: Unbounded;
+          font-size: 24px;
+          font-weight: 700;
+          line-height: 32px;
+          letter-spacing: 0em;
+          text-align: left;
+          color: #020c31;
+        }
+
+        span {
+          font-family: Poppins;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 24px;
+          letter-spacing: 0em;
+          text-align: left;
+          color: #0684f9;
+        }
+      }
+
+      .text {
+        margin: 32px 15px 32px 24px;
+        font-family: Poppins;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 26px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #24282599;
+        height: 250px;
+      }
+
+      .img-fath {
+        width: 64px;
+        height: 65px;
+        border-radius: 50%;
+        background-color: #01e5a1;
+
+        img {
+          width: 64px;
+          height: 65px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}

@@ -13,12 +13,21 @@ function Message() {
           <div className="form">
             <input type="text" placeholder="Ism" />
             <input type="text" placeholder="Telefon Nomer" />
-            <FormControlLabel className='checkbox' control={<Checkbox defaultChecked sx={{
-              color: "#9CBDFC",
-              '&.Mui-checked': {
-                color: "#9CBDFC",
-              },
-            }} />} label="Maxfiylik siyosati" />
+            <FormControlLabel
+              className="checkbox"
+              control={
+                <Checkbox
+                  defaultChecked
+                  sx={{
+                    color: '#9CBDFC',
+                    '&.Mui-checked': {
+                      color: '#9CBDFC',
+                    },
+                  }}
+                />
+              }
+              label="Maxfiylik siyosati"
+            />
             <Button variant="contained">Yuborish</Button>
           </div>
         </div>
