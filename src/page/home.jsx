@@ -1,4 +1,4 @@
-import { Header, Hero, Message, Teacher } from '../components';
+import { Header, Hero, Message, Promise, Teacher } from '../components';
 import { HomeVideo, Line } from '../html';
 
 function Home() {
@@ -6,7 +6,7 @@ function Home() {
     <>
       <Header />
       <Hero />
-      <Line />
+      <Promise />
       <HomeVideo />
       <Line />
       <Teacher />

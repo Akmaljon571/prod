@@ -24,7 +24,7 @@ function Header() {
     <>
       <div className="header-fix">
         <header className="header">
-          <nav>
+          <nav className='nav'>
             <Link to={'/'}>
               <img src={logo} alt="Company logo" />
             </Link>
@@ -46,27 +46,29 @@ function Header() {
               </li>
             </ul>
           </nav>
-          <select>
-            <option value="uz">Uz</option>
-            <option value="uz">Uz</option>
-          </select>
-          {!token ? (
-            <Button
-              style={{ borderRadius: '20px', textTransform: 'capitalize' }}
-              variant="contained"
-              className="btn"
-              onClick={() => navigate('/login')}
-            >
-              Kirish
-            </Button>
-          ) : (
-            <div onClick={() => setProf(true)} className="header-profile">
-              {/* <img className='header-img' src="" alt="" /> */}
-              <div className="header-img">A</div>
-              <div className="header-name">Akmal</div>
-              <img src={sVector} alt="Select Vector" />
-            </div>
-          )}
+          <div style={{width: "30%"}} className='nav header-select'>
+            <select>
+              <option value="uz">Uz</option>
+              <option value="uz">Uz</option>
+            </select>
+            {!token ? (
+              <Button
+                style={{ borderRadius: '20px', textTransform: 'capitalize' }}
+                variant="contained"
+                className="btn"
+                onClick={() => navigate('/login')}
+              >
+                Kirish
+              </Button>
+            ) : (
+              <div onClick={() => setProf(true)} className="header-profile">
+                {/* <img className='header-img' src="" alt="" /> */}
+                <div className="header-img">A</div>
+                <div className="header-name">Akmal</div>
+                <img src={sVector} alt="Select Vector" />
+              </div>
+            )}
+          </div>
           {prof ? (
             <>
               <div className="header-modal">
@@ -126,7 +128,11 @@ function Header() {
                   <p>Shahboz Aliyev</p>
                 </div>
               ) : (
-                <Button onClick={() => navigate('/login')} className="media_token-kirish" variant="outlined">
+                <Button
+                  onClick={() => navigate('/login')}
+                  className="media_token-kirish"
+                  variant="outlined"
+                >
                   Kirish
                   <img src={vector} alt="Vector" />
                 </Button>

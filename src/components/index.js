@@ -14,6 +14,7 @@ import RegistrFinish from './auth/registr-kirish';
 import Dars from './dars/dars';
 import Message from './message/message';
 import Error from './err/err';
+import Promise from './promise/promise';
 
 export {
   Header,
@@ -32,4 +33,5 @@ export {
   Dars,
   Message,
   Error,
+  Promise,
 };

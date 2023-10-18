@@ -16,16 +16,18 @@
   justify-content: space-between;
   padding: 22px 0;
   position: relative;
-  border-bottom: 1px solid #CCCCCC66;
+  border-bottom: 1px solid #cccccc66;
 
   .media_token-kirish {
     display: none;
   }
 
-  nav {
+  .nav {
     display: flex;
     align-items: center;
-    gap: 84px;
+    justify-content: space-between;
+    width: 50%;
+    gap: 10px;
 
     ul {
       display: flex;
@@ -54,7 +56,6 @@
   select {
     border: none;
     outline: none;
-    margin-right: -100px;
   }
 
   button {
@@ -64,11 +65,11 @@
     align-items: center;
     justify-content: center;
     font-family: Unbounded;
-      font-size: 16px;
-      font-weight: 500;
-      line-height: 24px;
-      letter-spacing: 0em;
-      text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
 
     box-shadow: 0px 4px 4px 0px #4a86fa38;
   }
@@ -238,10 +239,14 @@
       display: none;
     }
 
-    nav {
+    .nav {
       ul {
         display: none;
       }
+    }
+
+    .header-select {
+      width: 10% !important;
     }
 
     &-media-modal {
