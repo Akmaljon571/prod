@@ -15,6 +15,7 @@ import Dars from './dars/dars';
 import Message from './message/message';
 import Error from './err/err';
 import Promise from './promise/promise';
+import Kurs from './kurs/kurs';
 
 export {
   Header,
@@ -34,4 +35,5 @@ export {
   Message,
   Error,
   Promise,
+  Kurs,
 };

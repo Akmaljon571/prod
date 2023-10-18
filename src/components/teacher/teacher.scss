@@ -52,12 +52,12 @@
   .right {
     h3 {
       font-family: Unbounded;
-font-size: 52px;
-font-weight: 700;
-line-height: 64px;
-letter-spacing: 0em;
-text-align: left;
-      color: #020C31;
+      font-size: 52px;
+      font-weight: 700;
+      line-height: 64px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #020c31;
       margin-bottom: 24px;
       max-width: 532px;
       margin-top: 40px;
@@ -79,11 +79,11 @@ text-align: left;
       border-radius: 62px;
       padding: 12px 48px;
       font-family: Unbounded;
-font-size: 18px;
-font-weight: 600;
-line-height: 22px;
-letter-spacing: 0em;
-text-align: left;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 22px;
+      letter-spacing: 0em;
+      text-align: left;
       text-transform: capitalize;
     }
   }
@@ -192,6 +192,10 @@ text-align: left;
         line-height: 24px;
         letter-spacing: 0em;
         text-align: left;
+      }
+
+      button {
+        display: none;
       }
     }
   }

@@ -22,7 +22,7 @@ function Teacher() {
         <p>
           Bu topik darsliklari sizning yuqori daraja olishingizga yordam beradi
         </p>
-        <Button variant='contained'>Boshlash</Button>
+        <Button variant="contained">Boshlash</Button>
       </div>
     </div>
   );

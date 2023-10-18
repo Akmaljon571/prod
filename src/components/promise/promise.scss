@@ -26,7 +26,7 @@
     justify-content: space-between;
 
     li {
-        max-width: 330px;
+      max-width: 330px;
     }
 
     h3 {
@@ -54,19 +54,19 @@
 }
 
 @media screen and (max-width: 361px) {
-    .promise {
-        margin-top: 60px;
-        margin-bottom: 50px;
+  .promise {
+    margin-top: 60px;
+    margin-bottom: 50px;
 
-        h2 {
-            font-size: 20px;
-            width: 250px;
-            line-height: 30px;
-        }
-
-        ul {
-            flex-direction: column;
-            gap: 50px;
-        }
+    h2 {
+      font-size: 20px;
+      width: 250px;
+      line-height: 30px;
     }
+
+    ul {
+      flex-direction: column;
+      gap: 50px;
+    }
+  }
 }

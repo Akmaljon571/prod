@@ -24,7 +24,7 @@ function Header() {
     <>
       <div className="header-fix">
         <header className="header">
-          <nav className='nav'>
+          <nav className="nav">
             <Link to={'/'}>
               <img src={logo} alt="Company logo" />
             </Link>
@@ -46,7 +46,7 @@ function Header() {
               </li>
             </ul>
           </nav>
-          <div style={{width: "30%"}} className='nav header-select'>
+          <div style={{ width: '30%' }} className="nav header-select">
             <select>
               <option value="uz">Uz</option>
               <option value="uz">Uz</option>
