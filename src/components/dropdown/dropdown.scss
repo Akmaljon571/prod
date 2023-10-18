@@ -1,0 +1,132 @@
+.dropdown {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-top: 1px solid #cccccc;
+  padding-top: 40px;
+
+  h2 {
+    font-family: Unbounded;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #020c31;
+  }
+
+  ul {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+
+    li {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 38px 9px;
+      border-bottom: 1px solid #ccc;
+
+      h4 {
+        font-family: Unbounded;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 32px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #676d83;
+      }
+
+      p {
+        display: none;
+      }
+
+      button {
+        width: 52px;
+        height: 52px;
+        min-height: 52px;
+        min-width: 52px;
+        border-radius: 50%;
+        background-color: #f2f2f2;
+        
+        img {
+            width: 15px;
+            height: 20px;
+        }
+      }
+    }
+
+    .active {
+      h4 {
+        color: #020c31;
+        width: 80%;
+      }
+
+      p {
+        display: block;
+        font-family: Poppins;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 32px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #676d83;
+        margin-top: 16px;
+        width: 80%;
+      }
+
+      button {
+        background-color: #1D68F9;
+        width: 52px;
+        height: 52px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .dropdown {
+    h2 {
+      display: none;
+    }
+
+    ul {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .dropdown {
+    ul {
+      li {
+        h4 {
+          font-size: 18px;
+          width: 90%;
+        }
+
+        button {
+          width: 40px;
+          height: 40px;
+          min-width: 40px;
+          min-height: 40px;
+        }
+      }
+
+      .active {
+
+        p {
+          font-size: 15px;
+          line-height: 25px;
+        } 
+
+        button {
+          width: 40px;
+          height: 40px;
+          min-width: 40px;
+          min-height: 40px;
+        }
+      }
+    }
+  }
+}

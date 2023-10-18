@@ -96,30 +96,30 @@
 }
 
 @media screen and (max-width: 360px) {
-    .madaniyat {
-        flex-direction: column;
+  .madaniyat {
+    flex-direction: column;
 
-        h2 {
-            width: 100%;
-            font-size: 28px;
-            line-height: 45px;
-            margin-bottom: 30px;
-        }
-
-        .btns {
-            display: none;
-        }
-
-        .images {
-            width: 100%;
-
-            img {
-                width: 18%;
-            }
-
-            .center {
-                width: 53%;
-            }
-        }
+    h2 {
+      width: 100%;
+      font-size: 28px;
+      line-height: 45px;
+      margin-bottom: 30px;
     }
+
+    .btns {
+      display: none;
+    }
+
+    .images {
+      width: 100%;
+
+      img {
+        width: 18%;
+      }
+
+      .center {
+        width: 53%;
+      }
+    }
+  }
 }

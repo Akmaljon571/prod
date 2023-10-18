@@ -18,6 +18,7 @@ import Promise from './promise/promise';
 import Kurs from './kurs/kurs';
 import Comfort from './comfort/comfort';
 import Madaniyat from './madaniyat/madaniyat';
+import Dropdown from './dropdown/dropdown';
 
 export {
   Header,
@@ -40,4 +41,5 @@ export {
   Kurs,
   Comfort,
   Madaniyat,
+  Dropdown,
 };
