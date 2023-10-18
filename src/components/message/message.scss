@@ -25,13 +25,12 @@
     width: 360px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
 
-    input,
-    textarea {
+    input {
       background-color: #4a86fa;
       border: none;
-      border-radius: 12px;
+      border-radius: 8px;
       padding: 14px 16px;
       color: #cddefe;
       font-family: Poppins;
@@ -55,14 +54,20 @@
       }
     }
 
-    textarea {
-      margin: 20px 0;
-      resize: none;
+    .checkbox {
+      font-family: SF Pro Display;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #fff;
+      user-select: none;
     }
 
     button {
-      background-color: #fff;
-      color: #0550e0;
+      background-color: #020C31;
+      color: #fff;
       font-family: Poppins;
       font-size: 16px;
       font-weight: 500;
@@ -70,7 +75,7 @@
       letter-spacing: 0em;
       text-align: left;
       padding: 14px;
-      border-radius: 12px;
+      border-radius: 8px;
       text-transform: capitalize;
     }
   }
@@ -82,6 +87,9 @@
 
 @media screen and (max-width: 1000px) {
   .message {
+    height: auto;
+    padding-bottom: 60px;
+
     h2 {
       font-family: Poppins;
       font-size: 48px;
@@ -89,6 +97,12 @@
       line-height: 64px;
       letter-spacing: 0em;
       text-align: left;
+    }
+
+    .girl {
+      width: 400px;
+      height: 350px;
+      margin-bottom: -60px;
     }
   }
 }

@@ -1,4 +1,4 @@
-import { Button } from '@mui/material';
+import { Button, Checkbox, FormControlLabel } from '@mui/material';
 import girl from '../../img/message.png';
 import './message.scss';
 
@@ -13,11 +13,12 @@ function Message() {
           <div className="form">
             <input type="text" placeholder="Ism" />
             <input type="text" placeholder="Telefon Nomer" />
-            <textarea
-              placeholder="Xabar yuboring"
-              cols="30"
-              rows="10"
-            ></textarea>
+            <FormControlLabel className='checkbox' control={<Checkbox defaultChecked sx={{
+              color: "#9CBDFC",
+              '&.Mui-checked': {
+                color: "#9CBDFC",
+              },
+            }} />} label="Maxfiylik siyosati" />
             <Button variant="contained">Yuborish</Button>
           </div>
         </div>

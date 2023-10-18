@@ -23,7 +23,7 @@ function Home() {
       <Teacher />
       <Madaniyat />
       <Dropdown />
-      {/* <Message /> */}
+      <Message />
     </>
   );
 }
