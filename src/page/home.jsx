@@ -1,4 +1,12 @@
-import { Header, Hero, Kurs, Message, Promise, Teacher } from '../components';
+import {
+  Comfort,
+  Header,
+  Hero,
+  Kurs,
+  Message,
+  Promise,
+  Teacher,
+} from '../components';
 import { HomeVideo, Line } from '../html';
 
 function Home() {
@@ -9,6 +17,7 @@ function Home() {
       <Promise />
       <HomeVideo />
       <Kurs />
+      <Comfort />
       <Teacher />
       <Line />
       <Message />

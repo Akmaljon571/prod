@@ -16,6 +16,7 @@ import Message from './message/message';
 import Error from './err/err';
 import Promise from './promise/promise';
 import Kurs from './kurs/kurs';
+import Comfort from './comfort/comfort';
 
 export {
   Header,
@@ -36,4 +37,5 @@ export {
   Error,
   Promise,
   Kurs,
+  Comfort,
 };
