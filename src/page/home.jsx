@@ -3,11 +3,12 @@ import {
   Header,
   Hero,
   Kurs,
+  Madaniyat,
   Message,
   Promise,
   Teacher,
 } from '../components';
-import { HomeVideo, Line } from '../html';
+import { HomeVideo } from '../html';
 
 function Home() {
   return (
@@ -19,8 +20,8 @@ function Home() {
       <Kurs />
       <Comfort />
       <Teacher />
-      <Line />
-      <Message />
+      <Madaniyat />
+      {/* <Message /> */}
     </>
   );
 }

@@ -17,6 +17,7 @@ import Error from './err/err';
 import Promise from './promise/promise';
 import Kurs from './kurs/kurs';
 import Comfort from './comfort/comfort';
+import Madaniyat from './madaniyat/madaniyat';
 
 export {
   Header,
@@ -38,4 +39,5 @@ export {
   Promise,
   Kurs,
   Comfort,
+  Madaniyat,
 };

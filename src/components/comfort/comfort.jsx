@@ -12,9 +12,9 @@ function Comfort() {
           O’ziga hos <br /> o’quv <span>Darsliklarmiz</span> va qulaylik
         </h2>
         <div className="btns">
-          <img className='book' src={book} alt="Book" />
-          <img className='ok' src={ok} alt="ok" />
-          <img className='next' src={next} alt="next" />
+          <img className="book" src={book} alt="Book" />
+          <img className="ok" src={ok} alt="ok" />
+          <img className="next" src={next} alt="next" />
         </div>
       </div>
       <img className="girl" src={group} alt="" />

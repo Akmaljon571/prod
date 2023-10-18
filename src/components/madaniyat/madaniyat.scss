@@ -1,0 +1,125 @@
+.madaniyat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 120px;
+  margin-bottom: 120px;
+
+  h2 {
+    font-family: Unbounded;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 56px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #020c31;
+    width: 609px;
+
+    span {
+      border: 2px solid #cccccc;
+      padding: 5px 10px;
+      color: #fb462d;
+      border-radius: 40px;
+    }
+  }
+
+  .btns {
+    display: flex;
+    align-items: center;
+    margin-top: 92px;
+
+    .left {
+      display: flex;
+      align-items: center;
+      border: 2px solid #fb462d;
+      border-radius: 100px;
+      padding: 0 10px;
+      gap: 15px;
+    }
+
+    .next {
+      width: 100px;
+      height: 100px;
+      margin-left: 8px;
+      background-color: #3d55fd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+  }
+
+  .images {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .madaniyat {
+    h2 {
+      width: 400px;
+      font-size: 35px;
+      line-height: 60px;
+    }
+
+    .images {
+      img {
+        width: 85px;
+      }
+
+      .center {
+        width: 240px;
+      }
+    }
+
+    .btns {
+      margin-top: 20px;
+
+      .left {
+        img {
+          width: 50px;
+        }
+      }
+
+      .next {
+        width: 50px;
+        height: 50px;
+
+        img {
+          width: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+    .madaniyat {
+        flex-direction: column;
+
+        h2 {
+            width: 100%;
+            font-size: 28px;
+            line-height: 45px;
+            margin-bottom: 30px;
+        }
+
+        .btns {
+            display: none;
+        }
+
+        .images {
+            width: 100%;
+
+            img {
+                width: 18%;
+            }
+
+            .center {
+                width: 53%;
+            }
+        }
+    }
+}

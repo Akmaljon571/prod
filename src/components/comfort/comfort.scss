@@ -12,27 +12,27 @@
     height: 120px;
 
     img {
-        margin-right: -20px;
-        border-radius: 50%;
-        position: absolute;
-        left: 0;
+      margin-right: -20px;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
     }
 
     .book {
-        z-index: 3;
+      z-index: 3;
     }
 
     .ok {
-        z-index: 2;
-        left: 108px;
+      z-index: 2;
+      left: 108px;
     }
 
     .next {
-        border: 4px solid #fff;
-        z-index: 1;
-        left: 208px;
+      border: 4px solid #fff;
+      z-index: 1;
+      left: 208px;
     }
-  } 
+  }
 
   h2 {
     font-family: Unbounded;
@@ -55,57 +55,57 @@
 }
 
 @media screen and (max-width: 1000px) {
-    .comfort {
-        .girl {
-            width: 400px;
-            height: 300px;
-        }
-
-        h2 {
-            width: 450px;
-            font-size: 35px;
-            line-height: 50px;
-        }
+  .comfort {
+    .girl {
+      width: 400px;
+      height: 300px;
     }
+
+    h2 {
+      width: 450px;
+      font-size: 35px;
+      line-height: 50px;
+    }
+  }
 }
 
 @media screen and (max-width: 360px) {
-    .comfort {
-        flex-direction: column;
-        margin-top: 70px;
-        margin-bottom: 60px;
+  .comfort {
+    flex-direction: column;
+    margin-top: 70px;
+    margin-bottom: 60px;
 
-        h2 {
-            width: 100%;
-            font-size: 30px;
-            margin-bottom: 10px;
+    h2 {
+      width: 100%;
+      font-size: 30px;
+      margin-bottom: 10px;
 
-            br {
-                display: none;
-            }
-        }
-
-        .btns {
-            img {
-                width: 100px;
-            }
-        
-            .ok {
-                z-index: 2;
-                left: 85px;
-            }
-        
-            .next {
-                border: 4px solid #fff;
-                z-index: 1;
-                left: 165px;
-            }
-        }
-
-        .girl {
-            width: 100%;
-            height: auto;
-            margin-top: 54px;
-        }
+      br {
+        display: none;
+      }
     }
+
+    .btns {
+      img {
+        width: 100px;
+      }
+
+      .ok {
+        z-index: 2;
+        left: 85px;
+      }
+
+      .next {
+        border: 4px solid #fff;
+        z-index: 1;
+        left: 165px;
+      }
+    }
+
+    .girl {
+      width: 100%;
+      height: auto;
+      margin-top: 54px;
+    }
+  }
 }
