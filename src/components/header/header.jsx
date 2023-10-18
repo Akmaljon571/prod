@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
 import { useContext, useState } from 'react';
+import { State } from '../../context';
 import logo from '../../img/LinCor.svg';
 import vector from '../../img/header-vector.svg';
 import sVector from '../../img/profile-vector.svg';
@@ -11,7 +12,6 @@ import aloqa from '../../img/phone-call.svg';
 import chiqish from '../../img/log-out.svg';
 import hum from '../../img/hum.svg';
 import './header.scss';
-import { State } from '../../context';
 
 function Header() {
   const { token } = useContext(State);
@@ -46,15 +46,18 @@ function Header() {
               </li>
             </ul>
           </nav>
+          <select>
+            <option value="uz">Uz</option>
+            <option value="uz">Uz</option>
+          </select>
           {!token ? (
             <Button
               style={{ borderRadius: '20px', textTransform: 'capitalize' }}
-              variant="outlined"
+              variant="contained"
               className="btn"
               onClick={() => navigate('/login')}
             >
               Kirish
-              <img src={vector} alt="Vector" />
             </Button>
           ) : (
             <div onClick={() => setProf(true)} className="header-profile">
@@ -123,7 +126,7 @@ function Header() {
                   <p>Shahboz Aliyev</p>
                 </div>
               ) : (
-                <Button className="media_token-kirish" variant="outlined">
+                <Button onClick={() => navigate('/login')} className="media_token-kirish" variant="outlined">
                   Kirish
                   <img src={vector} alt="Vector" />
                 </Button>
