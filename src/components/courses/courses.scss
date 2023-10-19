@@ -1,5 +1,5 @@
 .courses {
-  margin-top: 80px;
+  margin-top: 48px;
 
   h2 {
     font-family: Poppins;
@@ -34,7 +34,7 @@
       width: 429px;
       height: auto;
       position: relative;
-      background-color: #1d68f9;
+      box-shadow: 0px 20px 45px 0px #00000014;
       border-radius: 20px;
 
       img {
@@ -55,7 +55,7 @@
           line-height: 48px;
           letter-spacing: 0em;
           text-align: left;
-          color: #fff;
+          color: #1a1a1a;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
@@ -68,7 +68,7 @@
           line-height: 24px;
           letter-spacing: 0em;
           text-align: left;
-          color: #f5f5f5;
+          color: #5c5c5c;
           margin-top: 8px;
           margin-bottom: 18px;
           height: 45px;
@@ -82,22 +82,21 @@
           line-height: 24px;
           letter-spacing: 0em;
           text-align: left;
-          color: #ffffff;
+          color: #1a1a1a;
         }
 
         div {
-          margin-top: 25px;
+          margin-top: 20px;
           font-family: Poppins;
           font-size: 32px;
           font-weight: 700;
           line-height: 40px;
           letter-spacing: 0em;
           text-align: left;
-          color: #fff;
+          color: #1a1a1a;
         }
 
         button {
-          background-color: #fff;
           margin-top: 15px;
           border-radius: 20px;
           font-family: Poppins;
@@ -108,11 +107,6 @@
           text-align: left;
           text-transform: capitalize;
           padding: 15px 52px;
-
-          &:hover {
-            background-color: blue;
-            color: #fff;
-          }
         }
       }
     }

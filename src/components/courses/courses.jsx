@@ -39,10 +39,10 @@ function Courses() {
                 />
                 <div className="bottom">
                   <h3>{e.title}</h3>
-                  <p>{e.description}</p>
+                  <p>{e.description}u darsliklari sizning yuqori daraja olishingizga yordam beradi</p>
                   <span>{e.videos?.length} Video + Workbook</span>
                   <div>{summa(e.price)}so'm</div>
-                  <Button variant="outlined">Sotib Olish</Button>
+                  <Button variant="contained">Sotib Olish</Button>
                 </div>
               </li>
             ))
