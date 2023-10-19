@@ -30,7 +30,7 @@ function Header() {
             </Link>
             <ul>
               <li>
-                <Link to={'/'}>Kurslar</Link>
+                <Link to={'/courses'}>Kurslar</Link>
               </li>
               <li>
                 <Link to={'/'}>Topik</Link>
@@ -150,7 +150,7 @@ function Header() {
               <hr />
               <ul className="header-media-modal_navlink">
                 <li>
-                  <Link to={'/'}>Kurslar</Link>
+                  <Link to={'/courses'}>Kurslar</Link>
                 </li>
                 {list_none ? null : (
                   <>

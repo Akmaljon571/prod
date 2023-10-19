@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { DarsPage, Home } from '../page';
+import { AloqaPage, CoursesPage, DarsPage, ErrorPage, Home } from '../page';
 import {
   Login,
   Password,
@@ -9,8 +9,6 @@ import {
   RegistrCode,
   RegistrFinish,
 } from '../components';
-import ErrorPage from '../page/error';
-import AloqaPage from '../page/aloqa';
 
 function Routers() {
   return (
@@ -25,6 +23,7 @@ function Routers() {
       <Route path="/registration/profil" element={<RegistrFinish />} />
       <Route path="/dars" element={<DarsPage />} />
       <Route path="/aloqa" element={<AloqaPage />} />
+      <Route path="/courses" element={<CoursesPage />} />
       <Route path="/*" element={<ErrorPage />} />
     </Routes>
   );

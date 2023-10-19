@@ -23,7 +23,7 @@ function Kurs() {
       },
     })
       .then((re) => re.json())
-      .then((data) => setCourses([...data?.courses, ...data?.courses].slice(0, 3)));
+      .then((data) => setCourses(data?.courses.slice(0, 3)));
   }, [token]);
 
   return (
@@ -34,7 +34,7 @@ function Kurs() {
       </p>
       <ul>
         {courses?.map((e, i) => (
-          <li className={i === 2 ? "t-none" : ""} key={i}>
+          <li className={i === 2 ? 't-none' : ''} key={i}>
             <img
               src={i === 0 ? kurs1 : i === 1 ? kurs2 : kurs3}
               alt="Kurs Rasmi"
@@ -42,14 +42,17 @@ function Kurs() {
             <h4>{e.title}</h4>
             <p>{summa(e.price)}so'm</p>
             <span>{e?.videos?.length} ta dars</span>
-            <Button onClick={() => navigate(`/course/${e._id}`)} variant="contained">
+            <Button
+              onClick={() => navigate(`/course/${e._id}`)}
+              variant="contained"
+            >
               Boshladik
               <img src={vector} alt="Vector" />
             </Button>
           </li>
         ))}
       </ul>
-      <div onClick={() => navigate('/course')} className="bottom">
+      <div onClick={() => navigate('/courses')} className="bottom">
         Barcha kurslar
         <img src={vector6} alt="Vector" />
       </div>

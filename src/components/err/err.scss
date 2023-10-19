@@ -26,6 +26,10 @@
     border: 8px;
   }
 
+  .media-margin {
+    margin-right: 24px;
+  }
+
   .right {
     font-family: Poppins;
     font-size: 250px;
@@ -56,6 +60,10 @@
       font-size: 15px;
       width: 100%;
       padding: 15px;
+    }
+
+    .media-margin {
+      margin-bottom: 24px;
     }
   }
 }

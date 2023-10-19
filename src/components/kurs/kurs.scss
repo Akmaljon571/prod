@@ -11,6 +11,9 @@
     text-align: left;
     margin-bottom: 16px;
     color: #020c31;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .text {
@@ -101,7 +104,6 @@
       }
 
       &:hover {
-
         p {
           color: #056ac7;
         }
@@ -151,7 +153,7 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    color: #2732FD;
+    color: #2732fd;
     border-radius: 12px;
     cursor: pointer;
   }
@@ -162,18 +164,18 @@
     margin-top: 70px;
     margin-bottom: 100px;
 
-      h2 {
-        font-size: 32px;
-      }
+    h2 {
+      font-size: 32px;
+    }
 
-      ul {
-        flex-direction: column;
+    ul {
+      flex-direction: column;
 
-        li {
-          width: 100%;
-          padding: 20px 18px;
-          height: 350px;
-        }
+      li {
+        width: 100%;
+        padding: 20px 18px;
+        height: 350px;
       }
+    }
   }
 }

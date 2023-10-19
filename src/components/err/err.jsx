@@ -11,7 +11,7 @@ function Error() {
         <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h3>
         <Button
           onClick={() => navigate('/dars')}
-          style={{ margin: '0 24px 24px 0' }}
+          className="media-margin"
           variant="contained"
         >
           Kurslarni o'rganing

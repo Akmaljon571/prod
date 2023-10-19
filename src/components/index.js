@@ -21,6 +21,7 @@ import Madaniyat from './madaniyat/madaniyat';
 import Dropdown from './dropdown/dropdown';
 import Fikr from './fikr/fikr';
 import Aloqa from './aloqa/aloqa';
+import Courses from './courses/courses';
 
 export {
   Header,
@@ -46,4 +47,5 @@ export {
   Dropdown,
   Fikr,
   Aloqa,
+  Courses,
 };
