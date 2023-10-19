@@ -1,5 +1,5 @@
-.dars {
-  margin-top: 10px;
+.video_player {
+  margin-top: 30px;
   position: relative;
 
   h5 {
@@ -76,6 +76,90 @@
     bottom: 20px;
     border-radius: 2px;
     height: 4px;
+  }
+}
+
+.dars {
+  .top {
+    .text {
+      width: 70%;
+      color: #1a1a1a;
+      font-family: Poppins;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0em;
+      text-align: left;
+      margin-top: 24px;
+      margin-bottom: 7px;
+    }
+
+    .buy {
+      border-top: 1px solid #1a1a1a;
+      padding: 14px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      h2 {
+        font-family: Poppins;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 40px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #1a1a1a;
+        width: 298px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      span {
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+
+      div {
+        p {
+          font-family: Poppins;
+          margin-top: 18px;
+          font-size: 24px;
+          font-weight: 500;
+          line-height: 24px;
+          letter-spacing: 0em;
+          text-align: left;
+          color: #d15260;
+        }
+
+        small {
+          font-family: Poppins;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 24px;
+          letter-spacing: 0em;
+          text-align: end;
+          color: #909090;
+        }
+      }
+
+      a {
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+        padding: 14px 100px;
+        border-radius: 28px;
+        background-color: #1f6afa;
+        color: #fff;
+      }
+    }
   }
 }
 

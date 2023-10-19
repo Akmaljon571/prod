@@ -21,7 +21,7 @@ function Routers() {
       <Route path="/registration" element={<Registr />} />
       <Route path="/registration/code" element={<RegistrCode />} />
       <Route path="/registration/profil" element={<RegistrFinish />} />
-      <Route path="/dars" element={<DarsPage />} />
+      <Route path="/courses/:id" element={<DarsPage />} />
       <Route path="/aloqa" element={<AloqaPage />} />
       <Route path="/courses" element={<CoursesPage />} />
       <Route path="/*" element={<ErrorPage />} />
