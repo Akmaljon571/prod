@@ -82,7 +82,7 @@ function PasswordCode() {
     if (code?.length === 4) {
       fetch(api + '/auth/verification', {
         method: 'POST',
-        credentials: "include",
+        credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
         },

@@ -46,10 +46,18 @@ code {
   .homeVideo {
     height: 419px;
   }
+
+  .t-none {
+    display: none !important;
+  }
 }
 
 @media screen and (max-width: 360px) {
   .homeVideo {
     height: 221px;
+  }
+
+  .m-none {
+    display: none !important;
   }
 }

@@ -61,7 +61,7 @@ function Registr() {
       });
       fetch(api + '/auth/register', {
         method: 'POST',
-        credentials: "include",
+        credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
         },
