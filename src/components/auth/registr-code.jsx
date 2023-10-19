@@ -1,12 +1,12 @@
 import { Link, useNavigate } from 'react-router-dom';
-import logo from '../../img/LinCor.svg';
 import { Button } from '@mui/material';
 import { message } from 'antd';
-import time from '../../img/Time.svg';
 import { State, api } from '../../context';
 import { useContext, useEffect, useRef, useState } from 'react';
-import './auth.scss';
 import { phoneFN } from '../../func/phone';
+import time from '../../img/Time.svg';
+import logo from '../../img/LinCor.svg';
+import './auth.scss';
 
 function RegistrCode() {
   const [messageApi, contextHolder] = message.useMessage();
@@ -17,6 +17,10 @@ function RegistrCode() {
   const { setToken } = useContext(State);
 
   useEffect(() => {
+    if (!phone) {
+      navigate('/registration');
+    }
+
     setTimeout(() => {
       const a = Number(vaqt.split(':')[1]);
       if (a !== 0) {
@@ -29,7 +33,7 @@ function RegistrCode() {
         setVaqt('00:00');
       }
     }, 1000);
-  }, [vaqt]);
+  }, [vaqt, phone, navigate]);
 
   const codeFilter = (e) => {
     const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];

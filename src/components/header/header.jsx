@@ -42,7 +42,7 @@ function Header() {
                 <Link to={'/'}>To’lov</Link>
               </li>
               <li>
-                <Link to={'/'}>Aloqa</Link>
+                <Link to={'/aloqa'}>Aloqa</Link>
               </li>
             </ul>
           </nav>
@@ -98,7 +98,7 @@ function Header() {
                     </Link>
                   </li>
                   <li>
-                    <Link to={'/'}>
+                    <Link to={'/aloqa'}>
                       <img src={aloqa} alt="Kurs" />
                       <p>Aloqa</p>
                     </Link>
@@ -164,7 +164,7 @@ function Header() {
                       <Link to={'/'}>To’lov</Link>
                     </li>
                     <li>
-                      <Link to={'/'}>Aloqa</Link>
+                      <Link to={'/aloqa'}>Aloqa</Link>
                     </li>
                   </>
                 )}
@@ -192,7 +192,7 @@ function Header() {
                       </Link>
                     </li>
                     <li>
-                      <Link to={'/'}>
+                      <Link to={'/aloqa'}>
                         <img src={aloqa} alt="Kurs" />
                         <p>Aloqa</p>
                       </Link>

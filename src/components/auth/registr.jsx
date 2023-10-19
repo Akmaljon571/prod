@@ -1,10 +1,10 @@
 import { Link, useNavigate } from 'react-router-dom';
-import logo from '../../img/LinCor.svg';
 import { Button } from '@mui/material';
-import './auth.scss';
-import { useRef } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { message } from 'antd';
-import { api } from '../../context';
+import { State, api } from '../../context';
+import logo from '../../img/LinCor.svg';
+import './auth.scss';
 
 function Registr() {
   const number = useRef();
@@ -12,6 +12,13 @@ function Registr() {
   const pass2 = useRef();
   const navigate = useNavigate();
   const [messageApi, contextHolder] = message.useMessage();
+  const { token } = useContext(State);
+
+  useEffect(() => {
+    if (token) {
+      navigate('/');
+    }
+  }, [token, navigate]);
 
   const phone = (e) => {
     const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];

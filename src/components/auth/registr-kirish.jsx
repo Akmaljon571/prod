@@ -1,10 +1,10 @@
 import { Link, useNavigate } from 'react-router-dom';
-import logo from '../../img/LinCor.svg';
 import { Button } from '@mui/material';
-import './auth.scss';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { State, api } from '../../context';
 import { message } from 'antd';
+import logo from '../../img/LinCor.svg';
+import './auth.scss';
 
 function RegistrFinish() {
   const [img, setImg] = useState('');
@@ -18,7 +18,7 @@ function RegistrFinish() {
 
   useEffect(() => {
     if (!token) {
-      navigate('/login');
+      navigate('/registration');
     }
   }, [token, navigate]);
 

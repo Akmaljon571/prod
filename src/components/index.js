@@ -20,6 +20,7 @@ import Comfort from './comfort/comfort';
 import Madaniyat from './madaniyat/madaniyat';
 import Dropdown from './dropdown/dropdown';
 import Fikr from './fikr/fikr';
+import Aloqa from './aloqa/aloqa';
 
 export {
   Header,
@@ -44,4 +45,5 @@ export {
   Madaniyat,
   Dropdown,
   Fikr,
+  Aloqa,
 };

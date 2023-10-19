@@ -1,10 +1,10 @@
 import { Link, useNavigate } from 'react-router-dom';
-import logo from '../../img/LinCor.svg';
 import { Button } from '@mui/material';
-import './auth.scss';
 import { useRef } from 'react';
 import { message } from 'antd';
 import { api } from '../../context';
+import logo from '../../img/LinCor.svg';
+import './auth.scss';
 
 function Password() {
   const number = useRef();
@@ -64,7 +64,7 @@ function Password() {
             });
             localStorage.setItem(
               'password-phone',
-              JSON.stringify({ phone: phone_number }),
+              JSON.stringify(phone_number),
             );
             navigate('/password/code');
           } else {

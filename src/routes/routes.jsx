@@ -10,6 +10,7 @@ import {
   RegistrFinish,
 } from '../components';
 import ErrorPage from '../page/error';
+import AloqaPage from '../page/aloqa';
 
 function Routers() {
   return (
@@ -23,6 +24,7 @@ function Routers() {
       <Route path="/registration/code" element={<RegistrCode />} />
       <Route path="/registration/profil" element={<RegistrFinish />} />
       <Route path="/dars" element={<DarsPage />} />
+      <Route path="/aloqa" element={<AloqaPage />} />
       <Route path="/*" element={<ErrorPage />} />
     </Routes>
   );

@@ -1,19 +1,25 @@
 import { Link, useNavigate } from 'react-router-dom';
-import logo from '../../img/LinCor.svg';
 import { Button } from '@mui/material';
 import { phoneFN } from '../../func/phone';
 import { message } from 'antd';
-import { api } from '../../context';
-import { useEffect, useRef, useState } from 'react';
+import { State, api } from '../../context';
+import { useContext, useEffect, useRef, useState } from 'react';
+import logo from '../../img/LinCor.svg';
 import time from '../../img/Time.svg';
 import './auth.scss';
 
 function PasswordCode() {
-  const { phone } = JSON.parse(localStorage.getItem('password-phone'));
+  const phone = JSON.parse(localStorage.getItem('password-phone')) || '';
   const [messageApi, contextHolder] = message.useMessage();
   const navigate = useNavigate();
   const [vaqt, setVaqt] = useState('00:59');
+  const { setToken } = useContext(State);
   const codeRef = useRef();
+  useEffect(() => {
+    if (!phone) {
+      navigate('/password');
+    }
+  }, [phone, navigate]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -37,7 +43,7 @@ function PasswordCode() {
       duration: 0,
     });
 
-    fetch(api + '/auth/forget-password', {
+    fetch(api + '/auth/resend', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -74,12 +80,45 @@ function PasswordCode() {
       duration: 0,
     });
     if (code?.length === 4) {
-      localStorage.removeItem('password-phone');
-      localStorage.setItem(
-        'password-phone-code',
-        JSON.stringify({ phone, code }),
-      );
-      navigate('/password/update');
+      fetch(api + '/auth/verification', {
+        method: 'POST',
+        credentials: "same-origin",
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          phone_number: phone,
+          code,
+        }),
+      })
+        .then((re) => re.json())
+        .then((data) => {
+          if (data?.ok) {
+            messageApi.destroy();
+            messageApi.open({
+              type: 'success',
+              content: 'Password kiriting',
+            });
+            setToken(data?.access_token);
+            localStorage.removeItem('password-phone');
+            localStorage.setItem(
+              'password-phone-code',
+              JSON.stringify({ phone, code }),
+            );
+            localStorage.setItem(
+              'access_token',
+              JSON.stringify(data?.access_token),
+            );
+            navigate('/password/update');
+          } else {
+            messageApi.destroy();
+            messageApi.open({
+              type: 'error',
+              content: "Ma'lumot xato",
+              duration: 0,
+            });
+          }
+        });
     } else {
       messageApi.destroy();
       messageApi.open({

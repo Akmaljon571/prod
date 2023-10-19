@@ -1,19 +1,24 @@
 import { Link, useNavigate } from 'react-router-dom';
-import logo from '../../img/LinCor.svg';
 import { Button } from '@mui/material';
-import './auth.scss';
-import { useRef } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { message } from 'antd';
-import { api } from '../../context';
+import { State, api } from '../../context';
+import logo from '../../img/LinCor.svg';
+import './auth.scss';
 
 function PasswordUpdate() {
-  const { code, phone: phone_number } = JSON.parse(
-    localStorage.getItem('password-phone-code'),
-  );
+  const json = JSON.parse(localStorage.getItem('password-phone-code'));
   const passRef = useRef();
   const passRef1 = useRef();
+  const { token } = useContext(State);
   const [messageApi, contextHolder] = message.useMessage();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!json?.code || !json?.phone || !token) {
+      navigate('/password');
+    }
+  }, [json, navigate, token]);
 
   const click = () => {
     const password = passRef.current.value;
@@ -23,21 +28,21 @@ function PasswordUpdate() {
       content: 'Action in progress..',
       duration: 0,
     });
-
     if (password?.length === 8 && password === pass1) {
-      fetch(api + '/auth/password', {
+      fetch(api + '/me/password', {
         method: 'PUT',
+        credentials: "same-origin",
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
-          phone_number,
-          code,
           password,
         }),
       })
         .then((re) => re.json())
         .then((data) => {
+          console.log(data);
           if (data?.ok) {
             messageApi.destroy();
             messageApi.open({
@@ -45,7 +50,7 @@ function PasswordUpdate() {
               content: "Muaffaqiyatli o'zgardi",
             });
             localStorage.removeItem('password-phone-code');
-            navigate('/login');
+            navigate('/');
           } else {
             messageApi.destroy();
             messageApi.open({

@@ -1,0 +1,168 @@
+.aloqa {
+  margin-top: 48px;
+
+  h2 {
+    font-family: Poppins;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 64px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1a1a1a;
+    margin-bottom: 24px;
+  }
+
+  p {
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #5c5c5c;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    width: 100%;
+    overflow: scroll;
+    margin-top: 40px;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    li {
+      min-width: 430px;
+      min-height: 237px;
+      padding: 20px 28px 20px 40px;
+      background-color: #fff;
+      border: 1px solid #1f6afa;
+      border-radius: 10px;
+      cursor: text;
+      cursor: pointer;
+
+      svg {
+        fill: #1d68f9;
+      }
+
+      h4 {
+        font-family: Poppins;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 40px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #1d68f9;
+        margin-bottom: 30px;
+      }
+
+      .aloqa-div {
+        display: flex;
+        align-items: flex-start;
+        gap: 18px;
+
+        p {
+          margin-bottom: 10px;
+          font-family: Poppins;
+          font-size: 20px;
+          font-weight: 400;
+          line-height: 24px;
+          letter-spacing: 0em;
+          text-align: left;
+          color: #1a1a1a;
+        }
+      }
+    }
+
+    .active {
+      background-color: #1d68f9 !important;
+
+      h4 {
+        color: #fff;
+      }
+
+      p {
+        color: #fff !important;
+      }
+
+      svg {
+        fill: #fff !important;
+      }
+    }
+
+    .li:hover {
+      transition: all 0.5s;
+      background-color: #1d68f9 !important;
+
+      h4 {
+        color: #fff;
+      }
+
+      p {
+        color: #fff !important;
+      }
+
+      svg {
+        fill: #fff !important;
+      }
+    }
+
+    &:hover {
+      li {
+        background-color: #fff !important;
+
+        h4 {
+          color: #1d68f9;
+        }
+
+        p {
+          color: #1a1a1a !important;
+        }
+
+        svg {
+          fill: #1d68f9 !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .aloqa {
+    ul {
+      flex-direction: column;
+      width: 100%;
+      overflow: visible;
+      gap: 5px;
+
+      li {
+        width: 100%;
+        min-width: 100%;
+        padding: 20px 25px;
+        min-height: 169px;
+
+        h4 {
+          font-family: Poppins;
+          font-size: 22px;
+          font-weight: 600;
+          line-height: 24px;
+          letter-spacing: 0em;
+          text-align: left;
+        }
+
+        p {
+          font-family: Poppins;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+          letter-spacing: 0em;
+          text-align: left;
+        }
+      }
+    }
+  }
+}

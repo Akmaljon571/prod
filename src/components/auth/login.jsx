@@ -1,17 +1,23 @@
-import logo from '../../img/LinCor.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
-import './auth.scss';
-import { useContext, useRef } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { message } from 'antd';
 import { State, api } from '../../context';
+import logo from '../../img/LinCor.svg';
+import './auth.scss';
 
 function Login() {
   const number = useRef();
   const pass = useRef();
   const [messageApi, contextHolder] = message.useMessage();
-  const { setToken } = useContext(State);
+  const { setToken, token } = useContext(State);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (token) {
+      navigate('/');
+    }
+  }, [token, navigate]);
 
   const phone = (e) => {
     const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
