@@ -55,6 +55,7 @@ function RegistrFinish() {
 
     fetch(api + '/me', {
       method: 'PUT',
+      credentials: "include",
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',

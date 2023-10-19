@@ -56,6 +56,7 @@ function Login() {
 
       fetch(api + '/auth/login', {
         method: 'POST',
+        credentials: "include",
         headers: {
           'Content-Type': 'application/json',
         },
@@ -86,6 +87,14 @@ function Login() {
               duration: 0,
             });
           }
+        })
+        .catch((err) => {
+          console.log(err);
+          messageApi.destroy();
+          messageApi.open({
+            type: 'error',
+            content: "Ma'lumotlarni to'ldiring",
+          });
         });
     } else {
       messageApi.destroy();

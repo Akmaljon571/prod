@@ -53,6 +53,7 @@ function RegistrCode() {
     if (code?.length === 4) {
       fetch(api + '/auth/verification', {
         method: 'POST',
+        credentials: "include",
         headers: {
           'Content-Type': 'application/json',
         },

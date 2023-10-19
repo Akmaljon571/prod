@@ -31,7 +31,7 @@ function PasswordUpdate() {
     if (password?.length === 8 && password === pass1) {
       fetch(api + '/me/password', {
         method: 'PUT',
-        credentials: "same-origin",
+        credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
@@ -42,7 +42,6 @@ function PasswordUpdate() {
       })
         .then((re) => re.json())
         .then((data) => {
-          console.log(data);
           if (data?.ok) {
             messageApi.destroy();
             messageApi.open({
