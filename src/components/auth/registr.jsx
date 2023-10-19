@@ -65,10 +65,7 @@ function Registr() {
         .then((re) => re.json())
         .then((data) => {
           if (data?.ok) {
-            localStorage.setItem(
-              'registr',
-              JSON.stringify({ phone: phone_number }),
-            );
+            localStorage.setItem('registr', JSON.stringify(phone_number));
             navigate('/registration/code');
           } else {
             messageApi.destroy();
@@ -78,7 +75,8 @@ function Registr() {
               duration: 0,
             });
           }
-        });
+        })
+        .catch((err) => console.log(err));
     } else {
       messageApi.open({
         type: 'error',

@@ -6,6 +6,7 @@ import time from '../../img/Time.svg';
 import { State, api } from '../../context';
 import { useContext, useEffect, useRef, useState } from 'react';
 import './auth.scss';
+import { phoneFN } from '../../func/phone';
 
 function RegistrCode() {
   const [messageApi, contextHolder] = message.useMessage();
@@ -52,7 +53,7 @@ function RegistrCode() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          phone_number: '998910056961',
+          phone_number: phone,
           code,
         }),
       })
@@ -66,7 +67,7 @@ function RegistrCode() {
             });
             localStorage.setItem(
               'access_token',
-              JSON.stringify({ access_token: data?.access_token }),
+              JSON.stringify(data?.access_token),
             );
             setToken(data?.access_token);
             navigate('/registration/profil');
@@ -95,7 +96,7 @@ function RegistrCode() {
       duration: 0,
     });
 
-    fetch(api + '/auth/forget-password', {
+    fetch(api + '/auth/resend', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -131,7 +132,7 @@ function RegistrCode() {
         <img src={logo} alt="Company Logo" />
       </Link>
       <h2>Tasdiqlash</h2>
-      <p>{phone} ga yuborilgan maxfiy kodni kiriting.</p>
+      <p>{phoneFN(phone)} ga yuborilgan maxfiy kodni kiriting.</p>
       <label>
         <span>Kodni kiriting</span>
         <input ref={codeRef} maxLength={4} onKeyDown={codeFilter} type="text" />

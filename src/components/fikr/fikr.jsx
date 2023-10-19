@@ -2,16 +2,18 @@ import img1 from '../../img/bohemian-man-with-his-arms-crossed_1368-3542.avif';
 import img2 from '../../img/pretty-smiling-woman-cafe_624325-3285.jpg';
 import img3 from '../../img/photo-1573496359142-b8d87734a5a2.avif';
 import img4 from '../../img/confident-corporate-charm-handsome-young-african-american-businessman-standing-indoors-with-his-arms-folded_590464-31666.avif';
-import Marquee from "react-fast-marquee";
+import Marquee from 'react-fast-marquee';
 import './fikr.scss';
 
 function Fikr() {
-
   return (
     <div className="fikr">
       <h2>O’quvchilarimiz fikri</h2>
-      <Marquee className={'bottom'}>
-        <div className='item' style={{backgroundColor: "#E6FCEB"}}>
+      <Marquee style={{ borderRadius: '12px' }} className={'bottom'}>
+        <div
+          className="item"
+          style={{ backgroundColor: '#E6FCEB', width: '200px' }}
+        >
           <div className="prof">
             <div className="img-fath">
               <img src={img1} alt="Image1" />
@@ -26,7 +28,7 @@ function Fikr() {
             ilmlarga ega bo‘ling! shoshiling!
           </p>
         </div>
-        <div className='item'>
+        <div style={{ width: '500px' }} className="item">
           <div className="prof">
             <div className="img-fath">
               <img src={img2} alt="Image1" />
@@ -43,7 +45,10 @@ function Fikr() {
             magistratura
           </p>
         </div>
-        <div className='item' style={{backgroundColor: "#E6FCEB"}}>
+        <div
+          className="item"
+          style={{ backgroundColor: '#E6FCEB', width: '200px' }}
+        >
           <div className="prof">
             <div className="img-fath">
               <img src={img4} alt="Image1" />
@@ -58,7 +63,7 @@ function Fikr() {
             ilmlarga ega bo‘ling! shoshiling!
           </p>
         </div>
-        <div className='item'>
+        <div className="item">
           <div className="prof">
             <div className="img-fath">
               <img src={img3} alt="Image1" />

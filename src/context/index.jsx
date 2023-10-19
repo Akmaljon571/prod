@@ -1,7 +1,7 @@
 import { createContext, useState } from 'react';
 
 export const State = createContext();
-export const api = 'http://157.230.176.191:4000/api';
+export const api = 'http://167.71.97.24/api';
 
 export const StatePriveder = ({ children }) => {
   const [token, setToken] = useState(
