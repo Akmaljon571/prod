@@ -1,6 +1,6 @@
 import ProfileTop from './profileTop';
-import './profile.scss';
 import ProfileList from './profileList';
+import './profile.scss';
 
 function Profile() {
   return (

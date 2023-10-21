@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from 'react';
 import { api } from '../../context';
 import { State } from '../../context';
-import summa from '../../func/summa';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import './courses.scss';
 import { src } from '../../func/src';
+import summa from '../../func/summa';
+import './courses.scss';
 
 function Courses() {
   const [courses, setCourses] = useState([]);
