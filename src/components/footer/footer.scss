@@ -1,1 +1,145 @@
 @import '../../utils/scss/var.scss';
+
+.footer {
+  width: 100%;
+  padding-bottom: 39px;
+  margin-top: 80px;
+
+  .top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .one {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+
+      img {
+        margin-bottom: 24px;
+      }
+
+      p,
+      span {
+        font-family: Poppins;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #676d83;
+      }
+    }
+
+    h4 {
+      font-family: Unbounded;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 24px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #020c31;
+      margin-bottom: 24px;
+    }
+
+    ul {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 12px;
+
+      li {
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #676d83;
+        display: flex;
+        align-items: center;
+        gap: 13px;
+
+        a {
+          font-family: Poppins;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 24px;
+          letter-spacing: 0em;
+          text-align: left;
+          color: #676d83;
+          display: flex;
+          align-items: center;
+          gap: 13px;
+        }
+      }
+    }
+  }
+
+  .bottom {
+    margin-top: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 93px;
+      font-family: Unbounded;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0em;
+      color: #1d68f9;
+      border-radius: 30px;
+      border: 1px solid #ccc;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .footer {
+    .top {
+      .three {
+        display: none;
+      }
+    }
+
+    .bottom {
+      a {
+        padding: 12px 50px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .footer {
+    .top {
+      flex-direction: column;
+      gap: 25px;
+
+      .one {
+        img {
+          margin-bottom: 0;
+        }
+      }
+
+      .two {
+        display: none;
+      }
+    }
+
+    .bottom {
+      flex-direction: column;
+      a {
+        width: 100%;
+        padding: 12px;
+        justify-content: center;
+      }
+    }
+  }
+}

@@ -1,10 +1,13 @@
-import { Error, Header } from '../components';
+import { Error, Footer, Header, Main } from '../components';
 
 function ErrorPage() {
   return (
     <>
       <Header />
-      <Error />
+      <Main>
+        <Error />
+      </Main>
+      <Footer />
     </>
   );
 }

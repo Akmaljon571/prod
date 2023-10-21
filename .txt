@@ -1,20 +1,34 @@
 user panel {
     course/one
     setting
-    home (footer, hero, 1section)
+    home (hero, 1section)
     Footer har bir page ga qoshib chiqish
+    Main har bir page ga qoshib chiqish
     Linklarni tolliq ulab chiqish saytlar aro
     linklar sotib olishda admin bilan
 }
 
 admin panel {
-    video korish
     statistikalar
+    video update
     reyting
     take
     user {
         search(tell + name)
         pagination
     }
-    img link update
+}
+
+finish user panel {
+    home page (hero section)
+    aloqa
+    profile
+    course page
+}
+
+finish admin panel {
+    user  search + pagination
+    video qoldi Update
+    workbook
+    course
 }
