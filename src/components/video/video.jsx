@@ -6,6 +6,7 @@ import summa from '../../func/summa';
 import './video.scss';
 import Description from './description';
 import List from './list';
+import Workbook from './workbook';
 
 function Video() {
   const { id } = useParams();
@@ -26,7 +27,6 @@ function Video() {
           setCourse(data.course);
         }
       });
-
     fetch(api + `/admin/course/${id}/video`, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -68,6 +68,7 @@ function Video() {
           find={findVideo?._id}
         />
       </div>
+      <Workbook course={course} />
     </div>
   );
 }
