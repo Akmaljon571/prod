@@ -1,5 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
-import { AloqaPage, CoursesPage, DarsPage, ErrorPage, Home } from '../page';
+import {
+  AloqaPage,
+  CoursesPage,
+  DarsPage,
+  ErrorPage,
+  Home,
+  ProfilePage,
+} from '../page';
 import {
   Login,
   Password,
@@ -24,6 +31,7 @@ function Routers() {
       <Route path="/courses/:id" element={<DarsPage />} />
       <Route path="/aloqa" element={<AloqaPage />} />
       <Route path="/courses" element={<CoursesPage />} />
+      <Route path="/profile" element={<ProfilePage />} />
       <Route path="/*" element={<ErrorPage />} />
     </Routes>
   );

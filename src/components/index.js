@@ -22,6 +22,7 @@ import Dropdown from './dropdown/dropdown';
 import Fikr from './fikr/fikr';
 import Aloqa from './aloqa/aloqa';
 import Courses from './courses/courses';
+import Profile from './profile/profile';
 
 export {
   Header,
@@ -48,4 +49,5 @@ export {
   Fikr,
   Aloqa,
   Courses,
+  Profile,
 };
