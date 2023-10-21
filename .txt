@@ -2,8 +2,6 @@ user panel {
     course/one
     setting
     home (hero, 1section)
-    Footer har bir page ga qoshib chiqish
-    Main har bir page ga qoshib chiqish
     Linklarni tolliq ulab chiqish saytlar aro
     linklar sotib olishda admin bilan
 }
