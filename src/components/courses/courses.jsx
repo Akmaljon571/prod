@@ -44,7 +44,7 @@ function Courses() {
                     onClick={() => navigate(`/courses/${e._id}`)}
                     variant="contained"
                   >
-                    {e?.take ? "Ko'rish" : 'Sotib Olish'}
+                    {e?.take ? "Ko'rish" : 'Sotib oling'}
                   </Button>
                 </div>
               </li>
