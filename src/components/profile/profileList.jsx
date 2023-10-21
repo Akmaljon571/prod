@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import gif from '../../img/d9f21515b1e38d83e94fdbce88f623b6 (1).gif';
 import { Button } from '@mui/material';
 import summa from '../../func/summa';
+import { src } from '../../func/src';
 
 function ProfileList() {
   const [nav, setNav] = useState(1);
@@ -45,11 +46,7 @@ function ProfileList() {
           {course?.length
             ? course.map((e, i) => (
                 <li key={i}>
-                  <img
-                    onLoad={(target) => onLoad(target, e.image, token)}
-                    src={gif}
-                    alt="Loading"
-                  />
+                  <img src={src(token, e?.image)} alt="Loading" />
                   <div className="bottom">
                     <h3>{e.title}</h3>
                     <p>

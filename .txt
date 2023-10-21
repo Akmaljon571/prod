@@ -1,6 +1,15 @@
-course/one
-profile
-setting
-home (footer, hero, 1section)
+user panel {
+    course/one
+    setting
+    home (footer, hero, 1section)
+    Footer har bir page ga qoshib chiqish
+    Linklarni tolliq ulab chiqish saytlar aro
+    linklar sotib olishda admin bilan
+}
 
-link jonatvotgan paytda token kelsa customer dan ol aks holda public dan ol degan fetchlar yozib chiqishim kerak ekan
+admin panel {
+    video korish
+    statistikalar
+    reyting
+    
+}

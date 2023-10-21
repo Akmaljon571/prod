@@ -44,7 +44,7 @@ function Kurs() {
             <p>{summa(e.price)}so'm</p>
             <span>{e?.videos?.length} ta dars</span>
             <Button
-              onClick={() => navigate(`/course/${e._id}`)}
+              onClick={() => navigate(`/courses/${e._id}`)}
               variant="contained"
             >
               Boshladik

@@ -1,12 +1,11 @@
 import { useContext, useEffect, useState } from 'react';
 import { api } from '../../context';
 import { State } from '../../context';
-import gif from '../../img/d9f21515b1e38d83e94fdbce88f623b6 (1).gif';
 import summa from '../../func/summa';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { onLoad } from '../../func/onload';
 import './courses.scss';
+import { src } from '../../func/src';
 
 function Courses() {
   const [courses, setCourses] = useState([]);
@@ -32,12 +31,8 @@ function Courses() {
       <ul>
         {courses?.length
           ? courses.map((e) => (
-              <li onClick={() => navigate(`/courses/${e._id}`)} key={e._id}>
-                <img
-                  onLoad={(target) => onLoad(target, e.image, token)}
-                  src={gif}
-                  alt="Loading"
-                />
+              <li key={e._id}>
+                <img src={src(token, e?.image)} alt="Loading" />
                 <div className="bottom">
                   <h3>{e.title}</h3>
                   <p>
@@ -46,7 +41,10 @@ function Courses() {
                   </p>
                   <span>{e.videos?.length} Video + Workbook</span>
                   <div>{summa(e.price)}so'm</div>
-                  <Button variant="contained">
+                  <Button
+                    onClick={() => navigate(`/courses/${e._id}`)}
+                    variant="contained"
+                  >
                     {e?.take ? "Ko'rish" : 'Sotib Olish'}
                   </Button>
                 </div>
