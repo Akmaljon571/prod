@@ -97,7 +97,7 @@ function ProfileList() {
                 </li>
               ))
             : null}
-            {oldCourse?.length
+          {oldCourse?.length
             ? oldCourse.map((e, i) => (
                 <li key={i}>
                   <img

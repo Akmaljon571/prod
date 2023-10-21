@@ -1,7 +1,8 @@
 import { api } from '../context';
 
 export const onLoad = async (e, link, token) => {
-  const res = await fetch(api + `/customer/file/${link}`, {
+  const url = token ? `/customer/file/${link}` : `/public/file/${link}`;
+  const res = await fetch(api + url, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
