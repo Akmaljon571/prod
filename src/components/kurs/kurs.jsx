@@ -23,7 +23,7 @@ function Kurs() {
       },
     })
       .then((re) => re.json())
-      .then((data) => setCourses(data?.courses.slice(0, 3)));
+      .then((data) => setCourses(data?.courses?.slice(0, 3)));
   }, [token]);
 
   return (

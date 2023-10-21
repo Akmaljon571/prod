@@ -1,1 +1,6 @@
 course/one
+profile
+setting
+home (footer, hero, 1section)
+
+link jonatvotgan paytda token kelsa customer dan ol aks holda public dan ol degan fetchlar yozib chiqishim kerak ekan
