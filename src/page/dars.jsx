@@ -1,11 +1,11 @@
-import { Dars, Footer, Header, Main } from '../components';
+import { Footer, Header, Main, Video } from '../components';
 
 function DarsPage() {
   return (
     <>
       <Header />
       <Main>
-        <Dars />
+        <Video />
       </Main>
       <Footer />
     </>

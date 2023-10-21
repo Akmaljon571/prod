@@ -3,14 +3,16 @@ import VideoPlayer from './videoPlayer';
 import { useContext, useEffect, useState } from 'react';
 import { State, api } from '../../context';
 import summa from '../../func/summa';
+import './video.scss';
+import Description from './description';
+import List from './list';
 
-function Dars() {
+function Video() {
   const { id } = useParams();
   const { token } = useContext(State);
   const [course, setCourse] = useState({});
-  const [buy, setBuy] = useState(false);
-  // const [findVideo, setFindVideo] = useState('');
-  // const [videoId, setVideoId] = useState('');
+  const [videos, setVideos] = useState([]);
+  const [findVideo, setFindVideo] = useState({});
 
   useEffect(() => {
     fetch(api + `/admin/course/${id}`, {
@@ -20,42 +22,54 @@ function Dars() {
     })
       .then((re) => re.json())
       .then((data) => {
-        if (data.ok) {
+        if (data?.ok) {
           setCourse(data.course);
+        }
+      });
 
-          fetch(api + `/customer/course/${data?.course[3]}`)
-            .then((re) => re.json())
-            .then((data) => {
-              if (data?.ok) {
-                setBuy(true);
-              } else {
-                setBuy(false);
-              }
-            })
-            .catch(() => setBuy(false));
+    fetch(api + `/admin/course/${id}/video`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((re) => re.json())
+      .then((data) => {
+        if (data?.ok) {
+          setVideos(data.videos);
+          setFindVideo(data.videos[0]);
         }
       });
   }, [id, token]);
 
   return (
     <div className="dars">
-      <VideoPlayer title={course?.title} />
+      <VideoPlayer title={course?.title} videoSrc={findVideo?.file_id} />
       <div className="top">
         <p className="text">{course?.description}</p>
-        {buy ? null : (
+        {course?.take ? null : (
           <div className="buy">
             <h2>{course?.title}</h2>
             <div>
               <span>{course?.videos?.length} Video + Workbook</span>
-              <p>{summa(course?.price)} so'm</p>
+              <p>{summa(course?.price || 0)} so'm</p>
               <small>6 oy uchun</small>{' '}
             </div>
             <a href="https://t.me/akmaljondev">Sotib olish</a>
           </div>
         )}
       </div>
+      <div className="bottom">
+        <Description description={findVideo?.description} />
+        <List
+          videos={videos}
+          course={id}
+          setFindVideo={setFindVideo}
+          active={course?.take ? true : false}
+          find={findVideo?._id}
+        />
+      </div>
     </div>
   );
 }
 
-export default Dars;
+export default Video;

@@ -1,9 +1,10 @@
 user panel {
     course/one
     setting
-    home (hero, 1section)
+    home (hero, 1section, header)
     Linklarni tolliq ulab chiqish saytlar aro
     linklar sotib olishda admin bilan
+    videoCount
 }
 
 admin panel {
@@ -15,6 +16,7 @@ admin panel {
         search(tell + name)
         pagination
     }
+    videoCount
 }
 
 finish user panel {

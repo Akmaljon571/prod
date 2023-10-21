@@ -11,7 +11,7 @@ import PasswordUpdate from './auth/password-update';
 import Registr from './auth/registr';
 import RegistrCode from './auth/registr-code';
 import RegistrFinish from './auth/registr-kirish';
-import Dars from './dars/dars';
+import Video from './video/video';
 import Message from './message/message';
 import Error from './err/err';
 import Promise from './promise/promise';
@@ -38,7 +38,7 @@ export {
   Registr,
   RegistrCode,
   RegistrFinish,
-  Dars,
+  Video,
   Message,
   Error,
   Promise,

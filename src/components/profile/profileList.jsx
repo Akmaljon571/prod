@@ -13,7 +13,7 @@ function ProfileList() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(api + '/admin/course', {
+    fetch(api + '/customer/course', {
       headers: {
         Authorization: `Bearer ${token}`,
       },

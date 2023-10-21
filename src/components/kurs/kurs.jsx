@@ -17,7 +17,7 @@ function Kurs() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const link = token ? '/admin/course' : '/public/course';
+    const link = token ? '/customer/course' : '/public/course';
     fetch(api + link, {
       headers: {
         Authorization: `Bearer ${token}`,
