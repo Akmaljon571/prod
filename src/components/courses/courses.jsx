@@ -45,7 +45,9 @@ function Courses() {
                   </p>
                   <span>{e.videos?.length} Video + Workbook</span>
                   <div>{summa(e.price)}so'm</div>
-                  <Button variant="contained">Sotib Olish</Button>
+                  <Button variant="contained">
+                    {e?.take ? "Ko'rish" : 'Sotib Olish'}
+                  </Button>
                 </div>
               </li>
             ))
