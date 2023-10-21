@@ -1,10 +1,13 @@
-import { Courses, Header } from '../components';
+import { Courses, Footer, Header, Main } from '../components';
 
 function CoursesPage() {
   return (
     <>
       <Header />
-      <Courses />
+      <Main>
+        <Courses />
+      </Main>
+      <Footer />
     </>
   );
 }

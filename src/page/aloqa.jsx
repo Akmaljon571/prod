@@ -1,11 +1,14 @@
-import { Aloqa, Header, Message } from '../components';
+import { Aloqa, Footer, Header, Main, Message } from '../components';
 
 function AloqaPage() {
   return (
     <>
       <Header />
-      <Aloqa />
-      <Message />
+      <Main>
+        <Aloqa />
+        <Message />
+      </Main>
+      <Footer />
     </>
   );
 }

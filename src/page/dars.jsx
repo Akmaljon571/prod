@@ -1,10 +1,13 @@
-import { Dars, Header } from '../components';
+import { Dars, Footer, Header, Main } from '../components';
 
 function DarsPage() {
   return (
     <>
       <Header />
-      <Dars />
+      <Main>
+        <Dars />
+      </Main>
+      <Footer />
     </>
   );
 }

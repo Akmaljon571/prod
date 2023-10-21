@@ -2,10 +2,12 @@ import {
   Comfort,
   Dropdown,
   Fikr,
+  Footer,
   Header,
   Hero,
   Kurs,
   Madaniyat,
+  Main,
   Message,
   Promise,
   Teacher,
@@ -16,16 +18,19 @@ function Home() {
   return (
     <>
       <Header />
-      <Hero />
-      <Promise />
-      <HomeVideo />
-      <Kurs />
-      <Comfort />
-      <Teacher />
-      <Madaniyat />
-      <Fikr />
-      <Dropdown />
-      <Message />
+      <Main>
+        <Hero />
+        <Promise />
+        <HomeVideo />
+        <Kurs />
+        <Comfort />
+        <Teacher />
+        <Madaniyat />
+        <Fikr />
+        <Dropdown />
+        <Message />
+      </Main>
+      <Footer />
     </>
   );
 }

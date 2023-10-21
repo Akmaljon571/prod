@@ -1,10 +1,13 @@
-import { Header, Profile } from '../components';
+import { Footer, Header, Main, Profile } from '../components';
 
 function ProfilePage() {
   return (
     <>
       <Header />
-      <Profile />
+      <Main>
+        <Profile />
+      </Main>
+      <Footer />
     </>
   );
 }
