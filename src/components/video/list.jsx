@@ -10,7 +10,10 @@ function List({ videos, active, find, setFindVideo, course }) {
 
   const findVideo = (id) => {
     message.loading("So'rov jo'natildi");
-    fetch(api + `/admin/course/${course}/video/${id}`, {
+    const url = token
+      ? `/customer/course/${course}/video/${id}`
+      : `/public/course/${course}/video/${id}`;
+    fetch(api + url, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -22,6 +25,7 @@ function List({ videos, active, find, setFindVideo, course }) {
         }
       });
   };
+
   return (
     <div className="video_list">
       <div className="video_list-top">

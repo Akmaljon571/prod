@@ -4,5 +4,14 @@ import ErrorPage from './error';
 import AloqaPage from './aloqa';
 import CoursesPage from './courses';
 import ProfilePage from './profile';
+import SettingPage from './setting';
 
-export { Home, DarsPage, ErrorPage, AloqaPage, CoursesPage, ProfilePage };
+export {
+  Home,
+  DarsPage,
+  ErrorPage,
+  AloqaPage,
+  CoursesPage,
+  ProfilePage,
+  SettingPage,
+};

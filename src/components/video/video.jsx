@@ -16,7 +16,8 @@ function Video() {
   const [findVideo, setFindVideo] = useState({});
 
   useEffect(() => {
-    fetch(api + `/admin/course/${id}`, {
+    const url = token ? `/customer/course/${id}` : `/public/course/${id}`;
+    fetch(api + url, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -27,7 +28,7 @@ function Video() {
           setCourse(data.course);
         }
       });
-    fetch(api + `/admin/course/${id}/video`, {
+    fetch(api + url + '/video', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -35,7 +36,7 @@ function Video() {
       .then((re) => re.json())
       .then((data) => {
         if (data?.ok) {
-          setVideos(data.videos);
+          setVideos(data.videos?.sort((a, b) => a.sequence - b.sequence));
           setFindVideo(data.videos[0]);
         }
       });

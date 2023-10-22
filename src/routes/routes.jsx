@@ -6,6 +6,7 @@ import {
   ErrorPage,
   Home,
   ProfilePage,
+  SettingPage,
 } from '../page';
 import {
   Login,
@@ -32,6 +33,7 @@ function Routers() {
       <Route path="/aloqa" element={<AloqaPage />} />
       <Route path="/courses" element={<CoursesPage />} />
       <Route path="/profile" element={<ProfilePage />} />
+      <Route path="/setting" element={<SettingPage />} />
       <Route path="/*" element={<ErrorPage />} />
     </Routes>
   );

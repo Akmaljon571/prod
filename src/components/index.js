@@ -23,6 +23,7 @@ import Fikr from './fikr/fikr';
 import Aloqa from './aloqa/aloqa';
 import Courses from './courses/courses';
 import Profile from './profile/profile';
+import Setting from './setting/setting';
 
 export {
   Header,
@@ -50,4 +51,5 @@ export {
   Aloqa,
   Courses,
   Profile,
+  Setting,
 };

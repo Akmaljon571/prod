@@ -1,5 +1,4 @@
 user panel {
-    course/one
     setting
     home (hero, 1section, header)
     Linklarni tolliq ulab chiqish saytlar aro
@@ -12,6 +11,7 @@ admin panel {
     video update
     reyting
     take
+    admin loginni 2 steplik qilish
     user {
         search(tell + name)
         pagination

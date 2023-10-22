@@ -4,6 +4,7 @@ import { nameOneLetter } from '../../func/name';
 import { phoneFN } from '../../func/phone';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { src } from '../../func/src';
 
 function ProfileTop() {
   const [user, setUser] = useState({});
@@ -27,7 +28,7 @@ function ProfileTop() {
         <div>
           <div className="img">
             {user.image ? (
-              <img src={api + user.image} alt="User Profile" />
+              <img src={src(token, user.image)} alt="User Profile" />
             ) : (
               <span>{nameOneLetter(user?.first_name)}</span>
             )}
