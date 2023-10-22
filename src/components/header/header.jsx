@@ -104,10 +104,10 @@ function Header() {
                     </Link>
                   </li>
                   <li>
-                    <Link to={'/'}>
+                    <a onClick={() => localStorage.clear()} href={'/'}>
                       <img src={chiqish} alt="Kurs" />
                       <p>Chiqish</p>
-                    </Link>
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -198,10 +198,10 @@ function Header() {
                       </Link>
                     </li>
                     <li className="chiqish">
-                      <Link to={'/'}>
+                      <a onClick={() => localStorage.clear()} href={'/'}>
                         <img src={chiqish} alt="Kurs" />
                         <p>Chiqish</p>
-                      </Link>
+                      </a>
                     </li>
                   </ul>
                 </>

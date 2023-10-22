@@ -1,5 +1,4 @@
 user panel {
-    setting
     home (hero, 1section, header)
     Linklarni tolliq ulab chiqish saytlar aro
     linklar sotib olishda admin bilan
@@ -24,6 +23,7 @@ finish user panel {
     aloqa
     profile
     course page
+    setting
 }
 
 finish admin panel {
