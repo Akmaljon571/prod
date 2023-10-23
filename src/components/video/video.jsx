@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import VideoPlayer from './videoPlayer';
 import { useContext, useEffect, useState } from 'react';
-import { State, api } from '../../context';
+import { State, api, tg } from '../../context';
 import summa from '../../func/summa';
 import './video.scss';
 import Description from './description';
@@ -55,7 +55,7 @@ function Video() {
               <p>{summa(course?.price || 0)} so'm</p>
               <small>6 oy uchun</small>{' '}
             </div>
-            <a href="https://t.me/akmaljondev">Sotib olish</a>
+            <a target='_blank' rel="noreferrer" href={tg}>Sotib olish</a>
           </div>
         )}
       </div>

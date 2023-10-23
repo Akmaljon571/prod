@@ -5,8 +5,11 @@ import tokyo1 from '../../img/tokyo1.png';
 import tokyo2 from '../../img/tokyo2.png';
 import tokyo3 from '../../img/tokyo3.png';
 import './madaniyat.scss';
+import { useNavigate } from 'react-router-dom';
 
 function Madaniyat() {
+  const navigate = useNavigate()
+
   return (
     <div className="madaniyat">
       <div className="text">
@@ -18,7 +21,7 @@ function Madaniyat() {
             <img src={oyin} alt="oyinchoq" />
             <img src={gerb} alt="Korea Bayrogi" />
           </div>
-          <div className="next">
+          <div onClick={() => navigate('/about')} className="next">
             <img src={next} alt="Next" />
           </div>
         </div>

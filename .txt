@@ -1,7 +1,5 @@
 user panel {
-    home (hero, 1section, header)
-    Linklarni tolliq ulab chiqish saytlar aro
-    linklar sotib olishda admin bilan
+    home (header)
     videoCount
 }
 
@@ -31,4 +29,9 @@ finish admin panel {
     video qoldi Update
     workbook
     course
+}
+
+maslahat {
+    teacher btn qayerga
+    xabar yuborish qatga
 }

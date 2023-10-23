@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
 import { useContext, useState } from 'react';
-import { State } from '../../context';
+import { State, tg } from '../../context';
 import logo from '../../img/LinCor.svg';
 import vector from '../../img/header-vector.svg';
 import sVector from '../../img/profile-vector.svg';
@@ -36,10 +36,10 @@ function Header() {
                 <Link to={'/'}>Topik</Link>
               </li>
               <li>
-                <Link to={'/'}>Koreada o‘qish</Link>
+                <Link to={'/about'}>Koreada o‘qish</Link>
               </li>
               <li>
-                <Link to={'/'}>To’lov</Link>
+                <a target='_blank' rel="noreferrer" href={tg}>To’lov</a>
               </li>
               <li>
                 <Link to={'/aloqa'}>Aloqa</Link>
@@ -80,19 +80,19 @@ function Header() {
                 <hr />
                 <ul>
                   <li>
-                    <Link to={'/'}>
+                    <Link to={'/profile'}>
                       <img src={book} alt="Kurs" />
                       <p>Mening Kurslarim</p>
                     </Link>
                   </li>
                   <li>
-                    <Link to={'/'}>
+                    <a target='_blank' rel="noreferrer" href={tg}>
                       <img src={tolov} alt="Kurs" />
                       <p>To'lov</p>
-                    </Link>
+                    </a>
                   </li>
                   <li>
-                    <Link to={'/'}>
+                    <Link to={'/setting'}>
                       <img src={profil} alt="Kurs" />
                       <p>Profilim</p>
                     </Link>
@@ -158,10 +158,10 @@ function Header() {
                       <Link to={'/'}>Topik</Link>
                     </li>
                     <li>
-                      <Link to={'/'}>Koreada o‘qish</Link>
+                      <Link to={'/about'}>Koreada o‘qish</Link>
                     </li>
                     <li>
-                      <Link to={'/'}>To’lov</Link>
+                      <a target='_blank' rel="noreferrer" href={tg}>To’lov</a>
                     </li>
                     <li>
                       <Link to={'/aloqa'}>Aloqa</Link>
@@ -174,19 +174,19 @@ function Header() {
                   <hr />
                   <ul className="header-media-modal_profile">
                     <li>
-                      <Link to={'/'}>
+                      <Link to={'/profile'}>
                         <img src={book} alt="Kurs" />
                         <p>Mening Kurslarim</p>
                       </Link>
                     </li>
                     <li>
-                      <Link to={'/'}>
+                      <a target='_blank' rel="noreferrer" href={tg}>
                         <img src={tolov} alt="Kurs" />
                         <p>To'lov</p>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to={'/'}>
+                      <Link to={'/setting'}>
                         <img src={profil} alt="Kurs" />
                         <p>Profilim</p>
                       </Link>

@@ -5,6 +5,7 @@ import mail from '../../img/footer-mail.svg';
 import location from '../../img/footer-location.svg';
 import icon from '../../img/footer-icon.svg';
 import './footer.scss';
+import { tg } from '../../context';
 
 function Footer() {
   return (
@@ -67,7 +68,7 @@ function Footer() {
           Instagram
           <img src={icon} alt="Icon" />
         </Link>
-        <Link target="_blank" rel="noreferrer" to="https://t.me/akmaljondev">
+        <Link target="_blank" rel="noreferrer" to={tg}>
           Telegram
           <img src={icon} alt="Icon" />
         </Link>
