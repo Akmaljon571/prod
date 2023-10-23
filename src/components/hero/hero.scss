@@ -4,95 +4,161 @@
   justify-content: space-between;
   width: 100%;
   border-radius: 20px;
-  background-color: #1d68f9;
-  height: 560px;
+  background-color: #1c4cf7;
+  height: 640px;
   overflow: hidden;
-  padding: 60px 159px 0 40px;
+  position: relative;
+  padding: 60px 0 0 40px;
   margin-top: 60px;
 
   .left {
     h1 {
-      font-family: Poppins;
-      font-size: 64px;
+      font-family: Unbounded;
+      font-size: 52px;
       font-weight: 700;
-      line-height: 76px;
+      line-height: 72px;
       letter-spacing: 0em;
-      text-align: left;
+      width: 60%;
       color: #fafafa;
       text-transform: capitalize;
       margin: 0;
-    }
 
-    p {
-      margin-top: 20px;
-      width: 262px;
-      color: #fafafad7;
-      font-family: Poppins;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 20px;
-      letter-spacing: 0em;
-      text-align: left;
-      margin-bottom: 69px;
+      span {
+        font-size: 45px;
+        background-color: #fff;
+        color: #711df9;
+        padding: 4px 20px;
+        border-radius: 40px;
+      }
     }
 
     button {
       border-radius: 40px;
-      border: 1px solid;
-      background-color: #fafafa;
-      padding: 4px;
-      padding-left: 28px;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      font-family: Poppins;
-      font-size: 20px;
-      font-weight: 500;
-      line-height: 20px;
+      background-color: #3375ff;
+      color: #fff;
+      padding: 13px 33px;
+      font-family: Unbounded;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 22px;
       letter-spacing: 0em;
       text-align: left;
       text-transform: capitalize;
+      position: absolute;
+      bottom: 44px;
+    }
+
+    .img {
+      padding: 12px 28px;
+      background-color: #fff;
+      border-radius: 62px;
+      cursor: pointer;
+      left: 253px;
+      position: absolute;
 
       img {
-        width: 56px;
-        height: 56px;
+        width: 24px;
+        height: 24px;
+      }
+
+      &:hover {
+        background-color: #fff;
       }
     }
   }
 
-  .right {
-    margin-top: 10px;
+  .image {
+    position: absolute;
+    right: 0;
+
+    &-fath {
+      background-image: url('../../img/Aylanalar\ 3\ ta.png');
+      right: 0;
+      height: 580px;
+      min-width: 840px;
+
+      img {
+        position: absolute;
+      }
+
+      .girl {
+        bottom: 0;
+        right: 170px;
+      }
+
+      .img1 {
+        top: 18px;
+        right: 443px;
+      }
+
+      .img2 {
+        top: 99px;
+        right: 143px;
+      }
+
+      .img3 {
+        bottom: 114px;
+        right: 14px;
+      }
+    }
   }
 }
 
 @media screen and (max-width: 1000px) {
   .hero {
     padding: 60px 40px 0 40px;
-    height: 463px;
+    height: 480px;
 
     .left {
       h1 {
         font-family: Poppins;
-        font-size: 48px;
+        font-size: 38px;
         font-weight: 700;
-        line-height: 76px;
+        width: 50%;
+        line-height: 46px;
         letter-spacing: 0em;
         text-align: left;
-      }
 
-      p {
-        font-family: Poppins;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 20px;
-        letter-spacing: 0em;
-        text-align: left;
+        span {
+          font-size: 30px;
+        }
       }
     }
 
-    .right {
-      width: 317px;
-      height: 400px;
+    .image {
+      min-width: 540px;
+      width: 540px;
+      height: 450px;
+      bottom: 0;
+
+      &-fath {
+        background-size: contain;
+        background-position: left 10px;
+        background-repeat: no-repeat;
+
+        .girl {
+          width: 400px;
+          right: 50px;
+        }
+
+        .img1 {
+          width: 80px;
+          height: 65px;
+          right: 340px;
+        }
+
+        .img2 {
+          width: 70px;
+          height: 80px;
+          right: 43px;
+        }
+        
+        .img3 {
+          width: 80px;
+          height: 70px;
+          right: 14px;
+        }
+      }
     }
   }
 }
@@ -100,7 +166,7 @@
 @media screen and (max-width: 361px) {
   .hero {
     padding: 25px 20px 0 20px;
-    height: 280px;
+    height: 380px;
     margin-top: 7px;
 
     .left {
@@ -111,43 +177,47 @@
         line-height: 28px;
         letter-spacing: 0em;
         text-align: left;
-      }
+        width: 100%;
 
-      p {
-        font-family: Poppins;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 20px;
-        letter-spacing: 0em;
-        text-align: left;
-        width: 198px;
-        margin-bottom: 23px;
+        span {
+          font-size: 18px;
+          padding: 2px 10px;
+        }
       }
 
       button {
-        width: 153px;
-        font-family: Poppins;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 20px;
-        letter-spacing: 0em;
-        text-align: left;
-        padding: 6px 15px;
-        white-space: nowrap;
-        gap: 11px;
-
-        img {
-          width: 24px;
-          height: 24px;
-        }
+        display: none;
       }
     }
 
-    .right {
-      margin-left: -50px;
-      width: 185px;
-      height: 210px;
-      margin-top: 50px;
+    .image {
+      bottom: 1px;
+      height: 280px;
+
+      &-fath {
+        min-width: none;
+        width: 360px;
+        height: 280px;
+        background-size: cover;
+        background-position: -40px top;
+      }
+
+      .girl {
+        width: 200px;
+        right: 80px;
+      }
+
+      .img1 {
+        right: 200px;
+      }
+
+      .img2 {
+        top: 20px;
+      }
+
+      .img3 {
+        bottom: 40px;
+      }
     }
   }
 }
