@@ -42,7 +42,7 @@ function Kurs() {
             />
             <h4>{e.title}</h4>
             <p>{summa(e.price)}so'm</p>
-            <span>{e?.videos?.length} ta dars</span>
+            <span>{e?.video_count} ta dars</span>
             <Button
               onClick={() => navigate(`/courses/${e._id}`)}
               variant="contained"

@@ -51,7 +51,7 @@ function ProfileList() {
                       {e.description}u darsliklari sizning yuqori daraja
                       olishingizga yordam beradi
                     </p>
-                    <span>{e.videos?.length} Video + Workbook</span>
+                    <span>{e.video_count} Video + Workbook</span>
                     <div>{summa(e.price)}so'm</div>
                     <Button
                       onClick={() => navigate(`/courses/${e._id}`)}
@@ -76,7 +76,7 @@ function ProfileList() {
                       {e.description}u darsliklari sizning yuqori daraja
                       olishingizga yordam beradi
                     </p>
-                    <span>{e.videos?.length} Video + Workbook</span>
+                    <span>{e.video_count} Video + Workbook</span>
                     <div>{summa(e.price)}so'm</div>
                     <Button
                       onClick={() => navigate(`/courses/${e._id}`)}
@@ -98,7 +98,7 @@ function ProfileList() {
                       {e.description}u darsliklari sizning yuqori daraja
                       olishingizga yordam beradi
                     </p>
-                    <span>{e.videos?.length} Video + Workbook</span>
+                    <span>{e.video_count} Video + Workbook</span>
                     <div>{summa(e.price)}so'm</div>
                     <Button
                       onClick={() => navigate(`/courses/${e._id}`)}

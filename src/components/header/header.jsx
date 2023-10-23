@@ -23,15 +23,17 @@ function Header() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(api + '/me', {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
-      .then((re) => re.json())
-      .then((data) => {
-        setMe(data.me);
-      });
+    if (token) {
+      fetch(api + '/me', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((re) => re.json())
+        .then((data) => {
+          setMe(data.me);
+        });
+    }
   }, [token]);
 
   return (

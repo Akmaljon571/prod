@@ -1,18 +1,15 @@
 user panel {
-    videoCount
+    take setting
+    media max > 500
 }
 
 admin panel {
     statistikalar
-    video update
     reyting
     take
-    admin loginni 2 steplik qilish
-    user {
-        search(tell + name)
-        pagination
+    notFound {
+      <Cascader.Panel />
     }
-    videoCount
 }
 
 finish user panel {
@@ -24,13 +21,15 @@ finish user panel {
 }
 
 finish admin panel {
-    user  search + pagination
-    video qoldi Update
+    user
+    video
     workbook
     course
+    Login
 }
 
 maslahat {
     teacher btn qayerga
     xabar yuborish qatga
+    admin login tekshiruv
 }

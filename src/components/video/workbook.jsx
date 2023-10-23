@@ -9,7 +9,7 @@ function Workbook({ course }) {
   const [workbook, setWorkbook] = useState({});
 
   useEffect(() => {
-    if (course?._id) {
+    if (course?._id && token) {
       fetch(api + `/customer/course/${course?._id}/workbook`, {
         headers: {
           Authorization: `Bearer ${token}`,
