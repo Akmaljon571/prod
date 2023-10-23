@@ -1,5 +1,4 @@
 user panel {
-    home (header)
     videoCount
 }
 
@@ -17,7 +16,7 @@ admin panel {
 }
 
 finish user panel {
-    home page (hero section)
+    home
     aloqa
     profile
     course page

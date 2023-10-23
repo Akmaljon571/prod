@@ -141,8 +141,11 @@
         line-height: 34px;
         letter-spacing: 0em;
         text-align: left;
-        width: 160px;
         overflow: hidden;
+        width: 200px;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
         text-overflow: ellipsis;
         white-space: nowrap;
       }
@@ -276,7 +279,10 @@
           letter-spacing: 0em;
           text-align: left;
           white-space: nowrap;
-          width: 60%;
+          width: 200px;
+          display: flex;
+          align-items: flex-start;
+          flex-direction: column;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;

@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
-import { useContext, useState } from 'react';
-import { State, tg } from '../../context';
+import { useContext, useEffect, useState } from 'react';
+import { State, api, tg } from '../../context';
 import logo from '../../img/LinCor.svg';
 import vector from '../../img/header-vector.svg';
 import sVector from '../../img/profile-vector.svg';
@@ -12,13 +12,27 @@ import aloqa from '../../img/phone-call.svg';
 import chiqish from '../../img/log-out.svg';
 import hum from '../../img/hum.svg';
 import './header.scss';
+import { nameOneLetter } from '../../func/name';
 
 function Header() {
   const { token } = useContext(State);
   const [prof, setProf] = useState(false);
   const [mediaModal, setMediaModal] = useState(false);
   const [list_none, setListNone] = useState(false);
+  const [me, setMe] = useState({});
   const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch(api + '/me', {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((re) => re.json())
+      .then((data) => {
+        setMe(data.me);
+      });
+  }, [token]);
 
   return (
     <>
@@ -39,7 +53,9 @@ function Header() {
                 <Link to={'/about'}>Koreada o‘qish</Link>
               </li>
               <li>
-                <a target='_blank' rel="noreferrer" href={tg}>To’lov</a>
+                <a target="_blank" rel="noreferrer" href={tg}>
+                  To’lov
+                </a>
               </li>
               <li>
                 <Link to={'/aloqa'}>Aloqa</Link>
@@ -62,9 +78,18 @@ function Header() {
               </Button>
             ) : (
               <div onClick={() => setProf(true)} className="header-profile">
-                {/* <img className='header-img' src="" alt="" /> */}
-                <div className="header-img">A</div>
-                <div className="header-name">Akmal</div>
+                {me?.image ? (
+                  <img
+                    className="header-img"
+                    src={api + '/customer/file/' + me.image}
+                    alt=""
+                  />
+                ) : (
+                  <div className="header-img">
+                    {nameOneLetter(me?.first_name)}
+                  </div>
+                )}
+                <div className="header-name">{me?.first_name}</div>
                 <img src={sVector} alt="Select Vector" />
               </div>
             )}
@@ -73,9 +98,20 @@ function Header() {
             <>
               <div className="header-modal">
                 <div className="top">
-                  {/* <img className='header-modal-img' src="" alt="" /> */}
-                  <div className="header-modal-img">A</div>
-                  <p>Shahboz Aliyev</p>
+                  {me?.image ? (
+                    <img
+                      className="header-modal-img"
+                      src={api + '/customer/file/' + me.image}
+                      alt=""
+                    />
+                  ) : (
+                    <div className="header-modal-img">
+                      {nameOneLetter(me?.first_name)}
+                    </div>
+                  )}
+                  <p>
+                    <span>{me?.first_name}</span> <span>{me?.last_name}</span>
+                  </p>
                 </div>
                 <hr />
                 <ul>
@@ -86,7 +122,7 @@ function Header() {
                     </Link>
                   </li>
                   <li>
-                    <a target='_blank' rel="noreferrer" href={tg}>
+                    <a target="_blank" rel="noreferrer" href={tg}>
                       <img src={tolov} alt="Kurs" />
                       <p>To'lov</p>
                     </a>
@@ -123,9 +159,20 @@ function Header() {
             <div className="header-media-modal">
               {token ? (
                 <div className="top">
-                  {/* <img className='header-modal-img' src="" alt="" /> */}
-                  <div className="header-modal-img">A</div>
-                  <p>Shahboz Aliyev</p>
+                  {me?.image ? (
+                    <img
+                      className="header-modal-img"
+                      src={api + '/customer/file/' + me.image}
+                      alt=""
+                    />
+                  ) : (
+                    <div className="header-modal-img">
+                      {nameOneLetter(me?.first_name)}
+                    </div>
+                  )}
+                  <p>
+                    <span>{me?.first_name}</span> <span>{me?.last_name}</span>
+                  </p>
                 </div>
               ) : (
                 <Button
@@ -161,7 +208,9 @@ function Header() {
                       <Link to={'/about'}>Koreada o‘qish</Link>
                     </li>
                     <li>
-                      <a target='_blank' rel="noreferrer" href={tg}>To’lov</a>
+                      <a target="_blank" rel="noreferrer" href={tg}>
+                        To’lov
+                      </a>
                     </li>
                     <li>
                       <Link to={'/aloqa'}>Aloqa</Link>
@@ -180,7 +229,7 @@ function Header() {
                       </Link>
                     </li>
                     <li>
-                      <a target='_blank' rel="noreferrer" href={tg}>
+                      <a target="_blank" rel="noreferrer" href={tg}>
                         <img src={tolov} alt="Kurs" />
                         <p>To'lov</p>
                       </a>

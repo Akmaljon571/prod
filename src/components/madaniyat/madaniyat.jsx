@@ -8,7 +8,7 @@ import './madaniyat.scss';
 import { useNavigate } from 'react-router-dom';
 
 function Madaniyat() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <div className="madaniyat">

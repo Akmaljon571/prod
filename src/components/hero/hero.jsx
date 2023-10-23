@@ -16,8 +16,14 @@ function Hero() {
         <h1>
           Online til o‘rganing Koreada <span>O’qish</span> Kutmoqda
         </h1>
-        <Button onClick={() => navigate('/courses')} variant="text">birinchi dars</Button>
-        <Button onClick={() => navigate('/courses')} className="img" variant="contained">
+        <Button onClick={() => navigate('/courses')} variant="text">
+          birinchi dars
+        </Button>
+        <Button
+          onClick={() => navigate('/courses')}
+          className="img"
+          variant="contained"
+        >
           <img src={player} alt="Video player" />
         </Button>
       </div>

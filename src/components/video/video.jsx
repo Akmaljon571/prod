@@ -55,7 +55,9 @@ function Video() {
               <p>{summa(course?.price || 0)} so'm</p>
               <small>6 oy uchun</small>{' '}
             </div>
-            <a target='_blank' rel="noreferrer" href={tg}>Sotib olish</a>
+            <a target="_blank" rel="noreferrer" href={tg}>
+              Sotib olish
+            </a>
           </div>
         )}
       </div>
