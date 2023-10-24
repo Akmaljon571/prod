@@ -13,6 +13,7 @@ import chiqish from '../../img/log-out.svg';
 import hum from '../../img/hum.svg';
 import './header.scss';
 import { nameOneLetter } from '../../func/name';
+import { message } from 'antd';
 
 function Header() {
   const { token } = useContext(State);
@@ -23,6 +24,7 @@ function Header() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    message.destroy();
     if (token) {
       fetch(api + '/me', {
         headers: {
@@ -49,10 +51,10 @@ function Header() {
                 <Link to={'/courses'}>Kurslar</Link>
               </li>
               <li>
-                <Link to={'/'}>Topik</Link>
+                <Link to={'/about/madaniyat'}>Madaniyat</Link>
               </li>
               <li>
-                <Link to={'/about'}>Koreada o‘qish</Link>
+                <Link to={'/about/oqish'}>Koreada o‘qish</Link>
               </li>
               <li>
                 <a target="_blank" rel="noreferrer" href={tg}>
@@ -204,10 +206,10 @@ function Header() {
                 {list_none ? null : (
                   <>
                     <li>
-                      <Link to={'/'}>Topik</Link>
+                      <Link to={'/about/madaniyat'}>Madaniyat</Link>
                     </li>
                     <li>
-                      <Link to={'/about'}>Koreada o‘qish</Link>
+                      <Link to={'/about/oqish'}>Koreada o‘qish</Link>
                     </li>
                     <li>
                       <a target="_blank" rel="noreferrer" href={tg}>

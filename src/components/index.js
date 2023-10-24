@@ -24,6 +24,7 @@ import Aloqa from './aloqa/aloqa';
 import Courses from './courses/courses';
 import Profile from './profile/profile';
 import Setting from './setting/setting';
+import About from './about/about';
 
 export {
   Header,
@@ -52,4 +53,5 @@ export {
   Courses,
   Profile,
   Setting,
+  About,
 };
