@@ -1,15 +1,20 @@
 user panel {
     take setting
+    2 ta til
+    madaniyat
+    koreada oqish
+    koreada ishlash
+    footer Link
+    yangiliklar
+    sertifikat
+    test
     media max > 500
+    payment
 }
 
 admin panel {
-    statistikalar
-    reyting
-    take
-    notFound {
-      <Cascader.Panel />
-    }
+    test
+    yangiliklar
 }
 
 finish user panel {
@@ -26,10 +31,11 @@ finish admin panel {
     workbook
     course
     Login
+    take
+    dashboard
 }
 
 maslahat {
     teacher btn qayerga
     xabar yuborish qatga
-    admin login tekshiruv
 }

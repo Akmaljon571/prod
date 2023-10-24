@@ -20,7 +20,7 @@ function ProfileList() {
     })
       .then((re) => re.json())
       .then((data) => setCourse(data.courses));
-    fetch(api + '/admin/course', {
+    fetch(api + '/customer/course', {
       headers: {
         Authorization: `Bearer ${token}`,
       },

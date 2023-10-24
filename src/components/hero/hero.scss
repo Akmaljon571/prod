@@ -23,12 +23,25 @@
       text-transform: capitalize;
       margin: 0;
 
-      span {
+      p {
         font-size: 45px;
         background-color: #fff;
         color: #711df9;
         padding: 4px 20px;
         border-radius: 40px;
+        display: inline;
+
+        span {
+          transition: all 1s;
+        }
+      }
+
+      .top {
+        margin-top: -100px;
+        width: 0;
+        height: 0;
+        padding: 0;
+        font-size: 0;
       }
     }
 

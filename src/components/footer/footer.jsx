@@ -40,21 +40,25 @@ function Footer() {
           <h4>Bog’lanish</h4>
           <ul>
             <li>
-              <a href="tel:+998990009901">
+              <a className='icon-fath' href="tel:+998990009901">
                 <img src={tell} alt="Tel" />
                 <span>+99899 000-99-01</span>
-                <img style={{ marginLeft: '12px' }} src={icon} alt="" />
+                <img className='icon' style={{ marginLeft: '12px' }} src={icon} alt="" />
               </a>
             </li>
             <li>
-              <a href="https://mail.google.com/mail/u/0/#inbox">
+              <a className='icon-fath' href="https://mail.google.com/mail/u/0/#inbox">
                 <img src={mail} alt="Email" />
                 <span>E-mail: examplry@gmail.com</span>
+                <img className='icon' style={{ marginLeft: '12px' }} src={icon} alt="" />
               </a>
             </li>
             <li>
-              <img src={location} alt="location" />
-              <span>Afrosiyob ko’chasi 12-A</span>
+              <a className='icon-fath' href="/">
+                <img src={location} alt="location" />
+                <span>Afrosiyob ko’chasi 12-A</span>
+                <img className='icon' style={{ marginLeft: '12px' }} src={icon} alt="" />
+              </a>
             </li>
           </ul>
         </div>
