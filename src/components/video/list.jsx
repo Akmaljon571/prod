@@ -4,9 +4,10 @@ import PauseIcon from '@mui/icons-material/Pause';
 import { message } from 'antd';
 import { State, api } from '../../context';
 import { useContext } from 'react';
+import { videoLang } from './video.lang';
 
 function List({ videos, active, find, setFindVideo, course }) {
-  const { token } = useContext(State);
+  const { token, l } = useContext(State);
 
   const findVideo = (id) => {
     message.loading("So'rov jo'natildi");
@@ -29,8 +30,10 @@ function List({ videos, active, find, setFindVideo, course }) {
   return (
     <div className="video_list">
       <div className="video_list-top">
-        <p>Barcha video darsliklar</p>
-        <span>{videos?.length} ta</span>
+        <p>{videoLang[l].all}</p>
+        <span>
+          {videos?.length} {videoLang[l].ta}
+        </span>
       </div>
       <ul className="list">
         {videos?.length
@@ -62,7 +65,9 @@ function List({ videos, active, find, setFindVideo, course }) {
                 </div>
                 <div className="item-right">
                   <span></span>
-                  <p>{e.sequence} Dars</p>
+                  <p>
+                    {e.sequence} {videoLang[l].dars}
+                  </p>
                 </div>
               </li>
             ))

@@ -6,10 +6,11 @@ import { useNavigate } from 'react-router-dom';
 import { src } from '../../func/src';
 import summa from '../../func/summa';
 import './courses.scss';
+import { coursesLang } from './courses.lang';
 
 function Courses() {
   const [courses, setCourses] = useState([]);
-  const { token } = useContext(State);
+  const { token, l } = useContext(State);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -25,9 +26,8 @@ function Courses() {
 
   return (
     <div className="courses">
-      <h2>Kurslar</h2>
-      <p>Bu darsliklari sizning yuqori daraja olishingizga yordam beradi</p>
-
+      <h2>{coursesLang[l].title}</h2>
+      <p>{coursesLang[l].text}</p>
       <ul>
         {courses?.length
           ? courses.map((e) => (
@@ -35,17 +35,19 @@ function Courses() {
                 <img src={src(token, e?.image)} alt="Loading" />
                 <div className="bottom">
                   <h3>{e.title}</h3>
-                  <p>
-                    {e.description}u darsliklari sizning yuqori daraja
-                    olishingizga yordam beradi
-                  </p>
-                  <span>{e.video_count} Video + Workbook</span>
-                  <div>{summa(e.price)}so'm</div>
+                  <p>{e.description}</p>
+                  <span>
+                    {e.video_count} {coursesLang[l].vd}
+                  </span>
+                  <div>
+                    {summa(e.price)}
+                    {coursesLang[l].som}
+                  </div>
                   <Button
                     onClick={() => navigate(`/courses/${e._id}`)}
                     variant="contained"
                   >
-                    {e?.take ? "Ko'rish" : 'Sotib oling'}
+                    {e?.take ? coursesLang[l].korish : coursesLang[l].ol}
                   </Button>
                 </div>
               </li>

@@ -7,10 +7,11 @@ import './video.scss';
 import Description from './description';
 import List from './list';
 import Workbook from './workbook';
+import { videoLang } from './video.lang';
 
 function Video() {
   const { id } = useParams();
-  const { token } = useContext(State);
+  const { token, l } = useContext(State);
   const [course, setCourse] = useState({});
   const [videos, setVideos] = useState([]);
   const [findVideo, setFindVideo] = useState({});
@@ -44,19 +45,27 @@ function Video() {
 
   return (
     <div className="dars">
-      <VideoPlayer title={course?.title} videoSrc={findVideo?.file_id} />
+      <VideoPlayer
+        seq={findVideo.sequence}
+        title={course?.title}
+        videoSrc={findVideo?.file_id}
+      />
       <div className="top">
         <p className="text">{course?.description}</p>
         {course?.take ? null : (
           <div className="buy">
             <h2>{course?.title}</h2>
             <div>
-              <span>{course?.videos?.length} Video + Workbook</span>
-              <p>{summa(course?.price || 0)} so'm</p>
-              <small>6 oy uchun</small>{' '}
+              <span>
+                {course?.videos?.length} {videoLang[l].vd}
+              </span>
+              <p>
+                {summa(course?.price || 0)} {videoLang[l].som}
+              </p>
+              <small>{videoLang[l].muddat}</small>{' '}
             </div>
             <a target="_blank" rel="noreferrer" href={tg}>
-              Sotib olish
+              {videoLang[l].ol}
             </a>
           </div>
         )}
@@ -71,7 +80,7 @@ function Video() {
           find={findVideo?._id}
         />
       </div>
-      <Workbook course={course} />
+      <Workbook take={course?.take} course={course} />
     </div>
   );
 }

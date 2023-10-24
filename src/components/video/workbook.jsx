@@ -3,9 +3,10 @@ import download from '../../img/workbook_download.svg';
 import { src } from '../../func/src';
 import { useContext, useEffect, useState } from 'react';
 import { State, api } from '../../context';
+import { videoLang } from './video.lang';
 
-function Workbook({ course }) {
-  const { token } = useContext(State);
+function Workbook({ course, take }) {
+  const { token, l } = useContext(State);
   const [workbook, setWorkbook] = useState({});
 
   useEffect(() => {
@@ -22,15 +23,20 @@ function Workbook({ course }) {
 
   return (
     <div className="video_workbook">
-      <h3>Workbook</h3>
-      <p>Workbook mashqlar bajarish uchun yuklab oling</p>
+      <h3>{videoLang[l].work}</h3>
+      <p>{videoLang[l].wtext}</p>
       <a
-        href={workbook?.length ? src(token, workbook[0].file_id) : ''}
+        href={workbook?.length && take ? src(token, workbook[0].file_id) : ''}
         target="_blank"
         rel="noreferrer"
         className="btns"
       >
-        <Button variant="contained">Yuklab olish</Button>
+        <Button
+          style={take ? { backgroundColor: 'gray', cursor: 'no-drop' } : {}}
+          variant="contained"
+        >
+          Yuklab olish
+        </Button>
         <img src={download} alt="Download" />
       </a>
     </div>

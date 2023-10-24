@@ -4,10 +4,21 @@ import tell from '../../img/footer-tell.svg';
 import mail from '../../img/footer-mail.svg';
 import location from '../../img/footer-location.svg';
 import icon from '../../img/footer-icon.svg';
+import { State, api, tg } from '../../context';
+import { useContext, useEffect, useState } from 'react';
 import './footer.scss';
-import { tg } from '../../context';
+import { footerLang } from './footer.lang';
 
 function Footer() {
+  const { l } = useContext(State);
+  const [list, setList] = useState([]);
+
+  useEffect(() => {
+    fetch(api + '/public/course')
+      .then((re) => re.json())
+      .then((data) => setList(data.courses));
+  }, []);
+
   return (
     <footer style={{ marginTop: '100px' }} className="footer">
       <div className="top">
@@ -15,29 +26,30 @@ function Footer() {
           <Link to={'/'}>
             <img src={logo} alt="Company Logo" />
           </Link>
-          <p>Barcha huquqlar himoyalangan </p>
-          <span>2023-yil Oktabr</span>
+          <p>{footerLang[l].text}</p>
+          <span>{footerLang[l].sana}</span>
         </div>
         <div className="two">
-          <h4>Kurslar</h4>
+          <h4>{footerLang[l].kurs}</h4>
           <ul>
-            <li>Boshlang‘ich tushuncha</li>
-            <li>Kores til asoslari</li>
-            <li>Muloqotni rivijlantirish</li>
-            <li>yuqoriroq daraja</li>
-            <li>yuqori daraja</li>
+            {list.length
+              ? list.map((e) => <li key={e._id}>{e.title}</li>)
+              : null}
           </ul>
         </div>
         <div className="three">
-          <h4>Imtiyozlar</h4>
+          <h4>{footerLang[l].maslahat}</h4>
           <ul>
-            <li>O’qish uchun</li>
-            <li>Ishlash uchun</li>
-            <li>Grandlar</li>
+            <li>
+              <Link to={'/about/madaniyat'}>{footerLang[l].t1}</Link>
+            </li>
+            <li>
+              <Link to={'/about/oqish'}>{footerLang[l].t2}</Link>
+            </li>
           </ul>
         </div>
         <div className="four">
-          <h4>Bog’lanish</h4>
+          <h4>{footerLang[l].aloqa}</h4>
           <ul>
             <li>
               <a className="icon-fath" href="tel:+998990009901">

@@ -2,6 +2,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
 import { useContext, useEffect, useState } from 'react';
 import { State, api, tg } from '../../context';
+import { nameOneLetter } from '../../func/name';
+import { message } from 'antd';
 import logo from '../../img/LinCor.svg';
 import vector from '../../img/header-vector.svg';
 import sVector from '../../img/profile-vector.svg';
@@ -12,8 +14,7 @@ import aloqa from '../../img/phone-call.svg';
 import chiqish from '../../img/log-out.svg';
 import hum from '../../img/hum.svg';
 import './header.scss';
-import { nameOneLetter } from '../../func/name';
-import { message } from 'antd';
+import { hLang } from './header.lang';
 
 function Header() {
   const { token } = useContext(State);
@@ -22,6 +23,7 @@ function Header() {
   const [list_none, setListNone] = useState(false);
   const [me, setMe] = useState({});
   const navigate = useNavigate();
+  const { l, setLang } = useContext(State);
 
   useEffect(() => {
     message.destroy();
@@ -48,28 +50,28 @@ function Header() {
             </Link>
             <ul>
               <li>
-                <Link to={'/courses'}>Kurslar</Link>
+                <Link to={'/courses'}>{hLang[l].kurs}</Link>
               </li>
               <li>
-                <Link to={'/about/madaniyat'}>Madaniyat</Link>
+                <Link to={'/about/madaniyat'}>{hLang[l].madaniyat}</Link>
               </li>
               <li>
-                <Link to={'/about/oqish'}>Koreada o‘qish</Link>
+                <Link to={'/about/oqish'}>{hLang[l].oqish}</Link>
               </li>
               <li>
                 <a target="_blank" rel="noreferrer" href={tg}>
-                  To’lov
+                  {hLang[l].tolov}
                 </a>
               </li>
               <li>
-                <Link to={'/aloqa'}>Aloqa</Link>
+                <Link to={'/aloqa'}>{hLang[l].aloqa}</Link>
               </li>
             </ul>
           </nav>
           <div style={{ width: '30%' }} className="nav header-select">
-            <select>
-              <option value="uz">Uz</option>
-              <option value="uz">Uz</option>
+            <select onChange={(e) => setLang(e.target.value)}>
+              <option value="uz">UZB</option>
+              <option value="kr">KOR</option>
             </select>
             {!token ? (
               <Button
@@ -78,7 +80,7 @@ function Header() {
                 className="btn"
                 onClick={() => navigate('/login')}
               >
-                Kirish
+                {hLang[l].kirish}
               </Button>
             ) : (
               <div onClick={() => setProf(true)} className="header-profile">
@@ -122,31 +124,31 @@ function Header() {
                   <li>
                     <Link to={'/profile'}>
                       <img src={book} alt="Kurs" />
-                      <p>Mening Kurslarim</p>
+                      <p>{hLang[l].kurslarim}</p>
                     </Link>
                   </li>
                   <li>
                     <a target="_blank" rel="noreferrer" href={tg}>
                       <img src={tolov} alt="Kurs" />
-                      <p>To'lov</p>
+                      <p>{hLang[l].tolov}</p>
                     </a>
                   </li>
                   <li>
                     <Link to={'/setting'}>
                       <img src={profil} alt="Kurs" />
-                      <p>Profilim</p>
+                      <p>{hLang[l].profile}</p>
                     </Link>
                   </li>
                   <li>
                     <Link to={'/aloqa'}>
                       <img src={aloqa} alt="Kurs" />
-                      <p>Aloqa</p>
+                      <p>{hLang[l].aloqa}</p>
                     </Link>
                   </li>
                   <li>
                     <a onClick={() => localStorage.clear()} href={'/'}>
                       <img src={chiqish} alt="Kurs" />
-                      <p>Chiqish</p>
+                      <p>{hLang[l].chiqish}</p>
                     </a>
                   </li>
                 </ul>
@@ -184,7 +186,7 @@ function Header() {
                   className="media_token-kirish"
                   variant="outlined"
                 >
-                  Kirish
+                  {hLang[l].kirish}
                   <img src={vector} alt="Vector" />
                 </Button>
               )}
@@ -201,23 +203,23 @@ function Header() {
               <hr />
               <ul className="header-media-modal_navlink">
                 <li>
-                  <Link to={'/courses'}>Kurslar</Link>
+                  <Link to={'/courses'}>{hLang[l].kurs}</Link>
                 </li>
                 {list_none ? null : (
                   <>
                     <li>
-                      <Link to={'/about/madaniyat'}>Madaniyat</Link>
+                      <Link to={'/about/madaniyat'}>{hLang[l].madaniyat}</Link>
                     </li>
                     <li>
-                      <Link to={'/about/oqish'}>Koreada o‘qish</Link>
+                      <Link to={'/about/oqish'}>{hLang[l].oqish}</Link>
                     </li>
                     <li>
                       <a target="_blank" rel="noreferrer" href={tg}>
-                        To’lov
+                        {hLang[l].tolov}
                       </a>
                     </li>
                     <li>
-                      <Link to={'/aloqa'}>Aloqa</Link>
+                      <Link to={'/aloqa'}>{hLang[l].aloqa}</Link>
                     </li>
                   </>
                 )}
@@ -229,31 +231,31 @@ function Header() {
                     <li>
                       <Link to={'/profile'}>
                         <img src={book} alt="Kurs" />
-                        <p>Mening Kurslarim</p>
+                        <p>{hLang[l].kurslarim}</p>
                       </Link>
                     </li>
                     <li>
                       <a target="_blank" rel="noreferrer" href={tg}>
                         <img src={tolov} alt="Kurs" />
-                        <p>To'lov</p>
+                        <p>{hLang[l].tolov}</p>
                       </a>
                     </li>
                     <li>
                       <Link to={'/setting'}>
                         <img src={profil} alt="Kurs" />
-                        <p>Profilim</p>
+                        <p>{hLang[l].profile}</p>
                       </Link>
                     </li>
                     <li>
                       <Link to={'/aloqa'}>
                         <img src={aloqa} alt="Kurs" />
-                        <p>Aloqa</p>
+                        <p>{hLang[l].aloqa}</p>
                       </Link>
                     </li>
                     <li className="chiqish">
                       <a onClick={() => localStorage.clear()} href={'/'}>
                         <img src={chiqish} alt="Kurs" />
-                        <p>Chiqish</p>
+                        <p>{hLang[l].chiqish}</p>
                       </a>
                     </li>
                   </ul>

@@ -8,6 +8,8 @@ export const StatePriveder = ({ children }) => {
   const [token, setToken] = useState(
     JSON.parse(localStorage.getItem('access_token')) || '',
   );
-  const data = { token, setToken };
+  const [l, setLang] = useState('uz');
+
+  const data = { token, setToken, l, setLang };
   return <State.Provider value={data}>{children}</State.Provider>;
 };

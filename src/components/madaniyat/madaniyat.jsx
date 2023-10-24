@@ -4,17 +4,22 @@ import next from '../../img/Vector 5.svg';
 import tokyo1 from '../../img/tokyo1.png';
 import tokyo2 from '../../img/tokyo2.png';
 import tokyo3 from '../../img/tokyo3.png';
-import './madaniyat.scss';
 import { useNavigate } from 'react-router-dom';
+import './madaniyat.scss';
+import { useContext } from 'react';
+import { State } from '../../context';
+import { madaniyatLang } from './madaniyat.lang';
 
 function Madaniyat() {
   const navigate = useNavigate();
+  const { l } = useContext(State);
 
   return (
     <div className="madaniyat">
       <div className="text">
         <h2>
-          Boshqalardan ajralib turuvchi <span>Madaniyatli</span> Korea bugun
+          {madaniyatLang[l].t1}
+          <span>{madaniyatLang[l].t2}</span> {madaniyatLang[l].t3}
         </h2>
         <div className="btns">
           <div className="left">

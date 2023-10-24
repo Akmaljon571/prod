@@ -6,15 +6,18 @@ import img1 from '../../img/hero1.png';
 import img2 from '../../img/hero2.png';
 import img3 from '../../img/hero3.png';
 import { useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { heroLang } from './hero.lang';
+import { State } from '../../context';
 
 function Hero() {
   const navigate = useNavigate();
   const [top, setTop] = useState(1);
+  const { l } = useContext(State);
 
   useEffect(() => {
     setTimeout(() => {
-      if (top === 4) {
+      if (top === 3) {
         setTop(1);
       } else {
         setTop(top + 1);
@@ -26,18 +29,17 @@ function Hero() {
     <div className="hero">
       <div className="left">
         <h1>
-          Online til o‘rganing Koreada
+          {heroLang[l].titleStart}
           <p>
-            <span className={top === 1 ? '' : 'top'}>O’qish</span>
-            <span className={top === 2 ? '' : 'top'}>Ishlash</span>
-            <span className={top === 3 ? '' : 'top'}>Yashash</span>
-            <span className={top === 4 ? '' : 'top'}>Uylanish</span>
+            <span className={top === 1 ? '' : 'top'}>{heroLang[l].span1}</span>
+            <span className={top === 2 ? '' : 'top'}>{heroLang[l].span2}</span>
+            <span className={top === 3 ? '' : 'top'}>{heroLang[l].span3}</span>
           </p>
           <br />
-          Kutmoqda
+          {heroLang[l].titleEnd}
         </h1>
         <Button onClick={() => navigate('/courses')} variant="text">
-          birinchi dars
+          {heroLang[l].btn}
         </Button>
         <Button
           onClick={() => navigate('/courses')}

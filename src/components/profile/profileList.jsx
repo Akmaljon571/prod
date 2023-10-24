@@ -4,12 +4,13 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
 import { src } from '../../func/src';
 import summa from '../../func/summa';
+import { profileLang } from './profile.lang';
 
 function ProfileList() {
   const [nav, setNav] = useState(1);
   const [course, setCourse] = useState([]);
   const [oldCourse, setOldCourse] = useState([]);
-  const { token } = useContext(State);
+  const { token, l } = useContext(State);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -33,10 +34,13 @@ function ProfileList() {
     <div className="profile-list">
       <div className="nav">
         <div onClick={() => setNav(1)} className={nav === 1 ? 'active' : ''}>
-          Sotib olingan kurslar
+          {profileLang[l].active}
         </div>
         <div onClick={() => setNav(2)} className={nav === 2 ? 'active' : ''}>
-          Avval xarid qilingan
+          {profileLang[l].old}
+        </div>
+        <div onClick={() => setNav(3)} className={nav === 3 ? 'active' : ''}>
+          {profileLang[l].s}
         </div>
       </div>
       {nav === 1 ? (
@@ -47,24 +51,26 @@ function ProfileList() {
                   <img src={src(token, e?.image)} alt="Loading" />
                   <div className="bottom">
                     <h3>{e.title}</h3>
-                    <p>
-                      {e.description}u darsliklari sizning yuqori daraja
-                      olishingizga yordam beradi
-                    </p>
-                    <span>{e.video_count} Video + Workbook</span>
-                    <div>{summa(e.price)}so'm</div>
+                    <p>{e.description}</p>
+                    <span>
+                      {e.video_count} {profileLang[l].vd}
+                    </span>
+                    <div>
+                      {summa(e.price)}
+                      {profileLang[l].som}
+                    </div>
                     <Button
                       onClick={() => navigate(`/courses/${e._id}`)}
                       variant="contained"
                     >
-                      Davom etish
+                      {profileLang[l].davom}
                     </Button>
                   </div>
                 </li>
               ))
             : null}
         </ul>
-      ) : (
+      ) : nav === 2 ? (
         <ul>
           {oldCourse?.length
             ? oldCourse.map((e, i) => (
@@ -72,45 +78,27 @@ function ProfileList() {
                   <img src={src(token, e?.image)} alt="Loading" />
                   <div className="bottom">
                     <h3>{e.title}</h3>
-                    <p>
-                      {e.description}u darsliklari sizning yuqori daraja
-                      olishingizga yordam beradi
-                    </p>
-                    <span>{e.video_count} Video + Workbook</span>
-                    <div>{summa(e.price)}so'm</div>
+                    <p>{e.description}</p>
+                    <span>
+                      {e.video_count} {profileLang[l].vd}
+                    </span>
+                    <div>
+                      {summa(e.price)}
+                      {profileLang[l].som}
+                    </div>
                     <Button
                       onClick={() => navigate(`/courses/${e._id}`)}
                       variant="contained"
                     >
-                      Davom etish
-                    </Button>
-                  </div>
-                </li>
-              ))
-            : null}
-          {oldCourse?.length
-            ? oldCourse.map((e, i) => (
-                <li key={i}>
-                  <img src={src(token, e?.image)} alt="Loading" />
-                  <div className="bottom">
-                    <h3>{e.title}</h3>
-                    <p>
-                      {e.description}u darsliklari sizning yuqori daraja
-                      olishingizga yordam beradi
-                    </p>
-                    <span>{e.video_count} Video + Workbook</span>
-                    <div>{summa(e.price)}so'm</div>
-                    <Button
-                      onClick={() => navigate(`/courses/${e._id}`)}
-                      variant="contained"
-                    >
-                      Davom etish
+                      {profileLang[l].davom}
                     </Button>
                   </div>
                 </li>
               ))
             : null}
         </ul>
+      ) : (
+        <>Serfitikat</>
       )}
     </div>
   );

@@ -5,10 +5,11 @@ import { phoneFN } from '../../func/phone';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { src } from '../../func/src';
+import { profileLang } from './profile.lang';
 
 function ProfileTop() {
   const [user, setUser] = useState({});
-  const { token } = useContext(State);
+  const { token, l } = useContext(State);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -41,7 +42,7 @@ function ProfileTop() {
           </div>
         </div>
         <Button onClick={() => navigate('/setting')} variant="contained">
-          Profil sozlamasi
+          {profileLang[l].set}
         </Button>
       </div>
     </div>

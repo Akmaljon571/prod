@@ -1,16 +1,21 @@
 import PhoneIcon from '@mui/icons-material/Phone';
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import { useContext } from 'react';
+import { State } from '../../context';
 import './aloqa.scss';
+import { aloqaLang } from './aloqa.lang';
 
 function Aloqa() {
+  const { l } = useContext(State);
+
   return (
     <div className="aloqa">
-      <h2>Aloqa</h2>
-      <p>Bizga murojaat qilmoqchimisiz</p>
+      <h2>{aloqaLang[l].title}</h2>
+      <p>{aloqaLang[l].text}</p>
       <ul>
         <li className="li active">
-          <h4>Aloqa ma’lumoti</h4>
+          <h4>{aloqaLang[l].t1}</h4>
           <div className="aloqa-div">
             <PhoneIcon />
             <div>
@@ -20,14 +25,14 @@ function Aloqa() {
           </div>
         </li>
         <li className="li">
-          <h4>Manzil</h4>
+          <h4>{aloqaLang[l].t2}</h4>
           <div className="aloqa-div">
             <FmdGoodIcon />
             <p>2260 Lady Bug Drive, New York, NY 10011</p>
           </div>
         </li>
         <li className="li">
-          <h4>Manzil</h4>
+          <h4>{aloqaLang[l].t3}</h4>
           <div className="aloqa-div">
             <AccessTimeIcon />
             <p>

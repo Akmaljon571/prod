@@ -2,10 +2,11 @@ import { useContext, useRef } from 'react';
 import poster from '../../img/photo_2023-10-17_02-48-14.jpg';
 import { State } from '../../context';
 import { source } from '../../func/source';
+import { videoLang } from './video.lang';
 
-function VideoPlayer({ title, videoSrc }) {
+function VideoPlayer({ title, videoSrc, seq }) {
   const videoRef = useRef(null);
-  const { token } = useContext(State);
+  const { token, l } = useContext(State);
 
   return (
     <div className="video_player">
@@ -21,8 +22,8 @@ function VideoPlayer({ title, videoSrc }) {
           src={source(token, videoSrc)}
         ></video>
         <p className="video-count">
-          <b>01</b>
-          <span>Dars</span>
+          <b>{seq}</b>
+          <span>{videoLang[l].dars}</span>
         </p>
       </div>
     </div>
