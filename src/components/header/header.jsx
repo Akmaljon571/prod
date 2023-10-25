@@ -13,8 +13,8 @@ import profil from '../../img/user.svg';
 import aloqa from '../../img/phone-call.svg';
 import chiqish from '../../img/log-out.svg';
 import hum from '../../img/hum.svg';
-import './header.scss';
 import { hLang } from './header.lang';
+import './header.scss';
 
 function Header() {
   const { token } = useContext(State);

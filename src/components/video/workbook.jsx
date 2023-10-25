@@ -32,7 +32,7 @@ function Workbook({ course, take }) {
         className="btns"
       >
         <Button
-          style={take ? { backgroundColor: 'gray', cursor: 'no-drop' } : {}}
+          style={!take ? { backgroundColor: 'gray', cursor: 'no-drop' } : {}}
           variant="contained"
         >
           Yuklab olish

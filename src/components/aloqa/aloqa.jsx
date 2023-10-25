@@ -3,8 +3,8 @@ import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import { useContext } from 'react';
 import { State } from '../../context';
-import './aloqa.scss';
 import { aloqaLang } from './aloqa.lang';
+import './aloqa.scss';
 
 function Aloqa() {
   const { l } = useContext(State);

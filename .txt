@@ -1,12 +1,12 @@
 user panel {
-    take setting
-    2 ta til (Auth and setting)
     yangiliklar
+    video
     test
     sertifikat
     about media
     media max > 500
     payment
+    profile (sertifikat)
 
     default uchun current_watch course_one
     course_one ichida test_id 
@@ -18,6 +18,7 @@ user panel {
 admin panel {
     test
     yangiliklar
+    2 language
 }
 
 finish user panel {
@@ -26,6 +27,7 @@ finish user panel {
     profile
     course page
     setting
+    2 language
 }
 
 finish admin panel {
