@@ -5,6 +5,7 @@ import { message } from 'antd';
 import { State, api } from '../../context';
 import logo from '../../img/LinCor.svg';
 import './auth.scss';
+import { authLang } from './auth.lang';
 
 function Registr() {
   const number = useRef();
@@ -12,7 +13,7 @@ function Registr() {
   const pass2 = useRef();
   const navigate = useNavigate();
   const [messageApi, contextHolder] = message.useMessage();
-  const { token } = useContext(State);
+  const { token, l } = useContext(State);
 
   useEffect(() => {
     if (token) {
@@ -99,24 +100,24 @@ function Registr() {
       <Link to={'/'}>
         <img src={logo} alt="Company Logo" />
       </Link>
-      <h2>Ro’yxatdan o’tish</h2>
+      <h2>{authLang[l].t10}</h2>
       <p>
-        Bizga qo’shiling! <Link to={'/login'}>Kirish</Link>
+        {authLang[l].biz} <Link to={'/login'}>{authLang[l].kirish}</Link>
       </p>
       <label>
-        <span>Telefon raqamingiz</span>
+        <span>{authLang[l].tel}</span>
         <input ref={number} onKeyDown={phone} type="text" />
       </label>
       <label>
-        <span>Yangi parol</span>
+        <span>{authLang[l].t11}</span>
         <input maxLength={8} ref={pass} type="password" />
       </label>
       <label>
-        <span>Yangi parolni takrorlang</span>
+        <span>{authLang[l].t12}</span>
         <input maxLength={8} ref={pass2} type="password" />
       </label>
       <Button onClick={click} className="kirish" variant="contained">
-        Tasdiqlash
+        {authLang[l].ok}
       </Button>
     </div>
   );

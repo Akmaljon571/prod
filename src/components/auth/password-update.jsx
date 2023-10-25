@@ -5,12 +5,13 @@ import { message } from 'antd';
 import { State, api } from '../../context';
 import logo from '../../img/LinCor.svg';
 import './auth.scss';
+import { authLang } from './auth.lang';
 
 function PasswordUpdate() {
   const json = JSON.parse(localStorage.getItem('password-phone-code'));
   const passRef = useRef();
   const passRef1 = useRef();
-  const { token } = useContext(State);
+  const { token, l } = useContext(State);
   const [messageApi, contextHolder] = message.useMessage();
   const navigate = useNavigate();
 
@@ -74,18 +75,18 @@ function PasswordUpdate() {
       <Link to={'/'}>
         <img src={logo} alt="Company Logo" />
       </Link>
-      <h2>Parolni tiklash</h2>
-      <p>Yangi parolni tiklang va doimgidek saytimizdan foydalaning</p>
+      <h2>{authLang[l].tikla}</h2>
+      <p>{authLang[l].t1}</p>
       <label>
-        <span>Yangi parol</span>
+        <span>{authLang[l].t2}</span>
         <input ref={passRef} maxLength={8} type="password" />
       </label>
       <label>
-        <span>Yangi parolni takrorlang</span>
+        <span>{authLang[l].t3}</span>
         <input ref={passRef1} maxLength={8} type="password" />
       </label>
       <Button onClick={click} className="kirish" variant="contained">
-        Tasdiqlash
+        {authLang[l].ok}
       </Button>
     </div>
   );

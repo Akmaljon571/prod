@@ -3,10 +3,11 @@ import { State, api } from '../../context';
 import { nameOneLetter } from '../../func/name';
 import { Button } from '@mui/material';
 import { message } from 'antd';
+import { settingLang } from './setting.lang';
 
 function Safe() {
   const [me, setMe] = useState({});
-  const { token } = useContext(State);
+  const { token, l } = useContext(State);
   const [image, setImage] = useState('');
   const name = useRef();
   const last = useRef();
@@ -119,8 +120,8 @@ function Safe() {
             />
           </label>
           <div>
-            <p className="text">Sizning sur’atingiz</p>
-            <span className="span">Rasmni o’zgartirish jpg yoki png</span>
+            <p className="text">{settingLang[l].imgS}</p>
+            <span className="span">{settingLang[l].imgT}</span>
           </div>
         </div>
         <div className="btns">
@@ -129,53 +130,51 @@ function Safe() {
             variant="outlined"
             className="del"
           >
-            O’chirish
+            {settingLang[l].del}
           </Button>
           <Button onClick={updateImage} variant="outlined" className="ok">
-            Tasdiqlash
+            {settingLang[l].ok}
           </Button>
         </div>
       </div>
       <div className="safe-bottom">
         <div>
-          <p className="text">Shaxsiy ma’lumotlar</p>
-          <span className="span">
-            Shaxsiy ma’lumotlaringizni o’zgartirishingiz mumkin.
-          </span>
+          <p className="text">{settingLang[l].secretS}</p>
+          <span className="span">{settingLang[l].secretT}</span>
         </div>
         <div className="inputFath">
           <label>
-            <span>Ism</span>
+            <span>{settingLang[l].p1}</span>
             <input
               ref={name}
               defaultValue={me?.first_name}
               type="text"
-              placeholder="Ism"
+              placeholder={settingLang[l].p1}
             />
           </label>
           <label>
-            <span>Familiya</span>
+            <span>{settingLang[l].p2}</span>
             <input
               ref={last}
               defaultValue={me?.last_name}
               type="text"
-              placeholder="Familiya"
+              placeholder={settingLang[l].p2}
             />
           </label>
         </div>
         <div className="inputFath">
           <label>
-            <span>E-Mail</span>
+            <span>{settingLang[l].p3}</span>
             <input
               ref={email}
               defaultValue={me?.email}
               type="text"
-              placeholder="E-Mail"
+              placeholder={settingLang[l].p3}
             />
           </label>
         </div>
         <Button onClick={updateData} variant="contained">
-          Tasdiqlash
+          {settingLang[l].ok}
         </Button>
       </div>
     </div>

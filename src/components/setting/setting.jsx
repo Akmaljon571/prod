@@ -6,10 +6,11 @@ import HttpsIcon from '@mui/icons-material/Https';
 import './setting.scss';
 import { State } from '../../context';
 import { useNavigate } from 'react-router-dom';
+import { settingLang } from './setting.lang';
 
 function Setting() {
   const [safe, setSafe] = useState(true);
-  const { token } = useContext(State);
+  const { token, l } = useContext(State);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,16 +21,16 @@ function Setting() {
 
   return (
     <div className="setting">
-      <h1>Profil sozlamalari</h1>
+      <h1>{settingLang[l].t1}</h1>
       <div className="setting-fath">
         <div className="left">
           <div onClick={() => setSafe(true)} className={safe ? 'active' : ''}>
             <SettingsIcon />
-            Profil sozlamalari
+            {settingLang[l].t1}
           </div>
           <div onClick={() => setSafe(false)} className={safe ? '' : 'active'}>
             <HttpsIcon />
-            Xavfsizlik
+            {settingLang[l].t2}
           </div>
         </div>
         {safe ? <Safe /> : <NoSafe />}

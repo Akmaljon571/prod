@@ -7,14 +7,16 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import logo from '../../img/LinCor.svg';
 import time from '../../img/Time.svg';
 import './auth.scss';
+import { authLang } from './auth.lang';
 
 function PasswordCode() {
   const phone = JSON.parse(localStorage.getItem('password-phone')) || '';
   const [messageApi, contextHolder] = message.useMessage();
   const navigate = useNavigate();
   const [vaqt, setVaqt] = useState('00:59');
-  const { setToken } = useContext(State);
+  const { setToken, l } = useContext(State);
   const codeRef = useRef();
+
   useEffect(() => {
     if (!phone) {
       navigate('/password');
@@ -141,10 +143,10 @@ function PasswordCode() {
       <Link to={'/'}>
         <img src={logo} alt="Company Logo" />
       </Link>
-      <h2>Tasdiqlash</h2>
-      <p>{phoneFN(phone)} ga yuborilgan maxfiy kodni kiriting.</p>
+      <h2>{authLang[l].ok}</h2>
+      <p>{phoneFN(phone)} {authLang[l].code}</p>
       <label>
-        <span>Kodni kiriting</span>
+        <span>{authLang[l].sendCode}</span>
         <input ref={codeRef} maxLength={4} onKeyDown={codeFilter} type="text" />
       </label>
       {vaqt?.split(':')[1] !== '00' ? (
@@ -157,7 +159,7 @@ function PasswordCode() {
           }}
           className="parol-update"
         >
-          Kodni qayta yuborish.
+          {authLang[l].resetCode}
           <img width={24} height={24} src={time} alt="" />
           {vaqt}
         </span>
@@ -167,11 +169,11 @@ function PasswordCode() {
           style={{ cursor: 'pointer' }}
           className="parol-update"
         >
-          Kodni qayta yuborish.
+          {authLang[l].resetCode}
         </span>
       )}
       <Button onClick={click} className="kirish" variant="contained">
-        Tasdiqlash
+        {authLang[l].ok}
       </Button>
     </div>
   );

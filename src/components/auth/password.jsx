@@ -1,8 +1,9 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
-import { useRef } from 'react';
+import { useContext, useRef } from 'react';
 import { message } from 'antd';
-import { api } from '../../context';
+import { State, api } from '../../context';
+import { authLang } from './auth.lang';
 import logo from '../../img/LinCor.svg';
 import './auth.scss';
 
@@ -10,6 +11,7 @@ function Password() {
   const number = useRef();
   const [messageApi, contextHolder] = message.useMessage();
   const navigate = useNavigate();
+  const { l } = useContext(State);
 
   const phone = (e) => {
     const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
@@ -91,16 +93,14 @@ function Password() {
       <Link to={'/'}>
         <img src={logo} alt="Company Logo" />
       </Link>
-      <h2>Parolni kitirish</h2>
-      <p>
-        Parolni unutgan bo’lsangiz telefon raqamingiz orqali tiklashingiz mumkun
-      </p>
+      <h2>{authLang[l].t4}</h2>
+      <p>{authLang[l].t5}</p>
       <label>
-        <span>Telefon raqamingiz</span>
+        <span>{authLang[l].tel}</span>
         <input ref={number} onKeyDown={phone} type="text" />
       </label>
       <Button onClick={click} className="kirish" variant="contained">
-        Kirish
+        {authLang[l].kirish}
       </Button>
     </div>
   );

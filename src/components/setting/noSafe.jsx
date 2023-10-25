@@ -2,6 +2,7 @@ import { Button } from '@mui/material';
 import { message } from 'antd';
 import { useContext, useRef, useState } from 'react';
 import { api, State } from '../../context';
+import { settingLang } from './setting.lang';
 
 function NoSafe() {
   const tellRef = useRef();
@@ -9,7 +10,7 @@ function NoSafe() {
   const newPass = useRef();
   const resetPass = useRef();
   const codeRef = useRef();
-  const { token } = useContext(State);
+  const { token, l } = useContext(State);
   const [number, setNumber] = useState(0);
   const [step, setStep] = useState(1);
 
@@ -141,37 +142,37 @@ function NoSafe() {
   return (
     <div className="no_safe">
       <div className="one">
-        <h4>Telefon raqamni o’zgartirish</h4>
-        <p>Hozirgi telefon raqamingiz +99899 000-00-00</p>
+        <h4>{settingLang[l].p4}</h4>
+        <p>{settingLang[l].p5}</p>
       </div>
       <div className="two">
         <label>
-          <h4>Yangi telefon raqamni kiritish</h4>
+          <h4>{settingLang[l].p6}</h4>
           <input ref={tellRef} onKeyDown={phone} type="text" />
         </label>
         <Button onClick={updatePhone} variant="contained">
-          Tasdiqlash
+          {settingLang[l].ok}
         </Button>
       </div>
       <div className="three">
         <div>
-          <h4>Parolni o’zgartirish</h4>
-          <span>Xavfsizlik tomonidan parolingizni yangilang.</span>
+          <h4>{settingLang[l].p7}</h4>
+          <span>{settingLang[l].p8}</span>
         </div>
         <label>
-          <span>Avvalgi parol</span>
+          <span>{settingLang[l].p9}</span>
           <input maxLength={8} ref={oldPass} type="text" />
         </label>
         <label>
-          <span>Yangi parolni kiritish</span>
+          <span>{settingLang[l].p10}</span>
           <input maxLength={8} ref={newPass} type="text" />
         </label>
         <label>
-          <span>Yangi parolni takrorlash</span>
+          <span>{settingLang[l].p11}</span>
           <input maxLength={8} ref={resetPass} type="text" />
         </label>
         <Button onClick={updatePassword} variant="contained">
-          Tasdiqlash
+          {settingLang[l].ok}
         </Button>
       </div>
       {number ? (
@@ -180,8 +181,8 @@ function NoSafe() {
           <div className="modal-card">
             {step === 1 ? (
               <>
-                <h5>Sms kodni kiriting</h5>
-                <p>+998{number} ushbu raqamga kod yuborildi</p>
+                <h5>{settingLang[l].p12}</h5>
+                <p>+998{number} {settingLang[l].p13}</p>
                 <input
                   ref={codeRef}
                   onKeyDown={codeFilter}
@@ -189,19 +190,19 @@ function NoSafe() {
                   type="text"
                 />
                 <Button onClick={sendCode} variant="contained">
-                  Tasdiqlash
+                  {settingLang[l].ok}
                 </Button>
               </>
             ) : (
               <>
-                <span>Sms kod muvaffaqiyatli tasdiqlandi</span>
+                <span>{settingLang[l].p14}</span>
                 <div
                   onClick={() => {
                     setNumber(0);
                     setStep(1);
                   }}
                 >
-                  Ok
+                  {settingLang[l].okey}
                 </div>
               </>
             )}

@@ -5,12 +5,13 @@ import { message } from 'antd';
 import { State, api } from '../../context';
 import logo from '../../img/LinCor.svg';
 import './auth.scss';
+import { authLang } from './auth.lang';
 
 function Login() {
   const number = useRef();
   const pass = useRef();
   const [messageApi, contextHolder] = message.useMessage();
-  const { setToken, token } = useContext(State);
+  const { setToken, token, l } = useContext(State);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -111,23 +112,23 @@ function Login() {
       <Link to={'/'}>
         <img src={logo} alt="Company Logo" />
       </Link>
-      <h2>Kirish</h2>
+      <h2>{authLang[l].kirish}</h2>
       <p>
-        Bizga qo’shiling! <Link to={'/registration'}>Ro’yxatdan o’tish</Link>
+        {authLang[l].biz} <Link to={'/registration'}>{authLang[l].registr}</Link>
       </p>
       <label>
-        <span>Telefon raqamingiz</span>
+        <span>{authLang[l].tel}</span>
         <input ref={number} onKeyDown={phone} type="text" />
       </label>
       <label>
-        <span>Password</span>
+        <span>{authLang[l].pas}</span>
         <input ref={pass} maxLength={8} type="password" />
       </label>
       <Link className="parol-update" to={'/password'}>
-        Parolni unutdingizmi?
+        {authLang[l].reset}
       </Link>
       <Button onClick={click} className="kirish" variant="contained">
-        Kirish
+        {authLang[l].kirish}
       </Button>
     </div>
   );

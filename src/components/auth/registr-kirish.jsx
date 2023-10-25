@@ -5,10 +5,11 @@ import { State, api } from '../../context';
 import { message } from 'antd';
 import logo from '../../img/LinCor.svg';
 import './auth.scss';
+import { authLang } from './auth.lang';
 
 function RegistrFinish() {
   const [img, setImg] = useState('');
-  const { token } = useContext(State);
+  const { token, l } = useContext(State);
   const [load, setLoad] = useState(false);
   const [imgString, setImgString] = useState('');
   const nameRef = useRef();
@@ -88,16 +89,16 @@ function RegistrFinish() {
       <Link to={'/'}>
         <img src={logo} alt="Company Logo" />
       </Link>
-      <h2>Profil</h2>
-      <p>Ma’lumotingizni kiriting.</p>
+      <h2>{authLang[l].t6}</h2>
+      <p>{authLang[l].t7}</p>
       <div>
         <img
           src={img || 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'}
           alt=""
         />
-        <p>JPG yoki PNG formatdagi sur’atingizni joylang.</p>
+        <p>{authLang[l].t8}</p>
         <label htmlFor="a">
-          <span>{load ? 'loading...' : 'Rasm joylash'}</span>
+          <span>{load ? 'loading...' : authLang[l].t9}</span>
           <input
             onChange={sendImage}
             id="a"
@@ -107,15 +108,15 @@ function RegistrFinish() {
         </label>
       </div>
       <label>
-        <span>Ismingiz</span>
+        <span>{authLang[l].ism}</span>
         <input ref={nameRef} type="text" />
       </label>
       <label>
-        <span>Familiyangiz</span>
+        <span>{authLang[l].last}</span>
         <input ref={lastRef} type="text" />
       </label>
       <Button onClick={click} className="kirish" variant="contained">
-        Kirish
+      {authLang[l].ok}
       </Button>
     </div>
   );
