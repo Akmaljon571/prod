@@ -114,7 +114,8 @@ function Login() {
       </Link>
       <h2>{authLang[l].kirish}</h2>
       <p>
-        {authLang[l].biz} <Link to={'/registration'}>{authLang[l].registr}</Link>
+        {authLang[l].biz}{' '}
+        <Link to={'/registration'}>{authLang[l].registr}</Link>
       </p>
       <label>
         <span>{authLang[l].tel}</span>

@@ -138,7 +138,9 @@ function RegistrCode() {
         <img src={logo} alt="Company Logo" />
       </Link>
       <h2>{authLang[l].ok}</h2>
-      <p>{phoneFN(phone)} {authLang[l].code}</p>
+      <p>
+        {phoneFN(phone)} {authLang[l].code}
+      </p>
       <label>
         <span>{authLang[l].sendCode}</span>
         <input ref={codeRef} maxLength={4} onKeyDown={codeFilter} type="text" />
@@ -167,7 +169,7 @@ function RegistrCode() {
         </span>
       )}
       <Button onClick={click} className="kirish" variant="contained">
-      {authLang[l].ok}
+        {authLang[l].ok}
       </Button>
     </div>
   );

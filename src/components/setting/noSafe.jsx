@@ -182,7 +182,9 @@ function NoSafe() {
             {step === 1 ? (
               <>
                 <h5>{settingLang[l].p12}</h5>
-                <p>+998{number} {settingLang[l].p13}</p>
+                <p>
+                  +998{number} {settingLang[l].p13}
+                </p>
                 <input
                   ref={codeRef}
                   onKeyDown={codeFilter}

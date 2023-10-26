@@ -5,6 +5,8 @@ import { Button } from '@mui/material';
 import { src } from '../../func/src';
 import summa from '../../func/summa';
 import { profileLang } from './profile.lang';
+import { residual } from '../../func/residual';
+import { Cascader } from 'antd';
 
 function ProfileList() {
   const [nav, setNav] = useState(1);
@@ -21,7 +23,7 @@ function ProfileList() {
     })
       .then((re) => re.json())
       .then((data) => setCourse(data.courses));
-    fetch(api + '/customer/course', {
+    fetch(api + '/customer/cours', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -55,6 +57,9 @@ function ProfileList() {
                     <span>
                       {e.video_count} {profileLang[l].vd}
                     </span>
+                    <br />
+                    <br />
+                    <span>Qolgan kun: {residual(e.take.expire_at)} Kun</span>
                     <div>
                       {summa(e.price)}
                       {profileLang[l].som}
@@ -68,7 +73,10 @@ function ProfileList() {
                   </div>
                 </li>
               ))
-            : null}
+            : <Cascader.Panel
+                style={{ marginTop: '0px' }}
+                className="not_fount"
+              />}
         </ul>
       ) : nav === 2 ? (
         <ul>
@@ -95,10 +103,41 @@ function ProfileList() {
                   </div>
                 </li>
               ))
-            : null}
+            : <Cascader.Panel
+                style={{ marginTop: '0px' }}
+                className="not_fount"
+              />}
         </ul>
       ) : (
-        <>Serfitikat</>
+        <ul>
+          {oldCourse?.length
+            ? oldCourse.map((e, i) => (
+                <li key={i}>
+                  <img src={src(token, e?.image)} alt="Loading" />
+                  <div className="bottom">
+                    <h3>{e.title}</h3>
+                    <p>{e.description}</p>
+                    <span>
+                      {e.video_count} {profileLang[l].vd}
+                    </span>
+                    <div>
+                      {summa(e.price)}
+                      {profileLang[l].som}
+                    </div>
+                    <Button
+                      onClick={() => navigate(`/courses/${e._id}`)}
+                      variant="contained"
+                    >
+                      {profileLang[l].davom}
+                    </Button>
+                  </div>
+                </li>
+              ))
+            : <Cascader.Panel
+                style={{ marginTop: '0px' }}
+                className="not_fount"
+              />}
+        </ul>
       )}
     </div>
   );

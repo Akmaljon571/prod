@@ -16,8 +16,6 @@ user panel {
 }
 
 admin panel {
-    test
-    yangiliklar
     2 language
 }
 
@@ -38,9 +36,10 @@ finish admin panel {
     Login
     take
     dashboard
+    test
+    news
 }
 
 maslahat {
     teacher btn qayerga
-    xabar yuborish qatga
 }

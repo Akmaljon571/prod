@@ -116,7 +116,7 @@ function RegistrFinish() {
         <input ref={lastRef} type="text" />
       </label>
       <Button onClick={click} className="kirish" variant="contained">
-      {authLang[l].ok}
+        {authLang[l].ok}
       </Button>
     </div>
   );
