@@ -1,5 +1,4 @@
 user panel {
-    yangiliklar
     video
     test
     sertifikat
@@ -11,8 +10,6 @@ user panel {
     default uchun current_watch course_one
     course_one ichida test_id 
     course ichidagi videolar va har watch videos:array boladi nuqtachalar ochirish yoki chiqishi va hamma videolar korib bolingach test topshirish, Test qayta topshirish
-
-    workbooklarni ni render qilish
 }
 
 admin panel {

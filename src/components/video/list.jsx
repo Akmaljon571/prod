@@ -3,11 +3,38 @@ import lock from '../../img/lock.svg';
 import PauseIcon from '@mui/icons-material/Pause';
 import { message } from 'antd';
 import { State, api } from '../../context';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { videoLang } from './video.lang';
+import { Button } from '@mui/material';
 
-function List({ videos, active, find, setFindVideo, course }) {
+function List({
+  videos,
+  active,
+  find,
+  setFindVideo,
+  course,
+  allWatch,
+  setCourse,
+}) {
   const { token, l } = useContext(State);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const url = token
+      ? `/customer/course/${course}`
+      : `/public/course/${course}`;
+    fetch(api + url, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((re) => re.json())
+      .then((data) => {
+        if (data?.ok) {
+          setCourse(data.course);
+        }
+      });
+  }, [token, setCourse, count, course]);
 
   const findVideo = (id) => {
     message.loading("So'rov jo'natildi");
@@ -22,9 +49,21 @@ function List({ videos, active, find, setFindVideo, course }) {
       .then((re) => re.json())
       .then((data) => {
         if (data.ok) {
+          setCount(count + 1);
           setFindVideo(data.video);
         }
       });
+  };
+
+  const startTest = () => {
+    localStorage.setItem(
+      'test',
+      JSON.stringify({
+        course_id: course,
+        minut: '39:59',
+        data: [],
+      }),
+    );
   };
 
   return (
@@ -64,7 +103,7 @@ function List({ videos, active, find, setFindVideo, course }) {
                   <h4>{e.title}</h4>
                 </div>
                 <div className="item-right">
-                  <span></span>
+                  {allWatch?.includes(e._id) ? null : <span></span>}
                   <p>
                     {e.sequence} {videoLang[l].dars}
                   </p>
@@ -73,6 +112,11 @@ function List({ videos, active, find, setFindVideo, course }) {
             ))
           : null}
       </ul>
+      {videos?.length === allWatch?.length ? (
+        <Button onClick={startTest} variant={'contained'}>
+          Test Topshirish
+        </Button>
+      ) : null}
     </div>
   );
 }

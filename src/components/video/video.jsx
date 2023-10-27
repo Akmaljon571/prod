@@ -27,8 +27,20 @@ function Video() {
       .then((data) => {
         if (data?.ok) {
           setCourse(data.course);
+          fetch(api + url + '/video/' + data.course?.take?.current_video, {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          })
+            .then((re) => re.json())
+            .then((data) => {
+              if (data?.ok) {
+                setFindVideo(data.video);
+              }
+            });
         }
       });
+
     fetch(api + url + '/video', {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -73,8 +85,10 @@ function Video() {
       <div className="bottom">
         <Description description={findVideo?.description} />
         <List
+          setCourse={setCourse}
           videos={videos}
           course={id}
+          allWatch={course.take?.watched_videos}
           setFindVideo={setFindVideo}
           active={course?.take ? true : false}
           find={findVideo?._id}
