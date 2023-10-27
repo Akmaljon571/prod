@@ -6,6 +6,7 @@ import CoursesPage from './courses';
 import ProfilePage from './profile';
 import SettingPage from './setting';
 import AboutPage from './about';
+import NewsPage from './news';
 
 export {
   Home,
@@ -16,4 +17,5 @@ export {
   ProfilePage,
   SettingPage,
   AboutPage,
+  NewsPage,
 };

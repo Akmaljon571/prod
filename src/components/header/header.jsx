@@ -14,10 +14,12 @@ import aloqa from '../../img/phone-call.svg';
 import chiqish from '../../img/log-out.svg';
 import hum from '../../img/hum.svg';
 import { hLang } from './header.lang';
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import './header.scss';
+import Notification from './notification';
 
 function Header() {
-  const { token } = useContext(State);
+  const { token, active, setActive } = useContext(State);
   const [prof, setProf] = useState(false);
   const [mediaModal, setMediaModal] = useState(false);
   const [list_none, setListNone] = useState(false);
@@ -43,6 +45,7 @@ function Header() {
   return (
     <>
       <div className="header-fix">
+        <Notification setActive={setActive} />
         <header className="header">
           <nav className="nav">
             <Link to={'/'}>
@@ -73,6 +76,34 @@ function Header() {
               <option value="uz">UZB</option>
               <option value="kr">KOR</option>
             </select>
+            <Link
+              to={'/news'}
+              style={{
+                backgroundColor: '#F2F2F2',
+                padding: '8px',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                position: 'relative',
+              }}
+            >
+              {active ? (
+                <span
+                  style={{
+                    display: 'block',
+                    width: '7px',
+                    height: '7px',
+                    position: 'absolute',
+                    backgroundColor: 'red',
+                    top: '8px',
+                    borderRadius: '50%',
+                    right: '11px',
+                  }}
+                ></span>
+              ) : null}
+              <NotificationsNoneIcon style={{ fill: '#aaa' }} />
+            </Link>
             {!token ? (
               <Button
                 style={{ borderRadius: '20px', textTransform: 'capitalize' }}

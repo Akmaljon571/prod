@@ -47,96 +47,102 @@ function ProfileList() {
       </div>
       {nav === 1 ? (
         <ul>
-          {course?.length
-            ? course.map((e, i) => (
-                <li key={i}>
-                  <img src={src(token, e?.image)} alt="Loading" />
-                  <div className="bottom">
-                    <h3>{e.title}</h3>
-                    <p>{e.description}</p>
-                    <span>
-                      {e.video_count} {profileLang[l].vd}
-                    </span>
-                    <br />
-                    <br />
-                    <span>Qolgan kun: {residual(e.take.expire_at)} Kun</span>
-                    <div>
-                      {summa(e.price)}
-                      {profileLang[l].som}
-                    </div>
-                    <Button
-                      onClick={() => navigate(`/courses/${e._id}`)}
-                      variant="contained"
-                    >
-                      {profileLang[l].davom}
-                    </Button>
+          {course?.length ? (
+            course.map((e, i) => (
+              <li key={i}>
+                <img src={src(token, e?.image)} alt="Loading" />
+                <div className="bottom">
+                  <h3>{e.title}</h3>
+                  <p>{e.description}</p>
+                  <span>
+                    {e.video_count} {profileLang[l].vd}
+                  </span>
+                  <br />
+                  <br />
+                  <span>Qolgan kun: {residual(e.take.expire_at)} Kun</span>
+                  <div>
+                    {summa(e.price)}
+                    {profileLang[l].som}
                   </div>
-                </li>
-              ))
-            : <Cascader.Panel
-                style={{ marginTop: '0px' }}
-                className="not_fount"
-              />}
+                  <Button
+                    onClick={() => navigate(`/courses/${e._id}`)}
+                    variant="contained"
+                  >
+                    {profileLang[l].davom}
+                  </Button>
+                </div>
+              </li>
+            ))
+          ) : (
+            <Cascader.Panel
+              style={{ marginTop: '0px' }}
+              className="not_fount"
+            />
+          )}
         </ul>
       ) : nav === 2 ? (
         <ul>
-          {oldCourse?.length
-            ? oldCourse.map((e, i) => (
-                <li key={i}>
-                  <img src={src(token, e?.image)} alt="Loading" />
-                  <div className="bottom">
-                    <h3>{e.title}</h3>
-                    <p>{e.description}</p>
-                    <span>
-                      {e.video_count} {profileLang[l].vd}
-                    </span>
-                    <div>
-                      {summa(e.price)}
-                      {profileLang[l].som}
-                    </div>
-                    <Button
-                      onClick={() => navigate(`/courses/${e._id}`)}
-                      variant="contained"
-                    >
-                      {profileLang[l].davom}
-                    </Button>
+          {oldCourse?.length ? (
+            oldCourse.map((e, i) => (
+              <li key={i}>
+                <img src={src(token, e?.image)} alt="Loading" />
+                <div className="bottom">
+                  <h3>{e.title}</h3>
+                  <p>{e.description}</p>
+                  <span>
+                    {e.video_count} {profileLang[l].vd}
+                  </span>
+                  <div>
+                    {summa(e.price)}
+                    {profileLang[l].som}
                   </div>
-                </li>
-              ))
-            : <Cascader.Panel
-                style={{ marginTop: '0px' }}
-                className="not_fount"
-              />}
+                  <Button
+                    onClick={() => navigate(`/courses/${e._id}`)}
+                    variant="contained"
+                  >
+                    {profileLang[l].davom}
+                  </Button>
+                </div>
+              </li>
+            ))
+          ) : (
+            <Cascader.Panel
+              style={{ marginTop: '0px' }}
+              className="not_fount"
+            />
+          )}
         </ul>
       ) : (
         <ul>
-          {oldCourse?.length
-            ? oldCourse.map((e, i) => (
-                <li key={i}>
-                  <img src={src(token, e?.image)} alt="Loading" />
-                  <div className="bottom">
-                    <h3>{e.title}</h3>
-                    <p>{e.description}</p>
-                    <span>
-                      {e.video_count} {profileLang[l].vd}
-                    </span>
-                    <div>
-                      {summa(e.price)}
-                      {profileLang[l].som}
-                    </div>
-                    <Button
-                      onClick={() => navigate(`/courses/${e._id}`)}
-                      variant="contained"
-                    >
-                      {profileLang[l].davom}
-                    </Button>
+          {oldCourse?.length ? (
+            oldCourse.map((e, i) => (
+              <li key={i}>
+                <img src={src(token, e?.image)} alt="Loading" />
+                <div className="bottom">
+                  <h3>{e.title}</h3>
+                  <p>{e.description}</p>
+                  <span>
+                    {e.video_count} {profileLang[l].vd}
+                  </span>
+                  <div>
+                    {summa(e.price)}
+                    {profileLang[l].som}
                   </div>
-                </li>
-              ))
-            : <Cascader.Panel
-                style={{ marginTop: '0px' }}
-                className="not_fount"
-              />}
+                  <Button
+                    onClick={() => navigate(`/courses/${e._id}`)}
+                    variant="contained"
+                  >
+                    {profileLang[l].davom}
+                  </Button>
+                </div>
+              </li>
+            ))
+          ) : (
+            <Cascader.Panel
+              style={{ marginTop: '0px' }}
+              className="not_fount"
+            />
+          )}
         </ul>
       )}
     </div>

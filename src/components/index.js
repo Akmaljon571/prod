@@ -25,6 +25,7 @@ import Courses from './courses/courses';
 import Profile from './profile/profile';
 import Setting from './setting/setting';
 import About from './about/about';
+import News from './news/news';
 
 export {
   Header,
@@ -54,4 +55,5 @@ export {
   Profile,
   Setting,
   About,
+  News,
 };

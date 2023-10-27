@@ -10,6 +10,12 @@
   padding-right: 30px;
 }
 
+.notification {
+  .Toastify__progress-bar-theme--light {
+    background: green !important;
+  }
+}
+
 .header {
   display: flex;
   align-items: center;

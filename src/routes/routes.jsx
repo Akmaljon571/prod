@@ -6,6 +6,7 @@ import {
   DarsPage,
   ErrorPage,
   Home,
+  NewsPage,
   ProfilePage,
   SettingPage,
 } from '../page';
@@ -35,6 +36,7 @@ function Routers() {
       <Route path="/courses" element={<CoursesPage />} />
       <Route path="/profile" element={<ProfilePage />} />
       <Route path="/setting" element={<SettingPage />} />
+      <Route path="/news" element={<NewsPage />} />
       <Route path="/about/:id" element={<AboutPage />} />
       <Route path="/*" element={<ErrorPage />} />
     </Routes>

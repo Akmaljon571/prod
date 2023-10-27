@@ -9,7 +9,10 @@ export const StatePriveder = ({ children }) => {
     JSON.parse(localStorage.getItem('access_token')) || '',
   );
   const [l, setLang] = useState('uz');
+  const [active, setActive] = useState(
+    JSON.parse(localStorage.getItem('notificationActive')) || false,
+  );
 
-  const data = { token, setToken, l, setLang };
+  const data = { token, setToken, l, setLang, active, setActive };
   return <State.Provider value={data}>{children}</State.Provider>;
 };
