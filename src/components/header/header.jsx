@@ -17,6 +17,7 @@ import { hLang } from './header.lang';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import './header.scss';
 import Notification from './notification';
+import Test from '../test/test';
 
 function Header() {
   const { token, active, setActive } = useContext(State);
@@ -44,6 +45,7 @@ function Header() {
 
   return (
     <>
+      <Test />
       <div className="header-fix">
         <Notification setActive={setActive} />
         <header className="header">

@@ -31,6 +31,7 @@ function List({
       .then((re) => re.json())
       .then((data) => {
         if (data?.ok) {
+          console.log(data);
           setCourse(data.course);
         }
       });
@@ -62,6 +63,7 @@ function List({
         course_id: course,
         minut: '39:59',
         data: [],
+        test_id: null,
       }),
     );
   };

@@ -9,13 +9,13 @@ function Test() {
 
   useEffect(() => {
     if (data?.course_id && token) {
-      fetch(api + `/customer/course/${data?.course_id}`, {
+      fetch(api + `/customer/course/${data?.course_id}/test/${data?.test_id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       })
         .then((re) => re.json())
-        .then((data) => setTest(data.tests));
+        .then((db) => console.log(db));
     }
   }, [data, token]);
 

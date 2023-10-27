@@ -1,18 +1,12 @@
 user panel {
-    video
     test
     sertifikat
-    about media
-    media max > 500
-    payment
     profile (sertifikat)
-
-    default uchun current_watch course_one
-    course_one ichida test_id 
-    course ichidagi videolar va har watch videos:array boladi nuqtachalar ochirish yoki chiqishi va hamma videolar korib bolingach test topshirish, Test qayta topshirish
+    payment(Hozir emas)
 }
 
 admin panel {
+    take
     2 language
 }
 
