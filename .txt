@@ -3,11 +3,11 @@ user panel {
     sertifikat
     profile (sertifikat)
     payment(Hozir emas)
+    logo
 }
 
 admin panel {
-    take
-    2 language
+    logo
 }
 
 finish user panel {
@@ -29,6 +29,8 @@ finish admin panel {
     dashboard
     test
     news
+    take
+    2 language
 }
 
 maslahat {

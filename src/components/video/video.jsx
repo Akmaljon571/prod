@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import VideoPlayer from './videoPlayer';
+import VideoPlayer from './video-player';
 import { useContext, useEffect, useState } from 'react';
 import { State, api, tg } from '../../context';
 import summa from '../../func/summa';

@@ -12,7 +12,19 @@ export const StatePriveder = ({ children }) => {
   const [active, setActive] = useState(
     JSON.parse(localStorage.getItem('notificationActive')) || false,
   );
+  const [openTest, setOpenTest] = useState(
+    JSON.parse(localStorage.getItem('test')) ? true : false,
+  );
 
-  const data = { token, setToken, l, setLang, active, setActive };
+  const data = {
+    token,
+    setToken,
+    l,
+    setLang,
+    active,
+    setActive,
+    openTest,
+    setOpenTest,
+  };
   return <State.Provider value={data}>{children}</State.Provider>;
 };

@@ -16,8 +16,9 @@ function List({
   allWatch,
   setCourse,
 }) {
-  const { token, l } = useContext(State);
+  const { token, l, setOpenTest } = useContext(State);
   const [count, setCount] = useState(0);
+  const [test, setTest] = useState('');
 
   useEffect(() => {
     const url = token
@@ -31,7 +32,7 @@ function List({
       .then((re) => re.json())
       .then((data) => {
         if (data?.ok) {
-          console.log(data);
+          setTest(data.course?.test_id);
           setCourse(data.course);
         }
       });
@@ -63,9 +64,10 @@ function List({
         course_id: course,
         minut: '39:59',
         data: [],
-        test_id: null,
+        test_id: '653aa38eaa9679ca906badd6',
       }),
     );
+    setOpenTest(true);
   };
 
   return (
@@ -114,7 +116,7 @@ function List({
             ))
           : null}
       </ul>
-      {videos?.length === allWatch?.length ? (
+      {videos?.length === allWatch?.length && test ? (
         <Button onClick={startTest} variant={'contained'}>
           Test Topshirish
         </Button>
