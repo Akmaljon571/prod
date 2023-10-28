@@ -1,9 +1,10 @@
 import { useContext } from 'react';
 import { State } from '../../context';
 import { Button } from '@mui/material';
+import { testLang } from './test.lang';
 
 function Finish({ finish, setFinish, setStep, setTest }) {
-  const { setOpenTest } = useContext(State);
+  const { setOpenTest, l } = useContext(State);
 
   const ok = () => {
     localStorage.removeItem('step');
@@ -18,7 +19,7 @@ function Finish({ finish, setFinish, setStep, setTest }) {
 
   return (
     <div className="finish">
-      <p>Test Natijasi: {finish.score}ta to'gri</p>
+      <p>{testLang[l].t5}: {finish.score}{testLang[l].t6}</p>
       <div className="list">
         <ul>
           {finish
@@ -60,7 +61,7 @@ function Finish({ finish, setFinish, setStep, setTest }) {
         </ul>
       </div>
       <Button onClick={ok} variant="contained">
-        Sertifikat olish
+      {testLang[l].t7}
       </Button>
     </div>
   );

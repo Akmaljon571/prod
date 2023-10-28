@@ -2,9 +2,10 @@ import { Button } from '@mui/material';
 import sertifikat from '../../img/Certificate.png';
 import { useContext } from 'react';
 import { State } from '../../context';
+import { testLang } from './test.lang';
 
 function TestStart({ setStep }) {
-  const { setOpenTest } = useContext(State);
+  const { setOpenTest, l } = useContext(State);
 
   const cancel = () => {
     setOpenTest(false);
@@ -14,16 +15,12 @@ function TestStart({ setStep }) {
   return (
     <div className="start">
       <img width={350} src={sertifikat} alt="" />
-      <p>
-        Sizga 10 ta savol beriladi va 40 daqiqa vaqt. Shu 40 daqiqa ichida
-        savollarni to'g'ri ishlab topshirsangiz sertifikat sizning nomingiz
-        uchun rasmiylashtiriladi. Hosh Testni
-      </p>
+      <p>{testLang[l].t1}</p>
       <Button onClick={cancel} variant="outlined">
-        Keyinroq qilamiz{' '}
+      {testLang[l].t2}
       </Button>
       <Button onClick={() => setStep('1')} variant="contained">
-        Boshlaymiz
+      {testLang[l].t3}
       </Button>
     </div>
   );

@@ -1,6 +1,7 @@
 import { Button } from '@mui/material';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { State, api } from '../../context';
+import { testLang } from './test.lang';
 
 function Quiz({ test, setStep, step, data, setFinish }) {
   const [time, setTime] = useState(data.minut);
@@ -8,7 +9,7 @@ function Quiz({ test, setStep, step, data, setFinish }) {
   const [result, setResult] = useState(
     JSON.parse(localStorage.getItem('result') || null) || [],
   );
-  const { token } = useContext(State);
+  const { token, l } = useContext(State);
   const inp1 = useRef();
   const inp2 = useRef();
   const inp3 = useRef();
@@ -68,7 +69,7 @@ function Quiz({ test, setStep, step, data, setFinish }) {
   };
 
   const next = () => {
-    if (step === 8) {
+    if (step === 10) {
       finish();
     } else {
       localStorage.setItem(
@@ -171,7 +172,7 @@ function Quiz({ test, setStep, step, data, setFinish }) {
       </div>
       {value ? (
         <Button onClick={next} variant="contained">
-          Yuborish
+          {testLang[l].t4}
         </Button>
       ) : null}
     </div>

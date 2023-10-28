@@ -1,9 +1,9 @@
 user panel {
     test
+    logo
     sertifikat
     profile (sertifikat)
     payment(Hozir emas)
-    logo
 }
 
 admin panel {
