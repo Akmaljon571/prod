@@ -24,7 +24,7 @@ function Footer() {
       <div className="top">
         <div className="one">
           <Link to={'/'}>
-            <img src={logo} alt="Company Logo" />
+            <img className='logo' src={logo} alt="Company Logo" />
           </Link>
           <p>{footerLang[l].text}</p>
           <span>{footerLang[l].sana}</span>

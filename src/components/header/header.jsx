@@ -15,8 +15,8 @@ import chiqish from '../../img/log-out.svg';
 import hum from '../../img/hum.svg';
 import { hLang } from './header.lang';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
-import './header.scss';
 import Notification from './notification';
+import './header.scss';
 
 function Header() {
   const { token, active, setActive } = useContext(State);
@@ -49,7 +49,7 @@ function Header() {
         <header className="header">
           <nav className="nav">
             <Link to={'/'}>
-              <img src={logo} alt="Company logo" />
+              <img className='logo' src={logo} alt="Company logo" />
             </Link>
             <ul>
               <li>
