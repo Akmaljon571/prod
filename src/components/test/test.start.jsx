@@ -17,10 +17,10 @@ function TestStart({ setStep }) {
       <img width={350} src={sertifikat} alt="" />
       <p>{testLang[l].t1}</p>
       <Button onClick={cancel} variant="outlined">
-      {testLang[l].t2}
+        {testLang[l].t2}
       </Button>
       <Button onClick={() => setStep('1')} variant="contained">
-      {testLang[l].t3}
+        {testLang[l].t3}
       </Button>
     </div>
   );

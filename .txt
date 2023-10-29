@@ -1,13 +1,11 @@
 user panel {
-    test
-    logo
     sertifikat
     profile (sertifikat)
     payment(Hozir emas)
 }
 
 admin panel {
-    logo
+    Finish
 }
 
 finish user panel {
@@ -17,6 +15,7 @@ finish user panel {
     course page
     setting
     2 language
+    test
 }
 
 finish admin panel {

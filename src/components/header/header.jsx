@@ -49,7 +49,7 @@ function Header() {
         <header className="header">
           <nav className="nav">
             <Link to={'/'}>
-              <img className='logo' src={logo} alt="Company logo" />
+              <img className="logo" src={logo} alt="Company logo" />
             </Link>
             <ul>
               <li>

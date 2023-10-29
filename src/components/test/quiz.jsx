@@ -109,8 +109,8 @@ function Quiz({ test, setStep, step, data, setFinish }) {
           <span className={Number(step) >= 6 ? 'active' : ''}></span>
           <span className={Number(step) >= 7 ? 'active' : ''}></span>
           <span className={Number(step) >= 8 ? 'active' : ''}></span>
-          <span className={Number(step) >= 8 ? 'active' : ''}></span>
-          <span className={Number(step) >= 8 ? 'active' : ''}></span>
+          <span className={Number(step) >= 9 ? 'active' : ''}></span>
+          <span className={Number(step) >= 10 ? 'active' : ''}></span>
         </div>
         <p>{time}</p>
       </div>

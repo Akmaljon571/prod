@@ -64,7 +64,7 @@ function List({
         course_id: course,
         minut: '39:59',
         data: [],
-        test_id: '653aa38eaa9679ca906badd6',
+        test_id: test,
       }),
     );
     setOpenTest(true);
