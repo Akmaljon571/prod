@@ -8,6 +8,7 @@ export const profileLang = {
     som: "so'm",
     davom: 'Davom etish',
     set: 'Profil sozlamasi',
+    yuklash: 'Yuklab olish',
   },
   kr: {
     title: '내 코스',
@@ -18,5 +19,6 @@ export const profileLang = {
     som: '그래서',
     davom: '계속',
     set: '프로필 설정',
+    yuklash: '다운로드',
   },
 };

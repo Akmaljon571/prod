@@ -6,6 +6,7 @@ import { src } from '../../func/src';
 import summa from '../../func/summa';
 import { profileLang } from './profile.lang';
 import { residual } from '../../func/residual';
+import pdf from '../../img/337946 1.svg';
 import { Cascader } from 'antd';
 
 function ProfileList() {
@@ -13,6 +14,7 @@ function ProfileList() {
   const [course, setCourse] = useState([]);
   const [oldCourse, setOldCourse] = useState([]);
   const { token, l } = useContext(State);
+  const [sert, setSert] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -29,7 +31,16 @@ function ProfileList() {
       },
     })
       .then((re) => re.json())
-      .then((data) => setOldCourse(data.courses));
+      .then((data) => setOldCourse(data.courses))
+      .catch(e => console.log(e));
+    fetch(api + '/me', {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+    .then(re => re.json())
+    .then(data => setSert(data.me?.certificates))
+    .catch(e => console.log(e));
   }, [setCourse, token]);
 
   return (
@@ -114,25 +125,16 @@ function ProfileList() {
         </ul>
       ) : (
         <ul>
-          {oldCourse?.length ? (
-            oldCourse.map((e, i) => (
+          {sert?.length ? (
+            sert.map((e, i) => (
               <li key={i}>
-                <img src={src(token, e?.image)} alt="Loading" />
-                <div className="bottom">
-                  <h3>{e.title}</h3>
-                  <p>{e.description}</p>
-                  <span>
-                    {e.video_count} {profileLang[l].vd}
-                  </span>
-                  <div>
-                    {summa(e.price)}
-                    {profileLang[l].som}
-                  </div>
+                <img src={pdf} alt="Loading" />
+                <div style={{marginLeft: "90px"}} className="bottom">
                   <Button
-                    onClick={() => navigate(`/courses/${e._id}`)}
+                    onClick={() => window.open(api + `/customer/file/${e}`, "_blanc")}
                     variant="contained"
                   >
-                    {profileLang[l].davom}
+                    {profileLang[l].yuklash}
                   </Button>
                 </div>
               </li>
