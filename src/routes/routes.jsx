@@ -7,6 +7,7 @@ import {
   ErrorPage,
   Home,
   NewsPage,
+  PaymentPage,
   ProfilePage,
   SettingPage,
 } from '../page';
@@ -38,6 +39,7 @@ function Routers() {
       <Route path="/setting" element={<SettingPage />} />
       <Route path="/news" element={<NewsPage />} />
       <Route path="/about/:id" element={<AboutPage />} />
+      <Route path="/payment" element={<PaymentPage />} />
       <Route path="/*" element={<ErrorPage />} />
     </Routes>
   );

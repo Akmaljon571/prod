@@ -26,6 +26,7 @@ import Profile from './profile/profile';
 import Setting from './setting/setting';
 import About from './about/about';
 import News from './news/news';
+import Payment from './payment/payment';
 
 export {
   Header,
@@ -56,4 +57,5 @@ export {
   Setting,
   About,
   News,
+  Payment
 };

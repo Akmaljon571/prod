@@ -7,6 +7,7 @@ import ProfilePage from './profile';
 import SettingPage from './setting';
 import AboutPage from './about';
 import NewsPage from './news';
+import PaymentPage from './payment';
 
 export {
   Home,
@@ -18,4 +19,5 @@ export {
   SettingPage,
   AboutPage,
   NewsPage,
+  PaymentPage
 };
