@@ -4,7 +4,7 @@ import mail from '../../img/footer-mail.svg';
 import location from '../../img/footer-location.svg';
 import icon from '../../img/footer-icon.svg';
 import { Link } from 'react-router-dom';
-import { State, api, tg } from '../../context';
+import { State, api } from '../../context';
 import { useContext, useEffect, useState } from 'react';
 import { footerLang } from './footer.lang';
 import './footer.scss';
@@ -102,7 +102,7 @@ function Footer() {
           Instagram
           <img src={icon} alt="Icon" />
         </Link>
-        <Link target="_blank" rel="noreferrer" to={tg}>
+        <Link target="_blank" rel="noreferrer" to={'https://t.me/akmaljondev'}>
           Telegram
           <img src={icon} alt="Icon" />
         </Link>

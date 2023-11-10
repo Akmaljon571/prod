@@ -29,3 +29,5 @@ finish admin panel {
     take
     2 language
 }
+
+payment qismini full media bilan, va Admin dan take ni ob tashlash

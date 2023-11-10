@@ -1,13 +1,13 @@
-import { useParams } from 'react-router-dom';
-import VideoPlayer from './video-player';
+import { Link, useParams } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
-import { State, api, tg } from '../../context';
+import { State, api } from '../../context';
+import { videoLang } from './video.lang';
+import VideoPlayer from './video-player';
 import summa from '../../func/summa';
-import './video.scss';
 import Description from './description';
 import List from './list';
 import Workbook from './workbook';
-import { videoLang } from './video.lang';
+import './video.scss';
 
 function Video() {
   const { id } = useParams();
@@ -76,9 +76,7 @@ function Video() {
               </p>
               <small>{videoLang[l].muddat}</small>{' '}
             </div>
-            <a target="_blank" rel="noreferrer" href={tg}>
-              {videoLang[l].ol}
-            </a>
+            <Link to={'/payment'}>{videoLang[l].ol}</Link>
           </div>
         )}
       </div>

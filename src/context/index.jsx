@@ -2,7 +2,6 @@ import { createContext, useState } from 'react';
 
 export const State = createContext();
 export const api = 'https://api.lincor.uz';
-export const tg = 'https://t.me/akmaljondev';
 
 export const StatePriveder = ({ children }) => {
   const [token, setToken] = useState(

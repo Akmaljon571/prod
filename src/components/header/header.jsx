@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
 import { useContext, useEffect, useState } from 'react';
-import { State, api, tg } from '../../context';
+import { State, api } from '../../context';
 import { nameOneLetter } from '../../func/name';
 import { message } from 'antd';
 import { hLang } from './header.lang';
@@ -20,13 +20,12 @@ import './header.scss';
 import './media.scss';
 
 function Header() {
-  const { token, active, setActive } = useContext(State);
+  const { token, active, setActive, l, setLang } = useContext(State);
   const [prof, setProf] = useState(false);
   const [mediaModal, setMediaModal] = useState(false);
   const [list_none, setListNone] = useState(false);
   const [me, setMe] = useState({});
   const navigate = useNavigate();
-  const { l, setLang } = useContext(State);
 
   useEffect(() => {
     message.destroy();
@@ -64,9 +63,7 @@ function Header() {
                   <Link to={'/about/oqish'}>{hLang[l].oqish}</Link>
                 </li>
                 <li>
-                  <a target="_blank" rel="noreferrer" href={tg}>
-                    {hLang[l].tolov}
-                  </a>
+                  <Link to={'/payment'}>{hLang[l].tolov}</Link>
                 </li>
                 <li>
                   <Link to={'/aloqa'}>{hLang[l].aloqa}</Link>
@@ -161,10 +158,10 @@ function Header() {
                       </Link>
                     </li>
                     <li>
-                      <a target="_blank" rel="noreferrer" href={tg}>
+                      <Link to={'/payment'}>
                         <img src={tolov} alt="Kurs" />
                         <p>{hLang[l].tolov}</p>
-                      </a>
+                      </Link>
                     </li>
                     <li>
                       <Link to={'/setting'}>
@@ -249,9 +246,7 @@ function Header() {
                         <Link to={'/about/oqish'}>{hLang[l].oqish}</Link>
                       </li>
                       <li>
-                        <a target="_blank" rel="noreferrer" href={tg}>
-                          {hLang[l].tolov}
-                        </a>
+                        <Link to={'/payment'}>{hLang[l].tolov}</Link>
                       </li>
                       <li>
                         <Link to={'/aloqa'}>{hLang[l].aloqa}</Link>
@@ -270,10 +265,10 @@ function Header() {
                         </Link>
                       </li>
                       <li>
-                        <a target="_blank" rel="noreferrer" href={tg}>
+                        <Link to={'/payment'}>
                           <img src={tolov} alt="Kurs" />
                           <p>{hLang[l].tolov}</p>
-                        </a>
+                        </Link>
                       </li>
                       <li>
                         <Link to={'/setting'}>
