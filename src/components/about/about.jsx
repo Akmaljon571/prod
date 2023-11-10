@@ -5,8 +5,8 @@ import oqishP2 from '../../img/photo_2023-10-17_02-48-14.jpg';
 import { useParams } from 'react-router-dom';
 import { useContext } from 'react';
 import { State } from '../../context';
-import './about.scss';
 import { aboutLang } from './about.lang';
+import './about.scss';
 
 function About() {
   const { id } = useParams();

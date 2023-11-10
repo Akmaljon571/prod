@@ -75,7 +75,7 @@
     }
 
     button {
-      margin-top: 40px;
+      margin-top: 30px;
       border-radius: 62px;
       padding: 12px 48px;
       font-family: Unbounded;
@@ -85,118 +85,6 @@
       letter-spacing: 0em;
       text-align: left;
       text-transform: capitalize;
-    }
-  }
-}
-
-@media screen and (max-width: 1150px) {
-  .teacher {
-    height: 492px;
-    padding: 40px;
-
-    &-absalute {
-      width: 150px;
-      height: 150px;
-      left: 143px;
-      top: 165px;
-
-      &-text {
-        top: 225px;
-        left: 170px;
-        font-family: Poppins;
-        font-size: 28px;
-        font-weight: 600;
-        line-height: 32px;
-        letter-spacing: 0em;
-        text-align: left;
-      }
-    }
-
-    .left {
-      max-width: 400px;
-      min-width: 400px;
-      gap: 5px;
-
-      img {
-        width: 150px;
-        height: 150px;
-      }
-    }
-
-    .right {
-      h3 {
-        font-family: Poppins;
-        font-size: 48px;
-        font-weight: 700;
-        line-height: 64px;
-        letter-spacing: 0em;
-        text-align: left;
-      }
-
-      p {
-        font-family: Poppins;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 24px;
-        letter-spacing: 0em;
-        text-align: left;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 360px) {
-  .teacher {
-    flex-direction: column;
-    padding: 20px;
-
-    .left {
-      max-width: 300px;
-      min-width: 300px;
-
-      img {
-        width: 126px;
-        height: 126px;
-      }
-    }
-
-    &-absalute {
-      top: 94px;
-      left: 94px;
-      width: 126px;
-      height: 126px;
-
-      &-text {
-        font-size: 22px;
-        top: 144px;
-        left: 124px;
-      }
-    }
-
-    .right {
-      h3 {
-        max-width: 276px;
-        font-family: Poppins;
-        font-size: 24px;
-        font-weight: 700;
-        line-height: 24px;
-        letter-spacing: 0em;
-        text-align: left;
-      }
-
-      p {
-        max-width: 276px;
-        font-family: Poppins;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 24px;
-        letter-spacing: 0em;
-        text-align: left;
-      }
-
-      button {
-        display: none;
-      }
     }
   }
 }

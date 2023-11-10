@@ -112,7 +112,7 @@ function Quiz({ test, setStep, step, data, setFinish }) {
           <span className={Number(step) >= 9 ? 'active' : ''}></span>
           <span className={Number(step) >= 10 ? 'active' : ''}></span>
         </div>
-        <p>{time}</p>
+        <p className='time'>{time}</p>
       </div>
       <div className="quiz">
         {test?.questions?.length ? (

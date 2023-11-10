@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
 import { State, api } from '../../context';
 import { src } from '../../func/src';
-import './news.scss';
 import { message } from 'antd';
+import './news.scss';
 
 function News() {
   const [news, setNews] = useState([]);

@@ -1,6 +1,4 @@
 user panel {
-    sertifikat
-    profile (sertifikat)
     payment(Hozir emas)
 }
 
@@ -30,8 +28,4 @@ finish admin panel {
     news
     take
     2 language
-}
-
-maslahat {
-    teacher btn qayerga
 }

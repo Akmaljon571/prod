@@ -71,7 +71,7 @@ function Finish({ finish, setFinish, setStep, setTest }) {
         <ul>
           {finish
             ? finish?.answers.map((e, i) =>
-                i > 4 ? (
+                i > 4 && i < 10 ? (
                   <li key={i}>
                     <b>{i + 1}</b>{' '}
                     <span

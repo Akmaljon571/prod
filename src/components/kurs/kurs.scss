@@ -159,13 +159,37 @@
   }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 1270px) {
+  .kurs {
+    ul {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .kurs {
+    ul {
+      li {
+        width: 100%;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 380px) {
   .kurs {
     margin-top: 70px;
     margin-bottom: 100px;
 
     h2 {
       font-size: 32px;
+      width: 100%;
+    }
+
+    .text {
+      width: 100%;
     }
 
     ul {
@@ -175,6 +199,10 @@
         width: 100%;
         padding: 20px 18px;
         height: 350px;
+
+        h4 {
+          width: 220px;
+        }
       }
     }
   }

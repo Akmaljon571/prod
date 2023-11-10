@@ -32,15 +32,15 @@ function ProfileList() {
     })
       .then((re) => re.json())
       .then((data) => setOldCourse(data.courses))
-      .catch(e => console.log(e));
+      .catch((e) => console.log(e));
     fetch(api + '/me', {
       headers: {
-        Authorization: `Bearer ${token}`
-      }
+        Authorization: `Bearer ${token}`,
+      },
     })
-    .then(re => re.json())
-    .then(data => setSert(data.me?.certificates))
-    .catch(e => console.log(e));
+      .then((re) => re.json())
+      .then((data) => setSert(data.me?.certificates))
+      .catch((e) => console.log(e));
   }, [setCourse, token]);
 
   return (
@@ -127,11 +127,14 @@ function ProfileList() {
         <ul>
           {sert?.length ? (
             sert.map((e, i) => (
-              <li key={i}>
-                <img src={pdf} alt="Loading" />
-                <div style={{marginLeft: "90px"}} className="bottom">
+              <li style={{ textAlign: 'center' }} key={i}>
+                <img className="pdf" src={pdf} alt="Loading" />
+                <div className="bottom">
                   <Button
-                    onClick={() => window.open(api + `/customer/file/${e}`, "_blanc")}
+                    className="yukash"
+                    onClick={() =>
+                      window.open(api + `/customer/file/${e}`, '_blanc')
+                    }
                     variant="contained"
                   >
                     {profileLang[l].yuklash}

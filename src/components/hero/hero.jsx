@@ -1,14 +1,15 @@
-import './hero.scss';
-import { Button } from '@mui/material';
 import player from '../../img/Vector 6.svg';
 import girl from '../../img/hero-girl.png';
 import img1 from '../../img/hero1.png';
 import img2 from '../../img/hero2.png';
 import img3 from '../../img/hero3.png';
+import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
 import { heroLang } from './hero.lang';
 import { State } from '../../context';
+import './hero.scss';
+import './media.scss';
 
 function Hero() {
   const navigate = useNavigate();

@@ -57,5 +57,5 @@ export {
   Setting,
   About,
   News,
-  Payment
+  Payment,
 };

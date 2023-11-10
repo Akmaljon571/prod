@@ -19,5 +19,5 @@ export {
   SettingPage,
   AboutPage,
   NewsPage,
-  PaymentPage
+  PaymentPage,
 };

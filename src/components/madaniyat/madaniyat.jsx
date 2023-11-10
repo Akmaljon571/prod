@@ -5,10 +5,11 @@ import tokyo1 from '../../img/tokyo1.png';
 import tokyo2 from '../../img/tokyo2.png';
 import tokyo3 from '../../img/tokyo3.png';
 import { useNavigate } from 'react-router-dom';
-import './madaniyat.scss';
 import { useContext } from 'react';
 import { State } from '../../context';
 import { madaniyatLang } from './madaniyat.lang';
+import './madaniyat.scss';
+import './media.scss';
 
 function Madaniyat() {
   const navigate = useNavigate();

@@ -3,11 +3,12 @@ import img2 from '../../img/photo-1573496359142-b8d87734a5a2.avif';
 import img4 from '../../img/confident-corporate-charm-handsome-young-african-american-businessman-standing-indoors-with-his-arms-folded_590464-31666.avif';
 import img3 from '../../img/pretty-smiling-woman-cafe_624325-3285.jpg';
 import absalute from '../../img/teacher.svg';
-import './teacher.scss';
 import { Button } from '@mui/material';
 import { teacherLang } from './teacher.lang';
 import { useContext } from 'react';
 import { State } from '../../context';
+import './teacher.scss';
+import './teacher.media.scss';
 
 function Teacher() {
   const { l } = useContext(State);

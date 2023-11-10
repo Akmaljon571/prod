@@ -1,9 +1,9 @@
 import { Button, Checkbox, FormControlLabel } from '@mui/material';
 import { useContext } from 'react';
 import { State } from '../../context';
+import { msgLang } from './msg.lang';
 import girl from '../../img/message.png';
 import './message.scss';
-import { msgLang } from './msg.lang';
 
 function Message() {
   const { l } = useContext(State);

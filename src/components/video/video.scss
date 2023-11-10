@@ -234,6 +234,7 @@
         overflow: auto;
         -ms-overflow-style: none;
         scrollbar-width: none;
+
         &::-webkit-scrollbar {
           display: none;
         }
@@ -302,6 +303,7 @@
             display: flex;
             align-items: center;
             gap: 5px;
+
             span {
               width: 4px;
               height: 4px;
@@ -377,6 +379,12 @@
 }
 
 @media screen and (max-width: 1000px) {
+  .video_player {
+    video {
+      height: auto !important;
+    }
+  }
+
   .dars {
     .bottom {
       flex-direction: column;
@@ -397,12 +405,45 @@
   }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 650px) {
   .dars {
-    video {
-      height: 247px !important;
+    .bottom {
+      flex-direction: column;
+
+      .video_description {
+        width: 100%;
+        min-width: 100%;
+        padding: 10px;
+      }
+
+      .video_list {
+        width: 100%;
+
+        .list {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .dars {
+    .bottom {
+      .video_description {
+        font-size: 15px !important;
+      }
     }
 
+    .video_workbook {
+      width: 100%;
+
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .dars {
     .control-button {
       top: 130px;
       left: 45%;

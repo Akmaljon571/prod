@@ -141,7 +141,7 @@
   }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 750px) {
   .footer {
     .top {
       flex-direction: column;
@@ -160,6 +160,41 @@
 
     .bottom {
       flex-direction: column;
+
+      a {
+        width: 100%;
+        padding: 12px;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .footer {
+    .top {
+      flex-direction: column;
+      gap: 25px;
+
+      .one {
+        img {
+          margin-bottom: 0;
+        }
+      }
+
+      ul {
+        display: none;
+      }
+
+      h4 {
+        display: none;
+      }
+    }
+
+    .bottom {
+      flex-direction: column;
+      margin-top: 5px;
+
       a {
         width: 100%;
         padding: 12px;

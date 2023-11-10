@@ -1,13 +1,13 @@
-import { Link } from 'react-router-dom';
 import logo from '../../img/LinCor.svg';
 import tell from '../../img/footer-tell.svg';
 import mail from '../../img/footer-mail.svg';
 import location from '../../img/footer-location.svg';
 import icon from '../../img/footer-icon.svg';
+import { Link } from 'react-router-dom';
 import { State, api, tg } from '../../context';
 import { useContext, useEffect, useState } from 'react';
-import './footer.scss';
 import { footerLang } from './footer.lang';
+import './footer.scss';
 
 function Footer() {
   const { l } = useContext(State);

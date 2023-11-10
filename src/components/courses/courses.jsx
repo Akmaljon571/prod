@@ -4,9 +4,9 @@ import { State } from '../../context';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { src } from '../../func/src';
+import { coursesLang } from './courses.lang';
 import summa from '../../func/summa';
 import './courses.scss';
-import { coursesLang } from './courses.lang';
 
 function Courses() {
   const [courses, setCourses] = useState([]);

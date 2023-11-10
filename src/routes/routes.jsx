@@ -40,6 +40,7 @@ function Routers() {
       <Route path="/news" element={<NewsPage />} />
       <Route path="/about/:id" element={<AboutPage />} />
       <Route path="/payment" element={<PaymentPage />} />
+      <Route path="/media" element={<ErrorPage />} />
       <Route path="/*" element={<ErrorPage />} />
     </Routes>
   );
