@@ -71,6 +71,71 @@ function NoSafe() {
             message.error('Raqamga Xato');
           }
         });
+    } else if (
+      Number(value.split(' ').join('').split('+').join(''))
+    ) {
+      const phone_number = value.split(' ').join('').split('+').join('');
+      if (phone_number.length === 12) {
+        fetch(api + '/me/send-code-update-phone-number', {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            phone_number,
+          }),
+        })
+          .then((re) => re.json())
+          .then((data) => {
+            if (data.ok) {
+              message.destroy();
+              message.success("Raqamga Kod jo'natildi");
+              setNumber(phone_number);
+            } else {
+              message.destroy();
+              message.error('Raqamga Xato');
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+            message.destroy();
+            message.error("Raqamni to'lliq kiriting");
+          });
+      } else if (phone_number.length === 9) {
+        const number = '998' + phone_number;
+        fetch(api + '/me/send-code-update-phone-number', {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            phone_number: number,
+          }),
+        })
+          .then((re) => re.json())
+          .then((data) => {
+            if (data.ok) {
+              message.destroy();
+              message.success("Raqamga Kod jo'natildi");
+              setNumber(phone_number);
+            } else {
+              message.destroy();
+              message.error('Raqamga Xato');
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+            message.destroy();
+            message.error("Raqamni to'lliq kiriting");
+          });
+      } else {
+        message.destroy();
+        message.error("Raqamni to'lliq kiriting");
+      }
     } else {
       message.error("Raqamni to'lliq kiriting");
     }
