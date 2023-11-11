@@ -1,15 +1,7 @@
-import { Footer, Header, Main, Payment } from '../components';
+import { Payment } from '../components';
 
 function PaymentPage() {
-  return (
-    <>
-      <Header />
-      <Main>
-        <Payment />
-      </Main>
-      <Footer />
-    </>
-  );
+  return <Payment />;
 }
 
 export default PaymentPage;
