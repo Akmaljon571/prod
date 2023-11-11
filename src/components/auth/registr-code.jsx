@@ -4,10 +4,10 @@ import { message } from 'antd';
 import { State, api } from '../../context';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { phoneFN } from '../../func/phone';
+import { authLang } from './auth.lang';
 import time from '../../img/Time.svg';
 import logo from '../../img/LinCor.svg';
 import './auth.scss';
-import { authLang } from './auth.lang';
 
 function RegistrCode() {
   const [messageApi, contextHolder] = message.useMessage();

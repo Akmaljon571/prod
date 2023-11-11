@@ -4,10 +4,10 @@ import { phoneFN } from '../../func/phone';
 import { message } from 'antd';
 import { State, api } from '../../context';
 import { useContext, useEffect, useRef, useState } from 'react';
+import { authLang } from './auth.lang';
 import logo from '../../img/LinCor.svg';
 import time from '../../img/Time.svg';
 import './auth.scss';
-import { authLang } from './auth.lang';
 
 function PasswordCode() {
   const phone = JSON.parse(localStorage.getItem('password-phone')) || '';

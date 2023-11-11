@@ -3,9 +3,9 @@ import { Button } from '@mui/material';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { State, api } from '../../context';
 import { message } from 'antd';
+import { authLang } from './auth.lang';
 import logo from '../../img/LinCor.svg';
 import './auth.scss';
-import { authLang } from './auth.lang';
 
 function RegistrFinish() {
   const [img, setImg] = useState('');

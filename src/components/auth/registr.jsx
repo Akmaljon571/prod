@@ -3,9 +3,9 @@ import { Button } from '@mui/material';
 import { useContext, useEffect, useRef } from 'react';
 import { message } from 'antd';
 import { State, api } from '../../context';
+import { authLang } from './auth.lang';
 import logo from '../../img/LinCor.svg';
 import './auth.scss';
-import { authLang } from './auth.lang';
 
 function Registr() {
   const number = useRef();
@@ -86,6 +86,87 @@ function Registr() {
           }
         })
         .catch((err) => console.log(err));
+    } else if (
+      Number(tell.split(' ').join('').split('+').join('')) &&
+      password.length === 8
+    ) {
+      const phone_number = tell.split(' ').join('').split('+').join('');
+      if (phone_number.length === 12) {
+        fetch(api + '/auth/register', {
+          method: 'POST',
+          credentials: 'include',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            phone_number,
+            password,
+          }),
+        })
+          .then((re) => re.json())
+          .then((data) => {
+            if (data?.ok) {
+              localStorage.setItem('registr', JSON.stringify(phone_number));
+              navigate('/registration/code');
+            } else {
+              messageApi.destroy();
+              messageApi.open({
+                type: 'error',
+                content: "Ma'lumot xato",
+                duration: 0,
+              });
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+            messageApi.destroy();
+            messageApi.open({
+              type: 'error',
+              content: "Ma'lumotlarni to'ldiring",
+            });
+          });
+      } else if (phone_number.length === 9) {
+        const number = '998' + phone_number;
+        fetch(api + '/auth/register', {
+          method: 'POST',
+          credentials: 'include',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            phone_number: number,
+            password,
+          }),
+        })
+          .then((re) => re.json())
+          .then((data) => {
+            if (data?.ok) {
+              localStorage.setItem('registr', JSON.stringify(phone_number));
+              navigate('/registration/code');
+            } else {
+              messageApi.destroy();
+              messageApi.open({
+                type: 'error',
+                content: "Ma'lumot xato",
+                duration: 0,
+              });
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+            messageApi.destroy();
+            messageApi.open({
+              type: 'error',
+              content: "Ma'lumotlarni to'ldiring",
+            });
+          });
+      } else {
+        messageApi.destroy();
+        messageApi.open({
+          type: 'error',
+          content: "Ma'lumotlarni to'ldiring",
+        });
+      }
     } else {
       messageApi.open({
         type: 'error',

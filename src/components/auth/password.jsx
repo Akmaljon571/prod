@@ -78,6 +78,96 @@ function Password() {
             });
           }
         });
+    } else if (Number(tell.split(' ').join('').split('+').join(''))) {
+      const phone_number = tell.split(' ').join('').split('+').join('');
+      if (phone_number.length === 12) {
+        fetch(api + '/auth/resend', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            phone_number,
+          }),
+        })
+          .then((re) => re.json())
+          .then((data) => {
+            if (data?.ok) {
+              messageApi.destroy();
+              messageApi.open({
+                type: 'success',
+                content: "Sms Jo'natildi",
+              });
+              localStorage.setItem(
+                'password-phone',
+                JSON.stringify(phone_number),
+              );
+              navigate('/password/code');
+            } else {
+              messageApi.destroy();
+              messageApi.open({
+                type: 'error',
+                content: "Ma'lumot xato",
+                duration: 0,
+              });
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+            messageApi.destroy();
+            messageApi.open({
+              type: 'error',
+              content: "Ma'lumotlarni to'ldiring",
+            });
+          });
+      } else if (phone_number.length === 9) {
+        const number = '998' + phone_number;
+        fetch(api + '/auth/resend', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            phone_number: number,
+          }),
+        })
+          .then((re) => re.json())
+          .then((data) => {
+            if (data?.ok) {
+              messageApi.destroy();
+              messageApi.open({
+                type: 'success',
+                content: "Sms Jo'natildi",
+              });
+              localStorage.setItem(
+                'password-phone',
+                JSON.stringify(phone_number),
+              );
+              navigate('/password/code');
+            } else {
+              messageApi.destroy();
+              messageApi.open({
+                type: 'error',
+                content: "Ma'lumot xato",
+                duration: 0,
+              });
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+            messageApi.destroy();
+            messageApi.open({
+              type: 'error',
+              content: "Ma'lumotlarni to'ldiring",
+            });
+          });
+      } else {
+        messageApi.destroy();
+        messageApi.open({
+          type: 'error',
+          content: "Ma'lumotlarni to'ldiring",
+        });
+      }
     } else {
       messageApi.destroy();
       messageApi.open({

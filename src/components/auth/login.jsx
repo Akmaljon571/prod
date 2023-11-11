@@ -3,9 +3,9 @@ import { Button } from '@mui/material';
 import { useContext, useEffect, useRef } from 'react';
 import { message } from 'antd';
 import { State, api } from '../../context';
+import { authLang } from './auth.lang';
 import logo from '../../img/LinCor.svg';
 import './auth.scss';
-import { authLang } from './auth.lang';
 
 function Login() {
   const number = useRef();
