@@ -97,8 +97,7 @@ function Login() {
             content: "Ma'lumotlarni to'ldiring",
           });
         });
-    }
-    if (
+    } else if (
       Number(tell.split(' ').join('').split('+').join('')) &&
       password.length === 8
     ) {
