@@ -406,6 +406,12 @@
 }
 
 @media screen and (max-width: 650px) {
+  .video_player {
+    .video-count {
+      top: 10px;
+    }
+  }
+
   .dars {
     .bottom {
       flex-direction: column;
