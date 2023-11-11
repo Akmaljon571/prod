@@ -71,9 +71,7 @@ function NoSafe() {
             message.error('Raqamga Xato');
           }
         });
-    } else if (
-      Number(value.split(' ').join('').split('+').join(''))
-    ) {
+    } else if (Number(value.split(' ').join('').split('+').join(''))) {
       const phone_number = value.split(' ').join('').split('+').join('');
       if (phone_number.length === 12) {
         fetch(api + '/me/send-code-update-phone-number', {

@@ -76,7 +76,7 @@ function Video() {
               </p>
               <small>{videoLang[l].muddat}</small>{' '}
             </div>
-            <Link to={'/payment'}>{videoLang[l].ol}</Link>
+            <Link to={`/payment/${course._id}`}>{videoLang[l].ol}</Link>
           </div>
         )}
       </div>

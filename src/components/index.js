@@ -27,6 +27,7 @@ import Setting from './setting/setting';
 import About from './about/about';
 import News from './news/news';
 import Payment from './payment/payment';
+import Buy from './buy/buy';
 
 export {
   Header,
@@ -58,4 +59,5 @@ export {
   About,
   News,
   Payment,
+  Buy
 };

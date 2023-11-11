@@ -1,5 +1,5 @@
 import { Button, Checkbox, FormControlLabel } from '@mui/material';
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 import { State } from '../../context';
 import { msgLang } from './msg.lang';
 import girl from '../../img/message.png';
@@ -7,6 +7,13 @@ import './message.scss';
 
 function Message() {
   const { l } = useContext(State);
+  const name = useRef();
+  const phone = useRef();
+
+  const click = () => {
+    name.current.value = '';
+    phone.current.value = '';
+  };
 
   return (
     <>
@@ -16,8 +23,12 @@ function Message() {
           <h2>{msgLang[l].title}</h2>
 
           <div className="form">
-            <input type="text" placeholder={`${msgLang[l].ism}`} />
-            <input type="text" placeholder={`${msgLang[l].phone}`} />
+            <input ref={name} type="text" placeholder={`${msgLang[l].ism}`} />
+            <input
+              ref={phone}
+              type="text"
+              placeholder={`${msgLang[l].phone}`}
+            />
             <FormControlLabel
               className="checkbox"
               control={
@@ -33,7 +44,9 @@ function Message() {
               }
               label={`${msgLang[l].s}`}
             />
-            <Button variant="contained">{msgLang[l].send}</Button>
+            <Button onClick={click} variant="contained">
+              {msgLang[l].send}
+            </Button>
           </div>
         </div>
         <img className="girl" src={girl} alt="" />

@@ -1,29 +1,41 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { State, api } from '../../context';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './payment.scss';
 
 function Payment() {
+  const paymentLink = 'https://agr.uz/sandbox';
+  const returnURL = 'http://localhost:3000/buy';
+  const [param, setParam] = useState({});
   const { token } = useContext(State);
-  // const paymentLink = 'https://agr.uz/sandbox';
+  const { id } = useParams('id');
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (token) {
-      fetch(api + '/customer/payment');
+    if (token && id) {
+      fetch(api + `/customer/course/${id}/payment`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+        .then(re => re.json())
+        .then(data => setParam(data.params))
+        .catch(err => console.log(err));
     } else {
       navigate('/login');
     }
-  }, [token, navigate]);
+  }, [token, navigate, id]);
 
   return (
-    <iframe
-      className="payment"
-      src="https://agr.uz/sandbox?VENDOR_ID=101613&MERCHANT_TRANS_ID=654e9c2d7d2ab573e15c7492&MERCHANT_TRANS_AMOUNT=1001&MERCHANT_CURRENCY=sum&MERCHANT_TRANS_NOTE=NOTE&SIGN_TIME=1699650605221&SIGN_STRING=5f4eb0d79dfaa48b7dd247020ac2032f&MERCHANT_TRANS_RETURN_URL=https%3A%2F%2Fapi.lincor.uz%2Fcustomer%2Fcourse%2F653df15af0f1a1215853baea%2Fpayment%2F654e9c2d7d2ab573e15c7492"
-      title="payment"
-      frameborder="0"
-      allowfullscreen
-    ></iframe>
+    <>
+      {param?.VENDOR_ID ? <iframe
+        className="payment"
+        src={`${paymentLink}?VENDOR_ID=${param.VENDOR_ID}&MERCHANT_TRANS_ID=${param.MERCHANT_TRANS_ID}&MERCHANT_TRANS_AMOUNT=${param.MERCHANT_TRANS_AMOUNT}&MERCHANT_CURRENCY=${param.MERCHANT_CURRENCY}&MERCHANT_TRANS_NOTE=${param.MERCHANT_TRANS_NOTE}&SIGN_TIME=${param.SIGN_TIME}&SIGN_STRING=${param.SIGN_STRING}&MERCHANT_TRANS_RETURN_URL=${returnURL}`}
+        title="payment"
+        frameBorder="0"
+        allowFullScreen
+      ></iframe> : null}
+    </>
   );
 }
 
