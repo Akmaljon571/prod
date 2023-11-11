@@ -97,6 +97,106 @@ function Login() {
             content: "Ma'lumotlarni to'ldiring",
           });
         });
+    }
+    if (
+      Number(tell.split(' ').join('').split('+').join('')) &&
+      password.length === 8
+    ) {
+      const phone_number = tell.split(' ').join('').split('+').join('');
+      if (phone_number.length === 12) {
+        fetch(api + '/auth/login', {
+          method: 'POST',
+          credentials: 'include',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            phone_number,
+            password,
+          }),
+        })
+          .then((re) => re.json())
+          .then((data) => {
+            if (data?.ok) {
+              messageApi.destroy();
+              messageApi.open({
+                type: 'success',
+                content: 'Muaffaqiyatli tekshiruv',
+              });
+              localStorage.setItem(
+                'access_token',
+                JSON.stringify(data?.access_token),
+              );
+              setToken(data?.access_token);
+              navigate('/');
+            } else {
+              messageApi.destroy();
+              messageApi.open({
+                type: 'error',
+                content: "Ma'lumot xato",
+                duration: 0,
+              });
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+            messageApi.destroy();
+            messageApi.open({
+              type: 'error',
+              content: "Ma'lumotlarni to'ldiring",
+            });
+          });
+      } else if (phone_number.length === 9) {
+        const number = '998' + phone_number;
+        fetch(api + '/auth/login', {
+          method: 'POST',
+          credentials: 'include',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            phone_number: number,
+            password,
+          }),
+        })
+          .then((re) => re.json())
+          .then((data) => {
+            if (data?.ok) {
+              messageApi.destroy();
+              messageApi.open({
+                type: 'success',
+                content: 'Muaffaqiyatli tekshiruv',
+              });
+              localStorage.setItem(
+                'access_token',
+                JSON.stringify(data?.access_token),
+              );
+              setToken(data?.access_token);
+              navigate('/');
+            } else {
+              messageApi.destroy();
+              messageApi.open({
+                type: 'error',
+                content: "Ma'lumot xato",
+                duration: 0,
+              });
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+            messageApi.destroy();
+            messageApi.open({
+              type: 'error',
+              content: "Ma'lumotlarni to'ldiring",
+            });
+          });
+      } else {
+        messageApi.destroy();
+        messageApi.open({
+          type: 'error',
+          content: "Ma'lumotlarni to'ldiring",
+        });
+      }
     } else {
       messageApi.destroy();
       messageApi.open({
