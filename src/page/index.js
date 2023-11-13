@@ -8,7 +8,6 @@ import SettingPage from './setting';
 import AboutPage from './about';
 import NewsPage from './news';
 import PaymentPage from './payment';
-import BuyPage from './buy';
 
 export {
   Home,
@@ -21,5 +20,4 @@ export {
   AboutPage,
   NewsPage,
   PaymentPage,
-  BuyPage
 };

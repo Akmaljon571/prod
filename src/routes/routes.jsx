@@ -2,7 +2,6 @@ import { Route, Routes } from 'react-router-dom';
 import {
   AboutPage,
   AloqaPage,
-  BuyPage,
   CoursesPage,
   DarsPage,
   ErrorPage,
@@ -42,7 +41,6 @@ function Routers() {
       <Route path="/about/:id" element={<AboutPage />} />
       <Route path="/payment" element={<CoursesPage />} />
       <Route path="/payment/:id" element={<PaymentPage />} />
-      <Route path="/buy" element={<BuyPage />} />
       <Route path="/*" element={<ErrorPage />} />
     </Routes>
   );
